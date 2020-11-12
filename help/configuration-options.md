@@ -51,7 +51,7 @@ Customers will be able to activate data from Adobe Experience Platform to your d
 
 **Example configuration**
 
-```
+```json
 
 {
   "name": "Moviestar destination server",

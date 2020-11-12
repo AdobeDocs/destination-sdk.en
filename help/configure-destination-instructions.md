@@ -13,7 +13,7 @@ title: How to use the Destination SDK to configure your destination
 >* The content on this page is Adobe confidential information, please do not share outside of your company.
 >* The Adobe Experience Platform Destination SDK is currently an alpha release. The documentation and the functionality are subject to change.
 
-<br>&nbsp; 
+<br>&nbsp;
 
 ## Overview 
 
@@ -37,7 +37,7 @@ As a first step, based on the payloads that your destination supports, you must 
 Insert the template you created in step 1 in the `value` parameter, under `requestBody`.
 
 
-```
+```curl
 
 POST /authoring/v1/destination-servers
 {
@@ -64,7 +64,7 @@ POST /authoring/v1/destination-servers
 
 ### Step 3 - Create credentials configuration
 
-```
+```curl
 
 POST /authoring/v1/credentials
 
@@ -80,7 +80,7 @@ POST /authoring/v1/credentials
 
 ### Step 4 - Create destination configuration
 
-```
+```curl
 
 POST /authoring/v1/destination
  
