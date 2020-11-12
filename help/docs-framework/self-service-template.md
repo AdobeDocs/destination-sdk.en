@@ -83,7 +83,7 @@ To activate segments to *YOURDESTINATION*, follow the steps below:
 3. Select **[!UICONTROL Activate]**;
 4. In the **[!UICONTROL Activate destination]** workflow, on the **[!UICONTROL Select Segments]** page, select which segments to send to *YOURDESTINATION*.
     ![segments-to-destination](/help/docs-framework/assets/activate-segments-google-customer-match.png)
-5.  In the **[!UICONTROL Mapping]** step, select which attributes and identities from the XDM schema to map to the destination schema. Select **[!UICONTROL Add new mapping]** and browse your schema, select email and/or hashed email, and map them to the corresponding target identity.  
+5.  In the **[!UICONTROL Mapping]** step, select which attributes and identities from the source XDM schema to map to the target schema. Select **[!UICONTROL Add new mapping]** and browse your schema, select identity namespaces and map them to the corresponding target identity.  
 ![identity mapping initial screen](/help/docs-framework/assets/gcm-identity-mapping.png) <br>&nbsp;
    *Plain text email address as primary identity*: If you have plain text (unhashed) email addresses as primary identity in your schema, select the email field in your **[!UICONTROL Source Attributes]** and map to the Email field in the right column under **[!UICONTROL Target Identities]**, as shown below. Set up a mapping between any other attributes you plan to use.
    ![identity mapping step](/help/docs-framework/assets/ssd-template-identity.png) <br>&nbsp;
@@ -102,7 +102,7 @@ If no policy violations have been detected, select **[!UICONTROL Finish]** to co
 
 ## Exported Data
 
-*Add a note about how data is exported to your destination. This would help the customer make sure that they have correctly integrated with your destination. For example, You could provide a sample JSON like the one below.*
+*Add a note about how data is exported to your destination. This would help the customer make sure that they have correctly integrated with your destination. For example, you could provide a sample JSON like the one below.*
 
 ```
 {
