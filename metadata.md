@@ -1,13 +1,15 @@
 ---
 cloud: experience-cloud
 solution-title: Adobe Experience Platform
+solution: Experience Platform
+type: Documentation
 solution-hub-url: TBD
 solution-image: assets/experience_platform_appicon_256.png
 getting-started-title: TBD
 getting-started-url: TBD
 tutorials-title: Tutorials
 tutorials-url: TBD
-git-repo: https://git.corp.adobe.com/AdobeDocs/destinations-authoring-api.en
+git-repo: https://github.com/AdobeDocs/destination-sdk.en
 index: no
 ---
 

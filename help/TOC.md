@@ -2,7 +2,8 @@
 product: Adobe Experience Platform
 audience: technical-audience
 user-guide-title: Destination SDK Developer Guide
-user-guide-url: /content/help/en/destinations-authoring-api/docs/home.html
+breadcrumb-title: Destination SDK Guide
+user-guide-description: Adobe Experience Platform Destination SDK provides you with self-serve API access, allowing you to build and maintain an integration with Adobe Experience Platform.
 ---
 
 # Adobe Destination SDK {#help}
