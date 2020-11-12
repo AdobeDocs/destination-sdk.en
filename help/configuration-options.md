@@ -146,57 +146,11 @@ A valid HTTP specs template could look like below:
 
 ```
 
--->
-
-
-<!--
-
 // commenting out this part as these types of destination specs are not supported in phase one
 
 ### File specifications
 
 File-based destinations deliver file exports containing segment qualifications and profile attributes to your preferred storage location. If you want to set up a batch file-based destination, the template we'll use will be as below:
-
-
-**File-based destination**
-
-|Parameter | Type | Description|
-|---------|----------|------|
-|name | String | Template name. We will autocomplete this with your company name. E.g. for Acme Company - Acme FILE template.  |
-|type | String | Template Type HTTP or FILE. Use FILE. |
-|filename | String | Specifies the file name for the data-transfer file. The file name is generated dynamically based on the message macros you export to your destination. For example, if you use the message macros `<SEGMENT_LIST><PROFILE_ATTRIBUTE><DATE>`, a filename could be `males19-25_phone.number_05052020.gz`. |
-|header | String | Data Header  |
-|datarow | String | Data row defined as macros. <br> We need to know which data format macros your destination should support. See [Outbound Template Macros](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/receiving-audience-data/batch-outbound-data-transfers/outbound-template-macros.html) and [Outbound Macro Examples](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/receiving-audience-data/batch-outbound-data-transfers/outbound-macro-examples.html) for examples from Adobe's DMP, Audience Manager. <br> See also, [Message format](#message-format) for further information. |
-|maxFileSizeMB | String | Maximum file size allowed in MB. Specify how large the exported files can be. |
-|compression | String | Compression format. Specify if the files exported our of Adobe Real-time CDP should be compressed. Supported values are `.gz` and `.zip`. For delivery to AWS S3, you must use .gz or uncompressed files.|
-|infoReceipt | boolean | Specifies that a transfer-control (.info) file is generated. The .info file provides metadata information about file transfers so that partners can verify that Audience Manager handled file transfers correctly. For more information, see Transfer-Control Files for Log File Transfers in the Audience Manager documentation. |
-|md5Receipt | boolean | Specifies that an MD5 checksum receipt is generated. |
-
-
-#### Example
-
-A valid file-based specs template could look like below:
-
-```
-
-{
-  "name": "ACME company Batch template",
-  "type": "FILE",
-  "fileTemplate": {
-    "filename": "males19-25_phone.number_05052020.gz",
-    "header": "ABCDEFGHIJKLMNO",
-    "dataRow": "profile_id hashed_phone_number datetime",
-    "maxFileSizeMB": "250",
-    "compression": "gz"
-    "infoReceipt": "true",
-    "md5Receipt": "true"
-  }
-}
-
-```
-
-
-<br>&nbsp;
 
 ## Server specs
 
@@ -219,7 +173,6 @@ Provide us the necessary information about your server or storage locations, as 
 |`maxUsersPerRequest` | integer | Specifies the maximum number of users per request allowed for your server. |
 |`path` | String | This represents the url path and parameters of your server. Example:  `/path/to/import` |
 
-<!--
 
 // commenting out this part as these types of destination specs are not supported in phase one
 
