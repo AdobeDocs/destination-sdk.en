@@ -2,7 +2,6 @@
 description: This page describes how to use the reference information in Configuration options for the Destinations SDK to configure your destination using Destination SDK.
 seo-description: This page describes how to use the reference information in Configuration options for the Destinations SDK to configure your destination using Destination SDK.
 seo-title: How to use the Destination SDK to configure your destination
-solution: 
 title: How to use the Destination SDK to configure your destination
 ---
 
