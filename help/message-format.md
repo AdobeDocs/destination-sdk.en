@@ -69,7 +69,7 @@ To demonstrate the transformation process, we'll look at three common profile at
 
 Let's say your platform can receive a message format like:
 
-```
+```curl
 
 POST https://YOUR_REST_API_URL/users/
 Content-Type: application/json
