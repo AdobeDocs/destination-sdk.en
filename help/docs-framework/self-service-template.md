@@ -143,6 +143,10 @@ If no policy violations have been detected, select **[!UICONTROL Finish]** to co
 
 ```
 
+## Data usage and governance {#data-usage-governance}
+
+All [!DNL Adobe Experience Platform] destinations are compliant with data usage policies when handling your data. For detailed information on how [!DNL Adobe Experience Platform] enforces data governance, see [Data Governance in Real-time CDP](/help/rtcdp/privacy/data-governance-overview.md).
+
 ## Additional resources
 
 *You can provide further links to your product documentation or any other resources you consider important for the customer to be successful.*
