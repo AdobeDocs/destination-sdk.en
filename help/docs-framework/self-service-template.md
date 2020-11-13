@@ -77,6 +77,7 @@ To help you better understand how and when you should use the *YOURDESTINATION* 
 To activate segments to *YOURDESTINATION*, follow the steps below: 
 
 1. In **[!UICONTROL Destinations > Browse]**, select the *YOURDESTINATION* destination where you want to activate your segments.
+
 2. Click the name of the destination. This takes you to the Activate flow.
     ![activate-flow](/help/docs-framework/assets/yourdestination3.png)
     Note that if an activation flow already exists for a destination, you can see the segments that are currently being sent to the destination. Select **[!UICONTROL Edit activation]** in the right rail and follow the steps below to modify the activation details.
