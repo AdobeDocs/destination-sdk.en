@@ -7,7 +7,7 @@ description: Use this template to create public documentation for your destinati
 
 *As you go through this template, replace or delete all the paragraphs in italics (starting with this one).*
 
-*Start by updating the metadata (title and description) at the top of the page. Please ignore all instances of UICONTROL in this page. This is a tag that helps our machine translation processes correctly translate the page into the multiple languages that we support. We will add tags to your documentation after you submit it.*
+*Start by updating the metadata (title and description) at the top of the page. Please ignore all instances of UICONTROL on this page. This is a tag that helps our machine translation processes correctly translate the page into the multiple languages that we support. We will add tags to your documentation after you submit it.*
 
 ## Overview
 
@@ -30,7 +30,7 @@ description: Use this template to create public documentation for your destinati
 
 ## Use Cases
 
-To help you better understand how and when you should use the *YOURDESTINATION* destination, here are sample use cases that Adobe Real-time Customer Data Platform customers can solve by using this destination.
+To help you better understand how and when you should use the *YOURDESTINATION* destination, here are sample use cases that Adobe Experience Platform customers can solve by using this destination.
 
 
 ### Use Case #1
@@ -47,14 +47,14 @@ To help you better understand how and when you should use the *YOURDESTINATION* 
 
 ## Connect to destination {#connect-destination}
 
-*Replace YOURDESTINATION with your destination name and TOBEFILLED with the category that your destination belongs to.*
+*Replace YOURDESTINATION with your destination name and TOBEFILLEDIN with the category that your destination belongs to.*
 
 1. In **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**, scroll to the ***TOBEFILLEDIN*** category. Select ***YOURDESTINATION***, then select **[!UICONTROL Configure]**.
 
 
     >[!NOTE]
     >
-    >If a connection with this destination already exists, you can see an **[!UICONTROL Activate]** button on the destination card. For more information about the difference between **[!UICONTROL Activate]** and **[!UICONTROL Configure]**, refer to the [Catalog](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destinations-interface/destinations-workspace.html#catalog) section of the destination workspace documentation.  
+    >If a connection with this destination already exists, you can see an **[!UICONTROL Activate]** button on the destination card. For more information about the difference between **[!UICONTROL Activate]** and **[!UICONTROL Configure]**, refer to the [Catalog](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destinations-workspace.html#catalog) section of the destination workspace documentation.  
 
     ![Connect to YOURDESTINATION](/help/docs-framework/assets/yourdestination1.png)
 
@@ -66,7 +66,7 @@ To help you better understand how and when you should use the *YOURDESTINATION* 
 
 3. Once your credentials are confirmed and Adobe Experience Cloud is connected to your ***YOURDESTINATION*** account, you can select **[!UICONTROL Next]** to proceed to the **[!UICONTROL Setup]** step.
 
-4. In the **[!UICONTROL Authentication]** step, enter a **[!UICONTROL Name]** and a **[!UICONTROL Description]** for your activation flow and fill your account ID. <br> Also in this step, you can select any **[!UICONTROL Marketing use case]** that should apply to this destination. Marketing use cases indicate the intent for which data will be exported to the destination. You can select from Adobe-defined marketing use cases or you can create your own marketing use case. For more information about marketing use cases, see the [Data Governance in Real-time CDP](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/privacy/data-governance-overview.html#destinations) page. For information about the individual Adobe-defined marketing use cases, see the [Data usage policies overview](https://docs.adobe.com/help/en/experience-platform/data-governance/policies/overview.html#core-actions). <br> Select **[!UICONTROL Create Destination]** after you filled in the fields above.
+4. In the **[!UICONTROL Authentication]** step, enter a **[!UICONTROL Name]** and a **[!UICONTROL Description]** for your activation flow and fill your account ID. <br> Also in this step, you can select any marketing action that should apply to this destination. Marketing actions indicate the intent for which data will be exported to the destination. You can select from Adobe-defined marketing actions or you can create your own marketing action. For more information about marketing actions, see the [Data usage policies overview](https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html).
 
     ![Connect to YOURDESTINATION](/help/docs-framework/assets/yourdestination2.png)
 
@@ -93,7 +93,7 @@ To activate segments to *YOURDESTINATION*, follow the steps below:
 
 >[!IMPORTANT]
 >
->In this step, Adobe Experience Platform checks for data usage policy violations. Shown below is an example where a policy is violated. You cannot complete the segment activation workflow until you have resolved the violation. For information on how to resolve policy violations, see [Policy enforcement](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/privacy/data-governance-overview.html#enforcement) in the data governance documentation section.
+>In this step, Adobe Experience Platform checks for data usage policy violations. Shown below is an example where a policy is violated. You cannot complete the segment activation workflow until you have resolved the violation. For information on how to resolve policy violations, see [Policy enforcement](https://experienceleague.adobe.com/docs/experience-platform/data-governance/enforcement/auto-enforcement.html#enforcement) in the data governance documentation section.
  
 ![confirm-selection](/help/docs-framework/assets/data-policy-violation.png)
 
@@ -146,7 +146,7 @@ If no policy violations have been detected, select **[!UICONTROL Finish]** to co
 
 ## Data usage and governance {#data-usage-governance}
 
-All [!DNL Adobe Experience Platform] destinations are compliant with data usage policies when handling your data. For detailed information on how [!DNL Adobe Experience Platform] enforces data governance, see [Data Governance in Real-time CDP](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/privacy/data-governance-overview.html).
+All [!DNL Adobe Experience Platform] destinations are compliant with data usage policies when handling your data. For detailed information on how [!DNL Adobe Experience Platform] enforces data governance, see the [Data Governance overview](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
 
 ## Additional resources
 
