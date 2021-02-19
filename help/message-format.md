@@ -65,7 +65,7 @@ To demonstrate the transformation process, we'll look at three common profile at
 
 >[!NOTE]
 >
->The customer maps the attributes from the Adobe XDM schema to the partner XDM schema in the Adobe Experience Platform UI, in the **Mapping** step of the [activate destination workflow](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/dest-tutorials/activate-destinations.html).
+>The customer maps the attributes from the Adobe XDM schema to the partner XDM schema in the Adobe Experience Platform UI, in the **Mapping** step of the [activate destination workflow](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate-destinations.html#identity-mapping).
 
 Let's say your platform can receive a message format like:
 

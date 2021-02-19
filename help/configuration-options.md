@@ -115,7 +115,7 @@ The template spec allows you to configure how to format the exported message to 
 
 >[!NOTE]
 >
->The `value` attribute in the example configuration above is a [character-escaped](https://www.w3schools.com/python/gloss_python_escape_characters.asp) version that ties together the examples in [Attributes](/help/message-format.md#attributes), [Segment membership](/help/message-format.md#segment-membership), and [Identities](/help/message-format.md#identities)
+>The `value` attribute in the example configuration above is a [character-escaped](https://www.w3schools.com/python/gloss_python_escape_characters.asp) version that ties together the examples in [Attributes](/help/message-format.md#attributes), [Segment membership](/help/message-format.md#segment-membership), and [Identities](/help/message-format.md#identities).
 
 <!--
 
@@ -423,7 +423,7 @@ This is an example configuration for a fictional destination, Moviestar, which h
 This section refers to the UI elements in the configuration above that Adobe will add for your destination in the Adobe Experience Platform user interface. See below:
 
 * `documentationLink`:  Refers to the documentation page in the Destinations Catalog for your destination. 
-* `catagory`: Refers to the category that your destination will be assigned in Adobe Experience Platform. For more information, read [Destination Categories](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html?lang=en#destination-categories).
+* `category`: Refers to the category that your destination will be assigned in Adobe Experience Platform. For more information, read [Destination Categories](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html?lang=en#destination-categories).
 * ``iconUrl``: Provide the logo that Adobe will display in the Adobe Experience Platform destinations catalog for your destination card.
 * ``description``: Provide a description that Adobe will use in the Adobe Experience Platform destinations catalog for your destination card. We recommend no more than 4-5 sentences.
 * `frequency`: in the alpha release phase of Destination SDK, `Streaming` is the only available option.
@@ -437,8 +437,8 @@ For instance, customers could map a Platform [!DNL IDFA] namespace to an [!DNL I
 
  Read more in the [Identity namespace overview](https://docs.adobe.com/content/help/en/experience-platform/identity/namespaces.html).
 
-* `acceptsAttributes`: indicates if your destination accepts standard profile attributes. Usually these are highlighted in our partners' documenation.
-* `acceptsCustomNamespaces`: indicates if customers can set up custom profile attributes in your destination. 
+* `acceptsAttributes`: indicates if your destination accepts standard profile attributes. Usually these are highlighted in our partners' documentation.
+* `acceptsCustomNamespaces`: indicates if customers can set up custom profile attributes in your destination.
 
 <!--
 
