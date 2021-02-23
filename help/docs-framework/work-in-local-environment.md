@@ -5,7 +5,7 @@ description: The instructions on this page show you how to use a text editor to 
 seo-description: The instructions on this page show you how to use a text editor to work in your local environment to author documentation and submit a pull request.
 ---
 
-### Use a text editor in your local environment to create your new destination page {#local-authoring}
+# Use a text editor in your local environment to create your new destination page {#local-authoring}
 
 The instructions on this page show you how to use a text editor to work in your local environment to author documentation and submit a pull request.
 

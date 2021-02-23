@@ -5,7 +5,7 @@ description: The instructions on this page show you how to use the GitHub web in
 seo-description: The instructions on this page show you how to use the GitHub web interface to author documentation and submit a pull request.
 ---
 
-### Use the GitHub web interface to create your new destination page {#github-interface}
+# Use the GitHub web interface to create your new destination page {#github-interface}
 
 The instructions below show you how to use the GitHub web interface to author documentation and submit a pull request. 
 
