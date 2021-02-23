@@ -33,7 +33,7 @@ This page includes:
 To create documentation for your destination according to the instructions in this article, the following items are necessary:
 
 * **A GitHub account**. Sign up for [GitHub](https://github.com/) if don't have one.
-* **GitHub Desktop**. If you select to [create the documentation in your local environment](/help/docs-framework/documentation-instructions.md#local-authoring), you will need to use [GitHub Desktop](https://desktop.github.com/).
+* **GitHub Desktop**. If you select to [create the documentation in your local environment](/help/docs-framework/documentation-instructions.md#local-authoring), you need to use [GitHub Desktop](https://desktop.github.com/).
 * Your integration with Adobe must be in a testing phase with your destination deployed in a staging environment in Adobe Experience Platform.
 
 ## High-level instructions to create documentation for your destination in Adobe Experience Platform
@@ -128,7 +128,7 @@ The instructions below show you how to use the GitHub web interface to author do
 
       ![confirm file creation](/help/docs-framework/assets/ssd-confirm-file-creation.png)
 
-1. After you saved the file and uploaded your desired images, you can open a pull request (PR) to merge your working branch into the master branch of the Adobe documentation repository. Make sure the branch you worked on is selected and select **Pull request**.
+1. After you saved the file and uploaded your desired images, you can open a pull request (PR) to merge your working branch into the master branch of the Adobe documentation repository. Make sure the branch that you worked on is selected and select **Pull request**.
 
    ![create pull request](/help/docs-framework/assets/ssd-create-pull-request-1.png)
 
@@ -139,13 +139,13 @@ The instructions below show you how to use the GitHub web interface to author do
    
    ![create pull request to adobe repo](/help/docs-framework/assets/ssd-create-pull-request-2.png)
 
-1. At this point, a notification appears that prompts you to sign the Adobe CLA. Note that this is a mandatory step. After you signed it, refresh the PR page and submit the pull request.
+1. At this point, a notification appears that prompts you to sign the Adobe CLA. This is a mandatory step. After you signed it, refresh the PR page and submit the pull request.
 
 1. You can confirm that the pull request has been submitted by inspecting the **Pull requests** tab in `https://github.com/AdobeDocs/experience-platform.en`.
 
    ![PR successful](/help/docs-framework/assets/ssd-pr-successful.png)
 
-1. Thank you! Our documentation team will reach out in the PR in case any edits are required and to let you know when the documentation will be published.
+1. Thank you! The Adobe documentation team will reach out in the PR in case any edits are required and to let you know when the documentation will be published.
 
 >[!TIP]
 >
@@ -155,7 +155,7 @@ The instructions below show you how to use the GitHub web interface to author do
 
 ### Method 2 - Create your new destination page using a text editor in your local environment {#local-authoring}
 
-The instructions below show you how use a text editor to work in your local environment to author documentation and submit a pull request.
+The instructions below show you how to use a text editor to work in your local environment to author documentation and submit a pull request.
 
 Please see [Install Git and Markdown Authoring tools](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/install-tools.html), [Set up Git repository locally for documentation](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/local-repo.html), and [GitHub contribution workflow for major changes](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/full-workflow.html) in Adobe's contributor guide for reference.
 
