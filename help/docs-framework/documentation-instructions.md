@@ -21,19 +21,19 @@ This assumes that you have completed steps 1-3 to [integrate with Adobe Real-tim
 
 -->
 
-This page includes:
+This documentation section includes:
 
 * Step-by step instructions for you to create a documentation page for your new destination;
 * A template for you to fill out for your destination;
 * [General instructions on using Markdown](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/markdown.html);
-* [Specific instructions for Adobe's Markdown flavor](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/markdown.html#custom-markdown-extensions) (don't worry, this is very similar to regular Markdown).
+* [Specific instructions for the Adobe Markdown flavor](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/markdown.html#custom-markdown-extensions) (the Adobe Markdown flavor is very similar to regular Markdown).
 
 ## Prerequisites
 
 To create documentation for your destination according to the instructions in this article, the following items are necessary:
 
-* **A GitHub account**. Sign up for [GitHub](https://github.com/) if don't have one.
-* **GitHub Desktop**. If you select to [create the documentation in your local environment](/help/docs-framework/documentation-instructions.md#local-authoring), you need to use [GitHub Desktop](https://desktop.github.com/).
+* **A GitHub account**. Sign up for [GitHub](https://github.com/) if don't have an account yet.
+* **GitHub Desktop**. If you select to [create the documentation in your local environment](/help/docs-framework/work-in-local-environment.md), you must use [GitHub Desktop](https://desktop.github.com/).
 * Your integration with Adobe must be in a testing phase with your destination deployed in a staging environment in Adobe Experience Platform.
 
 ## High-level instructions to create documentation for your destination in Adobe Experience Platform
@@ -48,7 +48,7 @@ Adobe's documentation team is happy to help with this, just ask for assistance i
 
 >[!TIP]
 >
->See [Writing guidance for Adobe Documentation](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/general-writing-guidance.html) for some quick writing tips that our team uses when authoring documentation.
+>See [Writing guidance for Adobe Documentation](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/general-writing-guidance.html) for some quick writing tips that the Adobe documentation team uses when authoring documentation.
 
 <!--
 
@@ -59,7 +59,7 @@ Adobe's documentation team is happy to help with this, just ask for assistance i
 
 ## Documentation template
 
-To assist you in creating your documentation page, we have prefilled a [documentation template](/help/docs-framework/self-service-template.md) for you. Further below, you can find instructions how to edit the template and open a pull request. The Adobe documentation team will review and publish the documentation for your new destination.
+To assist you in creating your documentation page, Adobe has prefilled a [documentation template](/help/docs-framework/self-service-template.md) for you. Further below, you can find instructions how to edit the template and open a pull request. The Adobe documentation team will review and publish the documentation for your new destination.
 
 You can [download the template here](assets/yourdestination-template.md.zip). Unzip the file to extract the `yourdestination.md` file.
 
@@ -91,6 +91,16 @@ If you are new to the GitHub contribution model and not used to working in a tex
 
 -->
 
+
+## Steps to create your new destination page {#steps-to-create-docs-page}
+
+You can use the GitHub web interface or your local environment to create documentation for your new destination in Adobe Experience Platform. Find instructions for both options in the links below:
+
+* [Use the GitHub web interface to create your new destination page](/help/docs-framework/use-github-interface-to-create-documentation.md)
+* [Use a text editor in your local environment to create your new destination page](/help/docs-framework/work-in-local-environment.md)
+
+
+<!--
 
 ## Steps to create your new destination page {#steps-to-create-docs-page}
 
@@ -229,6 +239,9 @@ Please see [Install Git and Markdown Authoring tools](https://docs.adobe.com/con
 >[!TIP]
 >
 >To add images and links to your documentation, and for any other questions around Markdown, read [Using Markdown](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/markdown.html) in Adobe's collaborative writing guide.
+
+-->
+
 
 <!--
 
