@@ -1,11 +1,11 @@
 ---
-title: Use the GitHub web interface to create your new destination page
-seo-title: Use the GitHub web interface to create your new destination page
+title: Use the GitHub web interface to create a destination documentation page 
+seo-title: Use the GitHub web interface to create a destination documentation page 
 description: The instructions on this page show you how to use the GitHub web interface to author documentation and submit a pull request.
 seo-description: The instructions on this page show you how to use the GitHub web interface to author documentation and submit a pull request.
 ---
 
-# Use the GitHub web interface to create your new destination page {#github-interface}
+# Use the GitHub web interface to create a destination documentation page {#github-interface}
 
 The instructions below show you how to use the GitHub web interface to author documentation and submit a pull request. Before going through the steps indicated here, make sure you read [Document your destination in Adobe Experience Platform Destinations](/help/docs-framework/documentation-instructions.md).
 
