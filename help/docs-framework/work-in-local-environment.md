@@ -1,11 +1,11 @@
 ---
-title: Use a text editor in your local environment to create your new destination page
-seo-title: Use a text editor in your local environment to create your new destination page
+title: Use a text editor in your local environment to create a destination documentation page
+seo-title: Use a text editor in your local environment to create a destination documentation page
 description: The instructions on this page show you how to use a text editor to work in your local environment to author documentation and submit a pull request.
 seo-description: The instructions on this page show you how to use a text editor to work in your local environment to author documentation and submit a pull request.
 ---
 
-# Use a text editor in your local environment to create your new destination page {#local-authoring}
+# Use a text editor in your local environment to create a destination documentation page {#local-authoring}
 
 The instructions on this page show you how to use a text editor to work in your local environment to author documentation and submit a pull request. Before going through the steps indicated here, make sure you read [Document your destination in Adobe Experience Platform Destinations](/help/docs-framework/documentation-instructions.md).
 
