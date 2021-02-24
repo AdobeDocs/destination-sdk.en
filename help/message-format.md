@@ -105,7 +105,7 @@ Note that the `identityMap` attribute in Adobe Experience Platform can contain s
 
 ## Using a templating language for the identity, attributes, and segment membership transformations {#using-templating}
 
-Adobe uses a [Jinja-based](https://jinja.palletsprojects.com/en/2.11.x/) templating language to transform the fields from the XDM schema into a format supported by your destination.
+Adobe uses a templating language similar to [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) to transform the fields from the XDM schema into a format supported by your destination.
 
 This section provides several examples of how these transformations are made, from the input XDM schema, through the template, and outputting into payload formats accepted by your destination. The examples below are sorted by increasing complexity, as follows:
 
