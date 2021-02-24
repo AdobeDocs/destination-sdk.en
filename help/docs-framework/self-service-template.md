@@ -1,5 +1,5 @@
 ---
-title: Self-service template // Replace with the name of destination
+title: Documentation self-service template // Replace with the name of destination
 description: Use this template to create public documentation for your destination in the Adobe Experience Platform catalog. // Replace with the paragraph in the Overview section
 ---
 
