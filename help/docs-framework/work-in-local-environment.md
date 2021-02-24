@@ -7,11 +7,11 @@ seo-description: The instructions on this page show you how to use a text editor
 
 # Use a text editor in your local environment to create your new destination page {#local-authoring}
 
-The instructions on this page show you how to use a text editor to work in your local environment to author documentation and submit a pull request.
+The instructions on this page show you how to use a text editor to work in your local environment to author documentation and submit a pull request. Before going through the steps indicated here, make sure you read [Document your destination in Adobe Experience Platform Destinations](/help/docs-framework/documentation-instructions.md).
 
 >[!TIP]
 >
->Refer also to our supporting documentation in Adobe's contributor guide:
+>Refer also to the supporting documentation in Adobe's contributor guide:
 >* [Install Git and Markdown Authoring tools](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/install-tools.html)
 >* [Set up Git repository locally for documentation](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/local-repo.html)
 >* [GitHub contribution workflow for major changes](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/full-workflow.html).
@@ -39,7 +39,7 @@ The instructions on this page show you how to use a text editor to work in your 
    >* `help/destinations/catalog/personalization/moviestar.md` for the Markdown file.
    >* `help/destinations/assets/catalog/personalization/moviestar/` for any images you are using in the documentation.
 
-   ![new branch local](/help/docs-framework/assets/new-branch-local.gif)
+   ![New branch local](/help/docs-framework/assets/new-branch-local.gif)
 
 10. In GitHub Desktop, [commit](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/github-glossary#commit) your work, as shown below.
 
@@ -49,21 +49,21 @@ The instructions on this page show you how to use a text editor to work in your 
    >* `help/destinations/catalog/personalization/moviestar.md` for the Markdown file.
    >* `help/destinations/assets/catalog/personalization/moviestar/` for any images you are using in the documentation.
 
-   ![commit local](/help/docs-framework/assets/commit-local.png)
+   ![Commit local](/help/docs-framework/assets/commit-local.png)
 11. In GitHub Desktop, [push](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/github-glossary#push) your work to the [remote](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/github-glossary#remote) branch, as shown below.
 
-   ![push your commit](/help/docs-framework/assets/push-local-to-remote.png)
+   ![Push your commit](/help/docs-framework/assets/push-local-to-remote.png)
 
 12. In the GitHub web interface, open a pull request (PR) to merge your working branch into the master branch of the Adobe documentation repository. Make sure the branch you worked on is selected and select **Pull request**.
 
-   ![create pull request](/help/docs-framework/assets/ssd-create-pull-request-1.png)
+   ![Create pull request](/help/docs-framework/assets/ssd-create-pull-request-1.png)
 
 13. Make sure that the base and compare branches are correct. Add a note to the PR, describing your update, and select **Create pull request**. This opens a PR to merge the working branch of your fork into the master branch of the Adobe repository. 
    >[!TIP]
    >
    >Leave the **Allow edits by maintainers** checkbox selected so that the Adobe documentation team can make edits to the PR. 
  
-   ![create pull request to adobe repo](/help/docs-framework/assets/ssd-create-pull-request-2.png)
+   ![Create pull request to Adobe documentation repository](/help/docs-framework/assets/ssd-create-pull-request-2.png)
 
 14. At this point, a notification appears that prompts you to sign the Adobe CLA. Note that this is a mandatory step. After you signed it, refresh the PR page and merge the pull request.
 15.  You can confirm that the pull request has been submitted by inspecting the **Pull requests** tab in `https://github.com/AdobeDocs/experience-platform.en`.

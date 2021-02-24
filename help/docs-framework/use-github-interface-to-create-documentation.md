@@ -7,11 +7,11 @@ seo-description: The instructions on this page show you how to use the GitHub we
 
 # Use the GitHub web interface to create your new destination page {#github-interface}
 
-The instructions below show you how to use the GitHub web interface to author documentation and submit a pull request. 
+The instructions below show you how to use the GitHub web interface to author documentation and submit a pull request. Before going through the steps indicated here, make sure you read [Document your destination in Adobe Experience Platform Destinations](/help/docs-framework/documentation-instructions.md).
 
 >[!TIP]
 >
->Refer also to our supporting documentation in Adobe's contributor guide:
+>Refer also to the supporting documentation in Adobe's contributor guide:
 >* [Install Git and Markdown Authoring tools](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/install-tools.html)
 >* [Set up Git repository locally for documentation](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/local-repo.html)
 >* [GitHub contribution workflow for major changes](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/full-workflow.html).
