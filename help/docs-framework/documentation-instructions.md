@@ -96,8 +96,8 @@ If you are new to the GitHub contribution model and not used to working in a tex
 
 You can use the GitHub web interface or your local environment to create documentation for your new destination in Adobe Experience Platform. Find instructions for both options in the links below:
 
-* [Use the GitHub web interface to create your new destination page](/help/docs-framework/use-github-interface-to-create-documentation.md)
-* [Use a text editor in your local environment to create your new destination page](/help/docs-framework/work-in-local-environment.md)
+* [Use the GitHub web interface to create a destination documentation page](/help/docs-framework/use-github-interface-to-create-documentation.md)
+* [Use a text editor in your local environment to create a destination documentation page](/help/docs-framework/work-in-local-environment.md)
 
 
 <!--
