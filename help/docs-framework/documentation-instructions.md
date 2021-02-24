@@ -100,6 +100,148 @@ You can use the GitHub web interface or your local environment to create documen
 * [Use a text editor in your local environment to create your new destination page](/help/docs-framework/work-in-local-environment.md)
 
 
+<!--
+
+## Steps to create your new destination page {#steps-to-create-docs-page}
+
+### Method 1 - Create your new destination page using the GitHub web interface {#github-interface}
+
+The instructions below show you how to use the GitHub web interface to author documentation and submit a pull request. 
+
+
+>[!TIP]
+>
+>If you prefer to work on the documentation in a text editor, read the section below, [Create your new destination page using a text editor in your local environment](/help/docs-framework/documentation-instructions.md#local-authoring). 
+>Refer also to our supporting documentation [Install Git and Markdown Authoring tools](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/install-tools.html), [Set up Git repository locally for documentation](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/local-repo.html), and [GitHub contribution workflow for major changes](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/full-workflow.html) in Adobe's contributor guide.
+
+1. In your browser, navigate to `https://github.com/AdobeDocs/experience-platform.en`.
+1. To [fork](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/local-repo.html#fork-the-repository) the repository, click **Fork** as shown in the image below.
+
+   ![fork repo](/help/docs-framework/assets/ssd-fork-repo.png)
+
+1. In your fork of the repository, create a new branch for your project, as shown below. You will use this branch for the work in this tutorial.
+
+   ![create new github branch](/help/docs-framework/assets/new-branch-github.gif)
+
+1. In the GitHub folder structure of the forked repository, navigate to `experience-platform.en/help/destinations/catalog/[...]`, where [...] is the desired category for your destination. For example, if you are adding a personalization destination to Experience Platform, select the `personalization` category. Select **Add file > Create new file**. 
+
+   >[!TIP]
+   >
+   >The folder structure in the screen recording below is outdated. Navigate to the folder structure indicated above.
+
+   ![add new file](/help/docs-framework/assets/github-navigate-and-create-file.gif)
+
+1. Name your destination `YOURDESTINATION.md`, where YOURDESTINATION is the name of your destination in Adobe Experience Platform. For example, if your company is called Moviestar, you would name your file `moviestar.md`.
+1. In your new file in GitHub, paste in the content of the [destination template](/help/docs-framework/self-service-template.md). Download the template [here](assets/yourdestination-template.md.zip). Unzip it to extract the `.md` file template.
+1. In the GitHub interface, edit the template with relevant information for your destination. Follow the instructions in the template. 
+1. For any screenshots or images that you plan on using, use the GitHub interface to upload the files to `experience-platform.en/help/destinations/assets/catalog/` and link to them from the page you are authoring. See [instructions how to link to images](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/linking.html#link-to-images).
+   
+   >[!TIP]
+   >
+   >The folder structure in the screen recording below is outdated. Navigate to the folder structure indicated above.
+
+   ![upload image to github](/help/docs-framework/assets/upload-image.gif)
+
+1.  When you are ready, save the file in your branch.
+
+      ![confirm file creation](/help/docs-framework/assets/ssd-confirm-file-creation.png)
+
+1. After you saved the file and uploaded your desired images, you can open a pull request (PR) to merge your working branch into the master branch of the Adobe documentation repository. Make sure the branch that you worked on is selected and select **Pull request**.
+
+   ![create pull request](/help/docs-framework/assets/ssd-create-pull-request-1.png)
+
+1. Make sure that the base and compare branches are correct. Add a note to the PR, describing your update, and select **Create pull request**. This opens a PR to merge the working branch of your fork into the master branch of the Adobe repository. 
+   >[!TIP]
+   >
+   >Leave the **Allow edits by maintainers** checkbox selected so that the Adobe documentation team can make edits to the PR. 
+   
+   ![create pull request to adobe repo](/help/docs-framework/assets/ssd-create-pull-request-2.png)
+
+1. At this point, a notification appears that prompts you to sign the Adobe CLA. This is a mandatory step. After you signed it, refresh the PR page and submit the pull request.
+
+1. You can confirm that the pull request has been submitted by inspecting the **Pull requests** tab in `https://github.com/AdobeDocs/experience-platform.en`.
+
+   ![PR successful](/help/docs-framework/assets/ssd-pr-successful.png)
+
+1.  Thank you! The Adobe documentation team will reach out in the PR in case any edits are required and to let you know when the documentation will be published.
+
+>[!TIP]
+>
+>To add images and links to your documentation, and for any other questions around Markdown, read [Using Markdown](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/markdown.html) in Adobe's collaborative writing guide.
+
+<br>&nbsp;
+
+### Method 2 - Create your new destination page using a text editor in your local environment {#local-authoring}
+
+The instructions below show you how to use a text editor to work in your local environment to author documentation and submit a pull request.
+
+Please see [Install Git and Markdown Authoring tools](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/install-tools.html), [Set up Git repository locally for documentation](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/local-repo.html), and [GitHub contribution workflow for major changes](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/full-workflow.html) in Adobe's contributor guide for reference.
+
+
+
+1. In your browser, navigate to `https://github.com/AdobeDocs/experience-platform.en`
+1. To [fork](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/local-repo.html#fork-the-repository) the repository, click **Fork** as shown in the screenshot.
+
+   ![fork repo](/help/docs-framework/assets/ssd-fork-repo.png)
+
+1. Clone the repository to your local machine. Select **Code > HTTPS > Open with GitHub Desktop**, as shown below. Make sure you have [GitHub Desktop](https://desktop.github.com/) installed. For further reference, read [Create a local clone of the repository](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/local-repo.html#create-a-local-clone-of-the-repository) in the Adobe contributor guide.
+
+   ![clone repository to local machine](/help/docs-framework/assets/clone-local.png)
+
+1. In your local file structure, navigate to `experience-platform.en/help/destinations/catalog/[...]`, where [...] is the desired category for your destination. For example, if you are adding a personalization destination to Experience Platform, select the `personalization` folder.
+1. Download the [self-service destination template](assets/yourdestination-template.md.zip). Unzip it and extract the file `yourdestination-template.md` to the above directory.  Rename the file `YOURDESTINATION.md`, where YOURDESTINATION is the name of your destination in Adobe Experience Platform. For example, if your company is called Moviestar, you would name your file `moviestar.md`.
+1. Open your new file in your [text editor of choice](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/install-tools.html#understand-markdown-editors).
+1. Edit the template with relevant information for your destination. Follow the instructions in the template. 
+1.  For any screenshots or images that you plan on adding to your documentation, navigate to `GitHub/experience-platform.en/help/destinations/assets/catalog/[...]`, where [...] is the desired category for your destination. For example, if you are adding a personalization destination to Experience Platform, select the `personalization` folder. Create a new folder for your destination and drop your images here. You can link to them from the page you are authoring. See [instructions how to link to images](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/linking.html#link-to-images).
+1. When you are ready, save the file you are working on.
+1. In GitHub Desktop, create a working branch for your updates and select **Publish branch** to publish the branch to GitHub.
+
+   >[!TIP]
+   >
+   >The folder structure in the screen recording below is outdated. For a personalization destination named Moviestar, you would use the following folder structure:
+   >* `help/destinations/catalog/personalization/moviestar.md` for the Markdown file.
+   >* `help/destinations/assets/catalog/personalization/moviestar/` for any images you are using in the documentation.
+
+   ![new branch local](/help/docs-framework/assets/new-branch-local.gif)
+
+1. In GitHub Desktop, [commit](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/github-glossary#commit) your work, as shown below.
+
+   >[!TIP]
+   >
+   >The folder structure in the screen recording below is outdated. For a personalization destination named Moviestar, you would use the following folder structure:
+   >* `help/destinations/catalog/personalization/moviestar.md` for the Markdown file.
+   >* `help/destinations/assets/catalog/personalization/moviestar/` for any images you are using in the documentation.
+
+   ![commit local](/help/docs-framework/assets/commit-local.png)
+
+1. In GitHub Desktop, [push](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/github-glossary#push) your work to the [remote](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/github-glossary#remote) branch, as shown below.
+
+   ![push your commit](/help/docs-framework/assets/push-local-to-remote.png)
+
+1. In the GitHub web interface, open a pull request (PR) to merge your working branch into the master branch of the Adobe documentation repository. Make sure the branch you worked on is selected and select **Pull request**.
+
+   ![create pull request](/help/docs-framework/assets/ssd-create-pull-request-1.png)
+
+1.  Make sure that the base and compare branches are correct. Add a note to the PR, describing your update, and select **Create pull request**. This opens a PR to merge the working branch of your fork into the master branch of the Adobe repository. 
+   >[!TIP]
+   >
+   >Leave the **Allow edits by maintainers** checkbox selected so that the Adobe documentation team can make edits to the PR. 
+ 
+   ![create pull request to adobe repo](/help/docs-framework/assets/ssd-create-pull-request-2.png)
+
+1. At this point, a notification appears that prompts you to sign the Adobe CLA. Note that this is a mandatory step. After you signed it, refresh the PR page and merge the pull request.
+1.  You can confirm that the pull request has been submitted by inspecting the **Pull requests** tab in `https://github.com/AdobeDocs/experience-platform.en`.
+
+   ![PR successful](/help/docs-framework/assets/ssd-pr-successful.png)
+
+1. Thank you! The Adobe documentation team will reach out in the PR in case any edits are required and to let you know when the documentation will be published.
+
+>[!TIP]
+>
+>To add images and links to your documentation, and for any other questions around Markdown, read [Using Markdown](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/markdown.html) in Adobe's collaborative writing guide.
+
+-->
+
 
 <!--
 
