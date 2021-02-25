@@ -404,29 +404,18 @@ This is an example configuration for a fictional destination, Moviestar, which h
 
 ```
 
-<!--
-
-// commenting this part out for now, we'll see if we add descriptions for each parameter
-
-`name`: 
-`description`:
-`releaseNotes`:
-`status`: Lifecycle status of destination template. Possible values `TEST, PUBLISHED, DELETED`
-
-`customerAuthenticationConfigurations`
-`authType`
-
--->
-
 ### UI attributes
 
-This section refers to the UI elements in the configuration above that Adobe will add for your destination in the Adobe Experience Platform user interface. See below:
+This section refers to the UI elements in the configuration template above that Adobe will add for your destination in the Adobe Experience Platform user interface. See below:
 
-* `documentationLink`:  Refers to the documentation page in the Destinations Catalog for your destination. 
-* `category`: Refers to the category that your destination will be assigned in Adobe Experience Platform. For more information, read [Destination Categories](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html?lang=en#destination-categories).
-* ``iconUrl``: Provide the logo that Adobe will display in the Adobe Experience Platform destinations catalog for your destination card.
-* ``description``: Provide a description that Adobe will use in the Adobe Experience Platform destinations catalog for your destination card. We recommend no more than 4-5 sentences.
-* `frequency`: in the alpha release phase of Destination SDK, `Streaming` is the only available option.
+|Parameter | Type | Description|
+|---------|----------|------|
+|`documentationLink` | String | Refers to the documentation page in the [Destinations Catalog](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog) for your destination. Use `http://www.adobe.com/go/destinations-YOURDESTINATION-en`, where `YOURDESTINATION` is the name of your destination. For a destination called Moviestar, you would use `http://www.adobe.com/go/destinations-moviestar-en` |
+|`category` | String | Refers to the category assigned to your destination in Adobe Experience Platform. For more information, read [Destination Categories](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html?lang=en#destination-categories). Use one of the following values: `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments` |
+|`iconUrl` | String | Provide the logo that Adobe will display in the Adobe Experience Platform destinations catalog for your destination card. |
+|`description` | String | Provide a description that Adobe will use in the Adobe Experience Platform destinations catalog for your destination card. We recommend using no more than 4-5 sentences. |
+|`connectionType` | String | In the alpha release phase of Destination SDK, `Server-to-server` is the only available option. |
+|`frequency` | String | In the alpha release phase of Destination SDK, `Streaming` is the only available option. |
 
 ### Identities
 
@@ -437,8 +426,10 @@ For instance, customers could map a Platform [!DNL IDFA] namespace to an [!DNL I
 
  Read more in the [Identity namespace overview](https://docs.adobe.com/content/help/en/experience-platform/identity/namespaces.html).
 
-* `acceptsAttributes`: indicates if your destination accepts standard profile attributes. Usually these are highlighted in our partners' documentation.
-* `acceptsCustomNamespaces`: indicates if customers can set up custom profile attributes in your destination.
+|Parameter | Type | Description|
+|---------|----------|------|
+|`acceptsAttributes` | Boolean | Indicates if your destination accepts standard profile attributes. Usually these are highlighted in our partners' documentation. |
+|`acceptsCustomNamespaces` | Boolean | Indicates if customers can set up custom namespaces in your destination. |
 
 <!--
 
