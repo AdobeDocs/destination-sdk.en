@@ -21,9 +21,9 @@ The destinations service in Adobe Experience Platform uses configuration templat
 
 * **Server and template specs**: ties together information about the server specs and the templating used by Adobe to deliver payloads to your destination
   * **Server specs**: a template that stores your endpoint details.
-  * **Template specs**: in this template,you can define how to transform profile attribute fields between XDM schema and the format that your platform supports. For in-depth information about supported templating languages, message formats, and the information that Adobe needs to set up the integration with your platform, see [Message format](/help/message-format.md). 
+  * **Template specs**: in this template, you can define how to transform profile attribute fields between XDM schema and the format that your platform supports. For in-depth information about supported templating languages, message formats, and the information required by Adobe to set up the integration with your platform, see [Message format](/help/message-format.md). 
 * **Credentials**: this template defines how Adobe Experience Platform users connect to your destination.
-* **Destination configuration**: contains further information about your destination. This includes the identity types that your destination can support, as well as various UI attributes for your destination card in the Adobe Experience Platform user interface.
+* **Destination configuration**: contains further information about your destination. This includes the identity types that your destination can support, and various UI attributes for your destination card in the Adobe Experience Platform user interface.
 
 ![Self-service configuration](/help/assets/self-service-configuration.png)
 
@@ -73,9 +73,9 @@ This process delivers user data as a series of JSON formatted messages to your d
 |Parameter | Type | Description|
 |---|---|---|
 |`name` | String | This is a friendly name of your server, visible only to Adobe. This name is not visible to partners or customers. Example `Moviestar destination server`.  |
-|`destinationServerType` | string | `URL_BASED` is the only available option in the alpha release phase. |
-|`maxUsersPerRequest` | integer | Specifies the maximum number of users per request allowed for your server. If your server does not accept multiple users per request, set this value to `1`. |
-|`splitUserById` | boolean | Use this flag if the call to the destination should to be split by identity. Set this flag to `true` if your server only accepts one identity per call, for a given namespace.  |
+|`destinationServerType` | String | `URL_BASED` is the only available option in the alpha release phase. |
+|`maxUsersPerRequest` | Integer | Specifies the maximum number of users per request allowed for your server. If your server does not accept multiple users per request, set this value to `1`. |
+|`splitUserById` | Boolean | Use this flag if the call to the destination should to be split by identity. Set this flag to `true` if your server only accepts one identity per call, for a given namespace.  |
 |`httpMethod` | String | The method that Adobe will use in calls to your server. Options are `GET`, `PUT`, `POST`, `DELETE`, `PATCH`, `OPTIONS`, `HEAD`. |
 
 <!--
@@ -413,7 +413,7 @@ This section refers to the UI elements in the configuration template above that 
 |`documentationLink` | String | Refers to the documentation page in the [Destinations Catalog](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog) for your destination. Use `http://www.adobe.com/go/destinations-YOURDESTINATION-en`, where `YOURDESTINATION` is the name of your destination. For a destination called Moviestar, you would use `http://www.adobe.com/go/destinations-moviestar-en` |
 |`category` | String | Refers to the category assigned to your destination in Adobe Experience Platform. For more information, read [Destination Categories](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html?lang=en#destination-categories). Use one of the following values: `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments` |
 |`iconUrl` | String | Provide the logo that Adobe will display in the Adobe Experience Platform destinations catalog for your destination card. |
-|`description` | String | Provide a description that Adobe will use in the Adobe Experience Platform destinations catalog for your destination card. We recommend using no more than 4-5 sentences. |
+|`description` | String | Provide a description that Adobe will use in the Adobe Experience Platform destinations catalog for your destination card. Aim for no more than 4-5 sentences. |
 |`connectionType` | String | In the alpha release phase of Destination SDK, `Server-to-server` is the only available option. |
 |`frequency` | String | In the alpha release phase of Destination SDK, `Streaming` is the only available option. |
 
@@ -424,7 +424,7 @@ Adobe needs to know which [!DNL Platform] identities customers will be able to e
 Identity namespaces do not require a 1-to-1 correspondence between [!DNL Platform] and your destination.
 For instance, customers could map a Platform [!DNL IDFA] namespace to an [!DNL IDFA] namespace from your destination, or they can map the same Platform [!DNL IDFA] namespace to a [!DNL Customer ID] namespace in your destination.
 
- Read more in the [Identity namespace overview](https://docs.adobe.com/content/help/en/experience-platform/identity/namespaces.html).
+ Read more in the [Identity Namespace overview](https://docs.adobe.com/content/help/en/experience-platform/identity/namespaces.html).
 
 |Parameter | Type | Description|
 |---------|----------|------|
