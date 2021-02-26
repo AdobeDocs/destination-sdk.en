@@ -74,7 +74,8 @@ The instructions on this page show you how to use a text editor to work in your 
  
    ![Create pull request to Adobe documentation repository](/help/docs-framework/assets/ssd-create-pull-request-2.png)
 
-6. At this point, a notification appears that prompts you to sign the Adobe CLA. Note that this is a mandatory step. After you signed it, refresh the PR page and merge the pull request.
+6. At this point, a notification appears that prompts you to sign the Adobe Contributor License Agreement (CLA). This is a mandatory step. After you sign the CLA, refresh the PR page and submit the pull request.
+
 7.  You can confirm that the pull request has been submitted by inspecting the **Pull requests** tab in `https://github.com/AdobeDocs/experience-platform.en`.
 
    ![PR successful](/help/docs-framework/assets/ssd-pr-successful.png)
