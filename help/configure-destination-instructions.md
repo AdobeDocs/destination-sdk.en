@@ -37,7 +37,7 @@ As a first step, based on the payloads that your destination supports, you must 
 Insert the template you created in step 1 in the `value` parameter, under `requestBody`.
 
 
-```curl
+```json
 
 POST /authoring/v1/destination-servers
 {
@@ -64,7 +64,7 @@ POST /authoring/v1/destination-servers
 
 ### Step 3 - Create credentials configuration
 
-```curl
+```json
 
 POST /authoring/v1/credentials
 
@@ -80,7 +80,7 @@ POST /authoring/v1/credentials
 
 ### Step 4 - Create destination configuration
 
-```curl
+```json
 
 POST /authoring/v1/destination
  
@@ -117,7 +117,7 @@ POST /authoring/v1/destination
     ]
   },
   "uiAttributes": {
-    "documentationLink": "https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destinations-overview.html",
+    "documentationLink": "http://www.adobe.com/go/destinations-moviestar-en",
     "category": "mobile",
     "iconUrl": "https://dc5tqsrhldvnl.cloudfront.net/2/90048/da276e30c730ce6cd666c8ca78360df2.png",
     "connectionType": "Server-to-server",
