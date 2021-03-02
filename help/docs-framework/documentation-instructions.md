@@ -32,7 +32,7 @@ This documentation section includes:
 
 To create documentation for your destination according to the instructions in this article, the following items are necessary:
 
-* **A GitHub account**. Sign up for [GitHub](https://github.com/) if don't have an account yet.
+* **A GitHub account**. Sign up for [GitHub](https://github.com/) if you don't have an account yet.
 * **GitHub Desktop**. If you select to [create the documentation in your local environment](/help/docs-framework/work-in-local-environment.md), you must use [GitHub Desktop](https://desktop.github.com/).
 * Your integration with Adobe must be in a testing phase with your destination deployed in a staging environment in Adobe Experience Platform.
 
