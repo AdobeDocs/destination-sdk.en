@@ -29,10 +29,6 @@ The instructions below show you how to use the GitHub web interface to author do
 
 4. In the GitHub folder structure of the forked repository, navigate to `experience-platform.en/help/destinations/catalog/[...]`, where `[...]` is the desired category for your destination. For example, if you are adding a personalization destination to Experience Platform, select the `personalization` category. Select **Add file > Create new file**.
 
-   >[!TIP]
-   >
-   >The folder structure in the screen recording below is outdated. Navigate to the folder structure indicated above.
-
    ![Add new file](/help/docs-framework/assets/github-navigate-and-create-file.gif)
 
 5. Name your destination `YOURDESTINATION.md`, where YOURDESTINATION is the name of your destination in Adobe Experience Platform. For example, if your company is called Moviestar, you would name your file `moviestar.md`. You don't need to save your file yet.
@@ -42,10 +38,6 @@ The instructions below show you how to use the GitHub web interface to author do
 1. In your new file in GitHub, paste in the content of the [destination template](/help/docs-framework/self-service-template.md). Download the template [here](assets/yourdestination-template.md.zip). Unzip it to extract the `.md` file template.
 2. In the GitHub interface, edit the template with relevant information for your destination. Follow the instructions in the template.
 3. For any screenshots or images that you plan on using, use the GitHub interface to upload the files to `experience-platform.en/help/destinations/catalog/[...]`, where `[...]` is the desired category for your destination. For example, if you are adding a personalization destination to Experience Platform, select the `personalization` category. You need to link to images from the page you are authoring. See [instructions how to link to images](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/linking.html#link-to-images).
-   
-   >[!TIP]
-   >
-   >The folder structure in the screen recording below is outdated. Navigate to the folder structure indicated above.
 
    ![Upload image to Github](/help/docs-framework/assets/upload-image.gif)
 

@@ -41,21 +41,9 @@ The instructions on this page show you how to use a text editor to work in your 
 
 1.  In GitHub Desktop, create a working branch for your updates and select **Publish branch** to publish the branch to GitHub.
 
-   >[!TIP]
-   >
-   >The folder structure in the screen recording below is outdated. For a personalization destination named Moviestar, the correct folder structure would be:
-   >* `help/destinations/catalog/personalization/moviestar.md` for the Markdown file.
-   >* `help/destinations/assets/catalog/personalization/moviestar/` for any images you are using in the documentation.
-
    ![New branch local](/help/docs-framework/assets/new-branch-local.gif)
 
 2. In GitHub Desktop, [commit](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/github-glossary#commit) your work, as shown below.
-
-   >[!TIP]
-   >
-   >The folder structure in the screen recording below is outdated. For a personalization destination named Moviestar, the correct folder structure would be:
-   >* `help/destinations/catalog/personalization/moviestar.md` for the Markdown file.
-   >* `help/destinations/assets/catalog/personalization/moviestar/` for any images you are using in the documentation.
 
    ![Commit local](/help/docs-framework/assets/commit-local.png)
 
