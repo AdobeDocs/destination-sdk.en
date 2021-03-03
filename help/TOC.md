@@ -8,11 +8,14 @@ user-guide-description: Adobe Experience Platform Destination SDK provides you w
 
 # Adobe Destination SDK {#help}
 
-+ [Overview](/help/overview.md)
-+ [Integration patterns](/help/integration-methods.md)
-+ [Configuration options](/help/configuration-options.md)
-+ [Message format](/help/message-format.md)
-+ [Use the Destination SDK to configure your destination](/help/configure-destination-instructions.md)
++ Overview {#overview}
+  + [Overview](/help/overview.md)
+  + [Integration patterns](/help/integration-methods.md)
++ Reference {#reference}
+  + [Configuration options](/help/configuration-options.md)
+  + [Message format](/help/message-format.md)
++ Guides {#guides}
+  + [Use the Destination SDK to configure your destination](/help/configure-destination-instructions.md)
 + Document your destination {#document-destination}
   + [Document your destination in Adobe Experience Platform](/help/docs-framework/documentation-instructions.md)
   + [Use the GitHub web interface to create a destination documentation page](/help/docs-framework/use-github-interface-to-create-documentation.md)
