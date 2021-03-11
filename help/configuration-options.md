@@ -464,5 +464,5 @@ For instance, customers could map a [!DNL Platform] [!DNL IDFA] namespace to an 
 |Parameter | Type | Description|
 |---------|----------|------|
 |`authenticationRule` | String | --- . Accepted values are `CUSTOMER_AUTHENTICATION, PLATFORM_AUTHENTICATION, NONE`.   |
-|`destinationServerId` | String | Not necessary in the alpha phase of Destination SDK. |
-|`inputSchemaId` | String | Not necessary in the alpha phase of Destination SDK. |
+|`destinationServerId` | String | This field is not necessary in the alpha phase of Destination SDK. |
+|`inputSchemaId` | String | This field is not necessary in the alpha phase of Destination SDK. |
