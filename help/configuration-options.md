@@ -85,7 +85,7 @@ This process delivers user data as a series of JSON formatted messages to your d
 |`templatingStrategy` | String | Use `PEBBLE_V1`. |
 |`value` | String | Fill in the address of the API endpoint that Experience Platform should connect to. |
 |`maxUsersPerRequest` | Integer | Specifies the maximum number of users per request allowed for your server. If your server does not accept multiple users per request, set this value to `1`. |
-|`splitUserById` | Boolean | Use this flag if the call to the destination should to be split by identity. Set this flag to `true` if your server only accepts one identity per call, for a given namespace.  |
+|`splitUserById` | Boolean | Use this flag if the call to the destination should be split by identity. Set this flag to `true` if your server only accepts one identity per call, for a given namespace.  |
 
 <!--
 
@@ -326,7 +326,7 @@ The sections below list out the necessary parameters for each authentication typ
 |`refreshToken` | String | Refresh token provided by the authorization provider |
 |`url` | String | URL of authorization provider |
 |`expiration` | String | The time-to-live for the refresh token |
-|`header` | integer | Any header required for authorization |
+|`header` | Integer | Any header required for authorization |
 
 <br>&nbsp;
 
