@@ -111,8 +111,8 @@ The template spec allows you to configure how to format the exported message to 
 |---|---|---|
 |`httpMethod` | String | The method that Adobe will use in calls to your server. Options are `GET`, `PUT`, `POST`, `DELETE`, `PATCH`, `OPTIONS`, `HEAD`. |
 |`templatingStrategy` | String | Use `PEBBLE_V1`. |
-|`value` | Integer | The `value` attribute in the example configuration is a [character-escaped](https://www.w3schools.com/python/gloss_python_escape_characters.asp) version that ties together the examples in [Attributes](/help/message-format.md#attributes), [Segment membership](/help/message-format.md#segment-membership), and [Identities](/help/message-format.md#identities). |
-|`contentType` | Boolean | Use `application/json`. |
+|`value` | String | The `value` attribute in the example configuration is a character-escaped version that ties together the examples in [Attributes](/help/message-format.md#attributes), [Segment membership](/help/message-format.md#segment-membership), and [Identities](/help/message-format.md#identities). For more information about character escaping, refer to the [RFC JSON standard, section seven](https://tools.ietf.org/html/rfc8259#section-7).|
+|`contentType` | String | The content type that your server accepts. This is most likely `application/json`. |
 
 
 <!--
@@ -326,7 +326,7 @@ The sections below list out the necessary parameters for each authentication typ
 |`refreshToken` | String | Refresh token provided by the authorization provider |
 |`url` | String | URL of authorization provider |
 |`expiration` | String | The time-to-live for the refresh token |
-|`header` | Integer | Any header required for authorization |
+|`header` | String | Any header required for authorization |
 
 <br>&nbsp;
 
@@ -430,7 +430,7 @@ This section allows partners to introduce custom fields. In the example configur
 |`title` | String | Indicates the name of the field, as it is seen by customers in the Experience Platform user interface |
 |`description` | String | Provide a description for the custom field. |
 |`isRequired` | Boolean | Indicates if this is a required field in the destination setup workflow. |
-|`enum` | String | Renders the custom field as a dropdown menu and Lists the options available to the user. |
+|`enum` | String | Renders the custom field as a dropdown menu and lists the options available to the user. |
 |`pattern` | String | Enforces a pattern for the custom field, if needed. Use regular expressions to enforce a pattern. For example, if your customer IDs don't include numbers or underscores, enter `'/^[A-Za-z]+/'` in this field.  |
 
 **UI attributes**
