@@ -82,7 +82,7 @@ This process delivers user data as a series of JSON formatted messages to your d
 |---|---|---|
 |`name` | String | This is a friendly name of your server, visible only to Adobe. This name is not visible to partners or customers. Example `Moviestar destination server`.  |
 |`destinationServerType` | String | `URL_BASED` is the only available option in the alpha release phase. |
-|`templatingStrategy` | String | Use `PEBBLE_V1`. |
+|`templatingStrategy` | String | <ul><li>Use `PEBBLE_V1` if Adobe needs to transform the URL in the `value` field below. You would use this if you have an endpoint like: `https://api.moviestar.com/data/{{endpoint.region}}/items` </li><li> Use `NONE` if no transformation is needed on the Adobe side, for example if you have an endpoint like: `https://api.moviestar.com/data/items` </li></ul>  |
 |`value` | String | Fill in the address of the API endpoint that Experience Platform should connect to. |
 |`maxUsersPerRequest` | Integer | Specifies the maximum number of users per request allowed for your server. If your server does not accept multiple users per request, set this value to `1`. |
 |`splitUserById` | Boolean | Use this flag if the call to the destination should be split by identity. Set this flag to `true` if your server only accepts one identity per call, for a given namespace.  |
@@ -109,7 +109,7 @@ The template spec allows you to configure how to format the exported message to 
 
 |Parameter | Type | Description|
 |---|---|---|
-|`httpMethod` | String | The method that Adobe will use in calls to your server. Options are `GET`, `PUT`, `POST`, `DELETE`, `PATCH`, `OPTIONS`, `HEAD`. |
+|`httpMethod` | String | The method that Adobe will use in calls to your server. Options are `GET`, `PUT`, `POST`, `DELETE`, `PATCH`. |
 |`templatingStrategy` | String | Use `PEBBLE_V1`. |
 |`value` | String | The `value` attribute in the example configuration is a character-escaped version that ties together the examples in [Attributes](/help/message-format.md#attributes), [Segment membership](/help/message-format.md#segment-membership), and [Identities](/help/message-format.md#identities). For more information about character escaping, refer to the [RFC JSON standard, section seven](https://tools.ietf.org/html/rfc8259#section-7).|
 |`contentType` | String | The content type that your server accepts. This is most likely `application/json`. |
