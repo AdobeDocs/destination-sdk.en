@@ -76,7 +76,7 @@ The server and template specs in Adobe Destination SDK can be configured via the
 
 Customers will be able to activate data from Adobe Experience Platform to your destination via HTTP exports. The server configuration contains information about the server receiving the messages (the server on your side).
 
-This process delivers user data as a series of JSON formatted messages to your destination platform. The parameters below form the HTTP server specs template.
+This process delivers user data as a series of HTTP messages to your destination platform. The parameters below form the HTTP server specs template.
 
 |Parameter | Type | Description|
 |---|---|---|
@@ -111,7 +111,7 @@ The template spec allows you to configure how to format the exported message to 
 |---|---|---|
 |`httpMethod` | String | The method that Adobe will use in calls to your server. Options are `GET`, `PUT`, `POST`, `DELETE`, `PATCH`. |
 |`templatingStrategy` | String | Use `PEBBLE_V1`. |
-|`value` | String | The `value` attribute in the example configuration is a character-escaped version that ties together the examples in [Attributes](/help/message-format.md#attributes), [Segment membership](/help/message-format.md#segment-membership), and [Identities](/help/message-format.md#identities). For more information about character escaping, refer to the [RFC JSON standard, section seven](https://tools.ietf.org/html/rfc8259#section-7).|
+|`value` | String | This is the character-escaped version that transforms Platform customers' data to the format your service expects. <br> For information how to write the template, read the [Using templating section](/help/message-format.md#using-templating). <br> For more information about character escaping, refer to the [RFC JSON standard, section seven](https://tools.ietf.org/html/rfc8259#section-7). <br> For an example of a simple transformation, refer to the [Profile Attributes](/help/message-format.md#attributes) transformation. |
 |`contentType` | String | The content type that your server accepts. This is most likely `application/json`. |
 
 
@@ -377,7 +377,7 @@ This is an example configuration for a fictional destination, Moviestar, which h
       "title": "Moviestar Customer ID",
       "description": "Your customer ID in the Moviestar destination (e.g. abcdef).",
       "isRequired": true,
-      "pattern": ""
+      "pattern": "^[A-Za-z]+$"
       }
     ],
   "uiAttributes": {
@@ -431,7 +431,7 @@ This section allows partners to introduce custom fields. In the example configur
 |`description` | String | Provide a description for the custom field. |
 |`isRequired` | Boolean | Indicates if this is a required field in the destination setup workflow. |
 |`enum` | String | Renders the custom field as a dropdown menu and lists the options available to the user. |
-|`pattern` | String | Enforces a pattern for the custom field, if needed. Use regular expressions to enforce a pattern. For example, if your customer IDs don't include numbers or underscores, enter `'/^[A-Za-z]+/'` in this field.  |
+|`pattern` | String | Enforces a pattern for the custom field, if needed. Use regular expressions to enforce a pattern. For example, if your customer IDs don't include numbers or underscores, enter `^[A-Za-z]+$` in this field. |
 
 **UI attributes**
 
@@ -458,6 +458,8 @@ For instance, customers could map a [!DNL Platform] [!DNL IDFA] namespace to an 
 |---------|----------|------|
 |`acceptsAttributes` | Boolean | Indicates if your destination accepts standard profile attributes. Usually these are highlighted in our partners' documentation. |
 |`acceptsCustomNamespaces` | Boolean | Indicates if customers can set up custom namespaces in your destination. |
+|`allowedAttributesTransformation` | String | _Not shown in example configuration_. Used, for example, when the Platform customer has plain email addresses as an attribute and your platform only accepts hashed emails. This is where you would provide the transformation that needs to be applied (e.g. transform the email to lowercase, then hash).   |
+|`acceptedGlobalNamespaces` | - | _Not shown in example configuration_. Used for cases when your platform accepts [standard identity namespaces](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces) (e.g. IDFA), so you can restrict Platfom users to only selecting these identity namespaces. |
 
 **Destination delivery**
 

@@ -21,7 +21,7 @@ This page describes how to use the reference information in [Configuration optio
 
 >[!NOTE]
 >
->In the alpha release phase of Destination SDK, we ask that you provide the templates to the Adobe team, and they will set up the destination for you.
+>In the alpha release phase of Destination SDK, we ask that you provide the configurations to the Adobe team, and they will set up the destination for you.
 
 
 ## Use the Configuration options in Adobe Experience Platform Destination SDK to set up your destination
@@ -151,9 +151,9 @@ POST /authoring/v1/destination
 
 ```
 
-### Step 5 - Provide templates to Adobe
+### Step 5 - Provide your configurations to Adobe
 
-Share the templates you created in steps 1-4 with Adobe's engineering team over email. The Adobe engineering team will set up your destination in Adobe Experience Platform.
+Share the configurations you created in steps 1-4 with Adobe's engineering team over email. The Adobe engineering team will set up your destination in Adobe Experience Platform.
 
 ### Next steps
 
