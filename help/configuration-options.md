@@ -458,8 +458,8 @@ For instance, customers could map a [!DNL Platform] [!DNL IDFA] namespace to an 
 |---------|----------|------|
 |`acceptsAttributes` | Boolean | Indicates if your destination accepts standard profile attributes. Usually these are highlighted in our partners' documentation. |
 |`acceptsCustomNamespaces` | Boolean | Indicates if customers can set up custom namespaces in your destination. |
-|`allowedAttributesTransformation` | String | _Not shown in example configuration_. Used, for example, when the Platform customer has plain email addresses as an attribute and your platform only accepts hashed emails. This is where you would provide the transformation that needs to be applied (e.g. transform the email to lowercase, then hash).   |
-|`acceptedGlobalNamespaces` | - | _Not shown in example configuration_. Used for cases when your platform accepts [standard identity namespaces](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces) (e.g. IDFA), so you can restrict Platfom users to only selecting these identity namespaces. |
+|`allowedAttributesTransformation` | String | _Not shown in example configuration_. Used, for example, when the Platform customer has plain email addresses as an attribute and your platform only accepts hashed emails. This is where you would provide the transformation that needs to be applied (for example, transform the email to lowercase, then hash).   |
+|`acceptedGlobalNamespaces` | - | _Not shown in example configuration_. Used for cases when your platform accepts [standard identity namespaces](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces) (for example, IDFA), so you can restrict Platform users to only selecting these identity namespaces. |
 
 **Destination delivery**
 
