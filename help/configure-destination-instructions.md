@@ -10,6 +10,7 @@ title: How to use the Destination SDK to configure your destination
 
 >[!IMPORTANT]
 >
+>* Contact [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) if you are interested in using Destination SDK.
 >* The content on this page is Adobe confidential information, please do not share outside of your company.
 >* The Adobe Experience Platform Destination SDK is currently an alpha release. The documentation and the functionality are subject to change.
 
@@ -150,10 +151,15 @@ POST /authoring/v1/destination
 }
 
 ```
+<!-- 
+
+commenting out this part at the request of Product Management
 
 ### Step 5 - Provide your configurations to Adobe
 
 Share the configurations you created in steps 1-4 with Adobe's engineering team over email. The Adobe engineering team will set up your destination in Adobe Experience Platform.
+
+-->
 
 ### Next steps
 
