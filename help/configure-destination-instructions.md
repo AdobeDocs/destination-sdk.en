@@ -151,6 +151,7 @@ POST /authoring/v1/destination
 }
 
 ```
+
 <!-- 
 
 commenting out this part at the request of Product Management
