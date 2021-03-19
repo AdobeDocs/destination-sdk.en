@@ -412,7 +412,7 @@ This is an example configuration for a fictional destination, Moviestar, which h
 |---------|----------|------|
 |`name` | String | Indicates the title of your destination in the Experience Platform catalog |
 |`description` | String | Provide a description that Adobe will use in the Experience Platform destinations catalog for your destination card. Aim for no more than 4-5 sentences. |
-|`releaseNotes` | String | --- |
+|`releaseNotes` | String | This field is not necessary in the alpha phase of Destination SDK. |
 |`status` | String | Indicates the lifecycle status of the destination card. Accepted values are `TEST`, `PUBLISHED`, and `DELETED`. Use `TEST` when you first configure your destination. |
 |`customerAuthenticationConfigurations` | String | Indicates the configuration used to authenticate Experience Platform customers to your server. See `authType` below for accepted values. |
 |`authType` | String | Accepted values are `S3, SFTP_WITH_SSH_KEY, SFTP_WITH_PASSWORD, OAUTH1, OAUTH2, BASIC, BEARER`. |
