@@ -208,7 +208,7 @@ Parameter | Description |
 >
 >The API endpoint is not available publicly in the alpha release phase of Destination SDK.
 
-This configuration determines how Adobe Experience Platform users authenticate to your destination to activate data. Adobe Experience Platform supports several authentication types:
+This configuration determines how Adobe Experience Platform users authenticate to your destination endpoint to activate data. Adobe Experience Platform supports several authentication types:
 
 * Basic authentication
 * Oauth1
@@ -465,6 +465,8 @@ For instance, customers could map a [!DNL Platform] [!DNL IDFA] namespace to an 
 
 |Parameter | Type | Description|
 |---------|----------|------|
-|`authenticationRule` | String | --- . Accepted values are `CUSTOMER_AUTHENTICATION, PLATFORM_AUTHENTICATION, NONE`.   |
+|`authenticationRule` | String | Indicates how Platform customers connect to your destination. Accepted values are `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Use `CUSTOMER_AUTHENTICATION` if the Platform customer needs to log into your system via a username and password, a bearer token, or another method of authentication. For example, your would select this option if you also selected `authType: OAUTH2` or `authType:BEARER` in `customerAuthenticationConfigurations`.  </li><li> Use `PLATFORM_AUTHENTICATION` if there is a global authentication system between Adobe and your destination and the Platform customer does not need to provide any authentication credentials to connect to your destination. In this case, you need to create a credentials object using the [Credentials](#credentials) template. </li></ul> |
 |`destinationServerId` | String | This field is not necessary in the alpha phase of Destination SDK. |
 |`inputSchemaId` | String | This field is not necessary in the alpha phase of Destination SDK. |
+|`backfillHistoricalProfileData` | Boolean | Controls whether historical profile data is exported when segments are activated to the destination. |
+
