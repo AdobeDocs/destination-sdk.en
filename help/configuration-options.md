@@ -19,11 +19,11 @@ title: Configuration options for the Destination SDK
 
 The destinations service in Adobe Experience Platform uses configuration templates for several components that build up the destinations functionality. Combined, these components allow Experience Platform to connect to destination partners, send custom messages, and activate profile data across the digital ecosystem. The templates used in Adobe Experience Platform are:
 
-* **Server and template specs**: ties together information about the server specs and the templating used by Adobe to deliver payloads to your destination
+* **Server and template specs**: Ties together information about the server specs and the templating used by Adobe to deliver payloads to your destination
   * **Server specs**: a template that stores your endpoint details.
   * **Template specs**: in this template, you can define how to transform profile attribute fields between XDM schema and the format that your platform supports. For in-depth information about supported templating languages, message formats, and the information required by Adobe to set up the integration with your platform, see [Message format](/help/message-format.md). 
-* **Credentials**: this template defines how Adobe Experience Platform users connect to your destination.
-* **Destination configuration**: contains further information about your destination. This includes the identity types that your destination can support, and various UI attributes for your destination card in the Adobe Experience Platform user interface.
+* **Credentials**: This template defines how Adobe Experience Platform users connect to your destination.
+* **Destination configuration**: contains further information about your destination. This configuration includes the identity types that your destination can support, and various UI attributes for your destination card in the Adobe Experience Platform user interface.
 
 ![Self-service configuration](/help/assets/self-service-configuration.png)
 
@@ -80,7 +80,7 @@ This process delivers user data as a series of HTTP messages to your destination
 
 |Parameter | Type | Description|
 |---|---|---|
-|`name` | String | This is a friendly name of your server, visible only to Adobe. This name is not visible to partners or customers. Example `Moviestar destination server`.  |
+|`name` | String | Represents a friendly name of your server, visible only to Adobe. This name is not visible to partners or customers. Example `Moviestar destination server`.  |
 |`destinationServerType` | String | `URL_BASED` is the only available option in the alpha release phase. |
 |`templatingStrategy` | String | <ul><li>Use `PEBBLE_V1` if Adobe needs to transform the URL in the `value` field below. You would use this if you have an endpoint like: `https://api.moviestar.com/data/{{endpoint.region}}/items` </li><li> Use `NONE` if no transformation is needed on the Adobe side, for example if you have an endpoint like: `https://api.moviestar.com/data/items` </li></ul>  |
 |`value` | String | Fill in the address of the API endpoint that Experience Platform should connect to. |
@@ -429,7 +429,7 @@ This section allows partners to introduce custom fields. In the example configur
 |`type` | String | Indicates what type of custom field you are introducing. Accepted values are `string`, `object`, `integer` |
 |`title` | String | Indicates the name of the field, as it is seen by customers in the Experience Platform user interface |
 |`description` | String | Provide a description for the custom field. |
-|`isRequired` | Boolean | Indicates if this is a required field in the destination setup workflow. |
+|`isRequired` | Boolean | Indicates if this field is required in the destination setup workflow. |
 |`enum` | String | Renders the custom field as a dropdown menu and lists the options available to the user. |
 |`pattern` | String | Enforces a pattern for the custom field, if needed. Use regular expressions to enforce a pattern. For example, if your customer IDs don't include numbers or underscores, enter `^[A-Za-z]+$` in this field. |
 
@@ -465,7 +465,7 @@ For instance, customers could map a [!DNL Platform] [!DNL IDFA] namespace to an 
 
 |Parameter | Type | Description|
 |---------|----------|------|
-|`authenticationRule` | String | Indicates how Platform customers connect to your destination. Accepted values are `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Use `CUSTOMER_AUTHENTICATION` if the Platform customer needs to log into your system via a username and password, a bearer token, or another method of authentication. For example, your would select this option if you also selected `authType: OAUTH2` or `authType:BEARER` in `customerAuthenticationConfigurations`.  </li><li> Use `PLATFORM_AUTHENTICATION` if there is a global authentication system between Adobe and your destination and the Platform customer does not need to provide any authentication credentials to connect to your destination. In this case, you need to create a credentials object using the [Credentials](#credentials) template. </li></ul> |
+|`authenticationRule` | String | Indicates how Platform customers connect to your destination. Accepted values are `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Use `CUSTOMER_AUTHENTICATION` if Platform customers log into your system via a username and password, a bearer token, or another method of authentication. For example, you would select this option if you also selected `authType: OAUTH2` or `authType:BEARER` in `customerAuthenticationConfigurations`. </li><li> Use `PLATFORM_AUTHENTICATION` if there is a global authentication system between Adobe and your destination and the Platform customer does not need to provide any authentication credentials to connect to your destination. In this case, you need to create a credentials object using the [Credentials](#credentials) template. </li></ul> |
 |`destinationServerId` | String | This field is not necessary in the alpha phase of Destination SDK. |
 |`inputSchemaId` | String | This field is not necessary in the alpha phase of Destination SDK. |
 |`backfillHistoricalProfileData` | Boolean | Controls whether historical profile data is exported when segments are activated to the destination. |
