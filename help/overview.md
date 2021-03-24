@@ -9,6 +9,7 @@ title: Adobe Experience Platform Destination SDK
 
 >[!IMPORTANT]
 >
+>* Contact [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) if you are interested in using Destination SDK.
 >* The content on this page is Adobe confidential information, please do not share outside of your company.
 >* The Adobe Experience Platform Destination SDK is currently an alpha release. The documentation and the functionality are subject to change.
 

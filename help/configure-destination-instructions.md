@@ -10,6 +10,7 @@ title: How to use the Destination SDK to configure your destination
 
 >[!IMPORTANT]
 >
+>* Contact [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) if you are interested in using Destination SDK.
 >* The content on this page is Adobe confidential information, please do not share outside of your company.
 >* The Adobe Experience Platform Destination SDK is currently an alpha release. The documentation and the functionality are subject to change.
 
@@ -21,20 +22,22 @@ This page describes how to use the reference information in [Configuration optio
 
 >[!NOTE]
 >
->In the alpha release phase of Destination SDK, we ask that you provide the payloads to our internal teams, and they will make API calls on your behalf to set up your destination.
+>In the alpha release phase of Destination SDK, we ask that you provide the configurations to the Adobe team, and they will set up the destination for you.
 
 
 ## Use the Configuration options in Adobe Experience Platform Destination SDK to set up your destination
 
 ![Illustrated steps of using the Destination SDK endpoints](/help/assets/destination-sdk-steps.png)
 
-### Step 1 -  Create transformation template - Use a templating language to specify the message output format
+## Step 1 -  Create transformation template - Use a templating language to specify the message output format
 
 As a first step, based on the payloads that your destination supports, you must create a template that transforms the format of the exported data from Adobe XDM format into your supported format. See template examples in the section [Using a templating language for the identity, attributes, and segment membership transformations](/help/message-format.md#using-templating).
 
-### Step 2 - Create a server and template configuration
+## Step 2 - Create a server and template configuration
 
 Insert the template you created in step 1 in the `value` parameter, under `requestBody`.
+
+For more information about the server and template configuration, refer to [Server and template specs](/help/configuration-options.md#server-and-template) in the reference section.
 
 
 ```json
@@ -62,7 +65,9 @@ POST /authoring/v1/destination-servers
 ```
 
 
-### Step 3 - Create credentials configuration
+## Step 3 - Create credentials configuration
+
+Shown below is an example configuration for a destination which supports Oauth2 authentication. For more information about credentials configuration, refer to [Credentials](/help/configuration-options.md#credentials) in the reference documentation.
 
 ```json
 
@@ -78,7 +83,9 @@ POST /authoring/v1/credentials
 
 ```
 
-### Step 4 - Create destination configuration
+## Step 4 - Create destination configuration
+
+Shown below is an example configuration for a destination template. For more information about this template, refer to [Destination configuration](/help/configuration-options.md#destination-configuration) in the reference documentation. 
 
 ```json
 
@@ -86,26 +93,20 @@ POST /authoring/v1/destination
  
 {
   "name": "Moviestar",
-  "description": "Moviestar Destination",
+  "description": "Moviestar is a fictional destination, used for this example.",
   "releaseNotes": "Test release",
   "status": "TEST",
   "customerAuthenticationConfigurations": [
     {
       "authType": "BEARER"
-    },
-    {
-      "authType": "BASIC",
-      "usernameAlias": "appKey",
-      "passwordAlias": "masterSecret"
     }
   ],
-  "customerTarget": {
-    "additionalFields": [
+  "customerDataFields": [
       {
         "name": "endpointsInstance",
         "type": "string",
-        "title": "Endpoints Instance",
-        "description": "Moviestar manages several instances across the globe for REST endpoints that our customers are provisioned for. Select the endpoint that you are provisioned to.",
+        "title": "Select Endpoint",
+        "description": "Moviestar manages several instances across the globe for REST endpoints that our customers are provisioned for. Select your endpoint in the dropdown list.",
         "isRequired": true,
         "enum": [
           "US",
@@ -113,21 +114,24 @@ POST /authoring/v1/destination
           "APAC",
           "NZ"
         ]
+      },
+      {
+      "name": "customerID",
+      "type": "string",
+      "title": "Moviestar Customer ID",
+      "description": "Your customer ID in the Moviestar destination (e.g. abcdef).",
+      "isRequired": true,
+      "pattern": ""
       }
-    ]
-  },
+    ],
   "uiAttributes": {
     "documentationLink": "http://www.adobe.com/go/destinations-moviestar-en",
     "category": "mobile",
-    "iconUrl": "https://dc5tqsrhldvnl.cloudfront.net/2/90048/da276e30c730ce6cd666c8ca78360df2.png",
+    "iconUrl": "https://address-to-your-logo.png",
     "connectionType": "Server-to-server",
     "frequency": "Streaming"
-},
+  },
   "identityNamespaces": {
-    "channel": {
-      "acceptsAttributes": true,
-      "acceptsCustomNamespaces": true
-    },
     "external_id": {
       "acceptsAttributes": true,
       "acceptsCustomNamespaces": true
@@ -140,13 +144,24 @@ POST /authoring/v1/destination
   "destinationDelivery": [
     {
       "authenticationRule": "CUSTOMER_AUTHENTICATION",
-      "serverRule": "SERVER_ID",
-      "serverId": "12347841-0c5c-4097-b872-33cd00708ddc",
-      "templateRule": "TEMPLATE_ID",
-      "templateId": "1234171f-a528-46e6-83da-00dbec3689d3"
+      "destinationServerId": "9c77000a-4559-40ae-9119-a04324a3ecd4"
     }
   ],
-  "inputSchemaId": "935a7d07bf8b409db7688f8364f34e21"
+  "inputSchemaId": "cc8621770a9243b98aba4df79898b1ed"
 }
 
 ```
+
+<!-- 
+
+commenting out this part at the request of Product Management
+
+### Step 5 - Provide your configurations to Adobe
+
+Share the configurations you created in steps 1-4 with Adobe's engineering team over email. The Adobe engineering team will set up your destination in Adobe Experience Platform.
+
+-->
+
+## Next steps
+
+Adobe will set your destination live behind a feature flag in Experience Platform. You can now test workflows to export data from Experience Platform to your destination. After confirming that everything works as intended, use our [self-service documentation process](/help/docs-framework/documentation-instructions.md) to create a documentation page for your destination.
