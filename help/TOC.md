@@ -20,3 +20,4 @@ user-guide-description: Adobe Experience Platform Destination SDK provides you w
   + [Use the GitHub web interface to create a destination documentation page](/help/docs-framework/use-github-interface-to-create-documentation.md)
   + [Use a text editor in your local environment to create a destination documentation page](/help/docs-framework/work-in-local-environment.md)
   + [Documentation self-service template](/help/docs-framework/self-service-template.md)
++ [Release notes](/help/release-notes.md)
