@@ -1,5 +1,5 @@
 ---
-cloud: experience-cloud
+cloud: Experience Cloud
 solution-title: Adobe Experience Platform
 solution: Experience Platform
 type: Documentation
