@@ -3,8 +3,8 @@ title: Document your destination in Adobe Experience Platform Destinations
 seo-title: Document your destination in Adobe Experience Platform Destinations
 description: Step-by-step instructions how to create documentation for your destination in Adobe Experience Platform
 seo-description: Step-by-step instructions how to create documentation for your destination in Adobe Experience Platform
+exl-id: 6cc9c758-44bb-463b-941a-06b1a22ee8f3
 ---
-
 # Document your destination in Adobe Experience Platform Destinations
 
 >[!IMPORTANT]
@@ -481,4 +481,3 @@ Note content
 For additional formats and options, you can reference this basic template: [**General topic template**](https://github.com/magento/Adobe Real-time CDP/blob/master/.github/TOPIC_TEMPLATE)
 
 -->
-

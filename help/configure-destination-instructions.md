@@ -3,8 +3,8 @@ description: This page describes how to use the reference information in Configu
 seo-description: This page describes how to use the reference information in Configuration options for the Destinations SDK to configure your destination using Destination SDK.
 seo-title: How to use the Destination SDK to configure your destination
 title: How to use the Destination SDK to configure your destination
+exl-id: 8fe68f3e-972a-40c5-9b63-8a51d5eff820
 ---
-
 # How to use the Destination SDK to configure your destination
 
 

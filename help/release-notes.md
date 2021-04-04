@@ -1,8 +1,8 @@
 ---
 description: Release Notes for the Adobe Experience Platform Destination SDK
 title: Release Notes
+exl-id: 084c9b69-40a1-4e91-abfb-0ef87617325f
 ---
-
 # Release Notes
 
 >[!IMPORTANT]

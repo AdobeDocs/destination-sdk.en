@@ -1,8 +1,8 @@
 ---
 title: Documentation self-service template // Replace with the name of destination
 description: Use this template to create public documentation for your destination in the Adobe Experience Platform catalog. // Replace with the paragraph in the Overview section
+exl-id: 99700474-8bf6-4176-acc1-38814e17c995
 ---
-
 # YOURDESTINATION {#your-destination}
 
 *As you go through this template, replace or delete all the paragraphs in italics (starting with this one).*

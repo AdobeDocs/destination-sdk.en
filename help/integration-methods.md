@@ -3,8 +3,8 @@ description: In Adobe Experience Platform, customers can activate their customer
 seo-description: In Adobe Experience Platform, customers can activate their customer profile data into destinations with up-to-date segment membership data and the corresponding identities and attributes for cross-channel personalization. When a user qualifies for a segment, the profile data would be passed to the destination with the integration patterns described on this page.
 seo-title: Integration patterns with Adobe Experience Platform
 title: Integration patterns with Adobe Experience Platform
+exl-id: a3ba2531-b6ed-4fbc-a7ac-0b756510b226
 ---
-
 # Integration patterns with Adobe Experience Platform
 
 >[!IMPORTANT]

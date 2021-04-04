@@ -3,8 +3,8 @@ description: Use the content on this page together with the rest of the configur
 seo-description: Use the content on this page together with the rest of the configuration options for partner destinations. This page addresses the messaging format of data exported from Adobe Experience Platform to destinations, while the other page addresses specifics about connecting and authenticating to your destination.
 seo-title: Message format
 title: Message format
+exl-id: bd348e99-56f7-449e-a639-8da6fd2cafaf
 ---
-
 # Message format
 
 
