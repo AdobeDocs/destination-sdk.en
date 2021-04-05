@@ -29,11 +29,11 @@ This page describes how to use the reference information in [Configuration optio
 
 ![Illustrated steps of using the Destination SDK endpoints](/help/assets/destination-sdk-steps.png)
 
-## Step 1 -  Create transformation template - Use a templating language to specify the message output format
+## Step 1:  Create transformation template - Use a templating language to specify the message output format
 
 As a first step, based on the payloads that your destination supports, you must create a template that transforms the format of the exported data from Adobe XDM format into your supported format. See template examples in the section [Using a templating language for the identity, attributes, and segment membership transformations](/help/message-format.md#using-templating).
 
-## Step 2 - Create a server and template configuration
+## Step 2: Create a server and template configuration
 
 Insert the template you created in step 1 in the `value` parameter, under `requestBody`.
 
@@ -42,7 +42,7 @@ For more information about the server and template configuration, refer to [Serv
 
 ```json
 
-POST /authoring/v1/destination-servers
+POST platform.adobe.io/data/core/activation/authoring/v1/destination-servers
 {
     "name": "Moviestar Server",
     "destinationServerType": "URL_BASED",
@@ -65,13 +65,13 @@ POST /authoring/v1/destination-servers
 ```
 
 
-## Step 3 - Create credentials configuration
+## Step 3: Create credentials configuration
 
 Shown below is an example configuration for a destination which supports Oauth2 authentication. For more information about credentials configuration, refer to [Credentials](/help/configuration-options.md#credentials) in the reference documentation.
 
 ```json
 
-POST /authoring/v1/credentials
+POST platform.adobe.io/data/core/activation/authoring/v1/credentials
 
   "oauth2ClientAuthentication": {
     "url": "string",
@@ -83,13 +83,13 @@ POST /authoring/v1/credentials
 
 ```
 
-## Step 4 - Create destination configuration
+## Step 4: Create destination configuration
 
 Shown below is an example configuration for a destination template. For more information about this template, refer to [Destination configuration](/help/configuration-options.md#destination-configuration) in the reference documentation. 
 
 ```json
 
-POST /authoring/v1/destination
+POST platform.adobe.io/data/core/activation/authoring/v1/destination
  
 {
   "name": "Moviestar",
