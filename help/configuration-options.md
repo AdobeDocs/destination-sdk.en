@@ -37,7 +37,7 @@ The sections below provide more detail about the configuration options available
 
 ## Server and template specs {#server-and-template}
 
-**API endpoint**: `/authoring/v1/destination-servers`
+**API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/destination-servers`
 
 >[!NOTE]
 >
@@ -202,7 +202,7 @@ Parameter | Description |
 
 ## Credentials {#credentials}
 
-**API endpoint**: `/authoring/v1/credentials` 
+**API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/credentials` 
 
 >[!NOTE]
 >
@@ -332,7 +332,7 @@ The sections below list out the necessary parameters for each authentication typ
 
 ## Destination configuration {#destination-configuration}
 
-**API endpoint**: `/authoring/v1/destinations` 
+**API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/destinations` 
 
 >[!NOTE]
 >
