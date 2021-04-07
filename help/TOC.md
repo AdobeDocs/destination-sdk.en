@@ -14,7 +14,7 @@ user-guide-description: Adobe Experience Platform Destination SDK provides you w
   + [Configuration options](/help/configuration-options.md)
   + [Message format](/help/message-format.md)
 + Guides {#guides}
-  + [Getting started](/help/configure-destination-instructions.md)
+  + [Getting started](/help/getting-started.md)
   + [Use the Destination SDK to configure your destination](/help/configure-destination-instructions.md)
 + Document your destination {#document-destination}
   + [Document your destination in Adobe Experience Platform](/help/docs-framework/documentation-instructions.md)
