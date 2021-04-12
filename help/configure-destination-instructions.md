@@ -67,7 +67,7 @@ POST platform.adobe.io/data/core/activation/authoring/v1/destination-servers
 
 ## Step 3: Create credentials configuration
 
-Shown below is an example configuration for a destination which supports Oauth2 authentication. For more information about credentials configuration, refer to [Credentials](/help/configuration-options.md#credentials) in the reference documentation.
+Shown below is an example configuration for a destination which supports Oauth2 authentication. For more information, refer to [Credentials configuration](/help/credentials-configuration.md) in the reference documentation.
 
 ```json
 
@@ -85,7 +85,7 @@ POST platform.adobe.io/data/core/activation/authoring/v1/credentials
 
 ## Step 4: Create destination configuration
 
-Shown below is an example configuration for a destination template. For more information about this template, refer to [Destination configuration](/help/configuration-options.md#destination-configuration) in the reference documentation. 
+Shown below is an example configuration for a destination template. For more information about this template, refer to [Destination configuration](/help/destination-configuration.md) in the reference documentation. 
 
 ```json
 
