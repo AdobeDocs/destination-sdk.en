@@ -29,10 +29,6 @@ The destinations service in Adobe Experience Platform uses configuration templat
 
 The pages below provide more detail about the configuration options available for the templates.
 
->[!IMPORTANT]
->
->The configurations described in the sections below are subject to change in the alpha release phase of Destination SDK.
-
 * [Destination configuration](/help/destination-configuration.md)
 * [Server and template specs](/help/server-and-template-configuration.md)
 * [Credentials configuration](/help/credentials-configuration.md)
