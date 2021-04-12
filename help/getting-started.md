@@ -21,11 +21,11 @@ This guide uses Platform-specific concepts, such as IMS Organization and sandbox
 
 ## Obtain required authentication credentials
 
-Partners in the Destination SDK program are assigned a common IMS Organization ID and individual sandboxes. 
+Destination SDK uses the Adobe I/O gateway for authentication. To make API calls, you will need provide certain headers in your calls. Work with the Adobe Exchange team to set up authentication for you in [Adobe Developer Console](http://console.adobe.io/).
 
-Destination SDK uses the Adobe I/O gateway for authentication. Ask the Adobe Exchange team to set up authentication for you in [Adobe Developer Console](http://console.adobe.io/).
+Partners in the Destination SDK program are assigned a common IMS Organization ID and individual sandboxes.
 
-In order to successfully make calls to Platform endpoints, including Destination SDK, you are required to complete the authentication tutorial. Completing the authentication tutorial provides the values for each of the required headers in Experience Platform API calls, as shown below:
+In order to successfully make calls to Platform endpoints, including Destination SDK, you are required to complete the [authentication tutorial](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html). Completing the authentication tutorial provides the values for each of the required headers in Experience Platform API calls, as shown below:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
