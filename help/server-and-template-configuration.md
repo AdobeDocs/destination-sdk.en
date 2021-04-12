@@ -55,7 +55,7 @@ This process delivers user data as a series of HTTP messages to your destination
 |---|---|---|
 |`name` | String | Represents a friendly name of your server, visible only to Adobe. This name is not visible to partners or customers. Example `Moviestar destination server`.  |
 |`destinationServerType` | String | `URL_BASED` is the only available option in the alpha release phase. |
-|`templatingStrategy` | String | <ul><li>Use `PEBBLE_V1` if Adobe needs to transform the URL in the `value` field below. You would use this if you have an endpoint like: `https://api.moviestar.com/data/{{endpoint.region}}/items` </li><li> Use `NONE` if no transformation is needed on the Adobe side, for example if you have an endpoint like: `https://api.moviestar.com/data/items` </li></ul>  |
+|`templatingStrategy` | String | <ul><li>Use `PEBBLE_V1` if Adobe needs to transform the URL in the `value` field below. Use this option if you have an endpoint like: `https://api.moviestar.com/data/{{endpoint.region}}/items` </li><li> Use `NONE` if no transformation is needed on the Adobe side, for example if you have an endpoint like: `https://api.moviestar.com/data/items` </li></ul>  |
 |`value` | String | Fill in the address of the API endpoint that Experience Platform should connect to. |
 |`maxUsersPerRequest` | Integer | Specifies the maximum number of users per request allowed for your server. If your server does not accept multiple users per request, set this value to `1`. |
 |`splitUserById` | Boolean | Use this flag if the call to the destination should be split by identity. Set this flag to `true` if your server only accepts one identity per call, for a given namespace.  |
@@ -84,8 +84,8 @@ The template spec allows you to configure how to format the exported message to 
 |---|---|---|
 |`httpMethod` | String | The method that Adobe will use in calls to your server. Options are `GET`, `PUT`, `POST`, `DELETE`, `PATCH`. |
 |`templatingStrategy` | String | Use `PEBBLE_V1`. |
-|`value` | String | This is the character-escaped version that transforms Platform customers' data to the format your service expects. <br> For information how to write the template, read the [Using templating section](/help/message-format.md#using-templating). <br> For more information about character escaping, refer to the [RFC JSON standard, section seven](https://tools.ietf.org/html/rfc8259#section-7). <br> For an example of a simple transformation, refer to the [Profile Attributes](/help/message-format.md#attributes) transformation. |
-|`contentType` | String | The content type that your server accepts. This is most likely `application/json`. |
+|`value` | String | This string is the character-escaped version that transforms Platform customers' data to the format your service expects. <br> For information how to write the template, read the [Using templating section](/help/message-format.md#using-templating). <br> For more information about character escaping, refer to the [RFC JSON standard, section seven](https://tools.ietf.org/html/rfc8259#section-7). <br> For an example of a simple transformation, refer to the [Profile Attributes](/help/message-format.md#attributes) transformation. |
+|`contentType` | String | The content type that your server accepts. This value is most likely `application/json`. |
 
 
 <!--
