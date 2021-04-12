@@ -20,7 +20,7 @@ This configuration allows you to indicate basic information like your destinatio
 
 ## Example configuration
 
-This is an example configuration for a fictional destination, Moviestar, which has endpoints in four locations on the globe. The destination belongs to the mobile destinations category.
+Below is an example configuration for a fictional destination, Moviestar, which has endpoints in four locations on the globe. The destination belongs to the mobile destinations category.
 
 ```json
 
@@ -112,7 +112,7 @@ This section allows partners to introduce custom fields. In the example configur
 
 ## UI attributes
 
-This section refers to the UI elements in the configuration template above that Adobe will add for your destination in the Adobe Experience Platform user interface. See below:
+This section refers to the UI elements in the configuration template above that Adobe should use for your destination in the Adobe Experience Platform user interface. See below:
 
 |Parameter | Type | Description|
 |---------|----------|------|
@@ -124,7 +124,7 @@ This section refers to the UI elements in the configuration template above that 
 
 ## Identities
 
-Adobe needs to know which [!DNL Platform] identities customers will be able to export to your destination. Some examples are [!DNL Experience Cloud ID], hashed email, device ID ([!DNL IDFA], [!DNL GAID]). These are [!DNL Platform] identity namespaces that customers can map to identity namespaces from your destination.
+Adobe needs to know which [!DNL Platform] identities customers will be able to export to your destination. Some examples are [!DNL Experience Cloud ID], hashed email, device ID ([!DNL IDFA], [!DNL GAID]). These values are [!DNL Platform] identity namespaces that customers can map to identity namespaces from your destination.
 
 Identity namespaces do not require a 1-to-1 correspondence between [!DNL Platform] and your destination.
 For instance, customers could map a [!DNL Platform] [!DNL IDFA] namespace to an [!DNL IDFA] namespace from your destination, or they can map the same [!DNL Platform] [!DNL IDFA] namespace to a [!DNL Customer ID] namespace in your destination.
@@ -133,7 +133,7 @@ For instance, customers could map a [!DNL Platform] [!DNL IDFA] namespace to an 
 
 |Parameter | Type | Description|
 |---------|----------|------|
-|`acceptsAttributes` | Boolean | Indicates if your destination accepts standard profile attributes. Usually these are highlighted in our partners' documentation. |
+|`acceptsAttributes` | Boolean | Indicates if your destination accepts standard profile attributes. Usually, these attributes are highlighted in our partners' documentation. |
 |`acceptsCustomNamespaces` | Boolean | Indicates if customers can set up custom namespaces in your destination. |
 |`allowedAttributesTransformation` | String | _Not shown in example configuration_. Used, for example, when the [!DNL Platform] customer has plain email addresses as an attribute and your platform only accepts hashed emails. This is where you would provide the transformation that needs to be applied (for example, transform the email to lowercase, then hash).   |
 |`acceptedGlobalNamespaces` | - | _Not shown in example configuration_. Used for cases when your platform accepts [standard identity namespaces](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces) (for example, IDFA), so you can restrict Platform users to only selecting these identity namespaces. |
@@ -142,7 +142,7 @@ For instance, customers could map a [!DNL Platform] [!DNL IDFA] namespace to an 
 
 |Parameter | Type | Description|
 |---------|----------|------|
-|`authenticationRule` | String | Indicates how [!DNL Platform] customers connect to your destination. Accepted values are `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Use `CUSTOMER_AUTHENTICATION` if Platform customers log into your system via a username and password, a bearer token, or another method of authentication. For example, you would select this option if you also selected `authType: OAUTH2` or `authType:BEARER` in `customerAuthenticationConfigurations`. </li><li> Use `PLATFORM_AUTHENTICATION` if there is a global authentication system between Adobe and your destination and the [!DNL Platform] customer does not need to provide any authentication credentials to connect to your destination. In this case, you need to create a credentials object using the [Credentials](/help/credentials-configuration.md) configuration. </li><li>Use `NONE` if no authentication is required to send data to your destination platform. </li></ul> |
+|`authenticationRule` | String | Indicates how [!DNL Platform] customers connect to your destination. Accepted values are `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Use `CUSTOMER_AUTHENTICATION` if Platform customers log into your system via a username and password, a bearer token, or another method of authentication. For example, you would select this option if you also selected `authType: OAUTH2` or `authType:BEARER` in `customerAuthenticationConfigurations`. </li><li> Use `PLATFORM_AUTHENTICATION` if there is a global authentication system between Adobe and your destination and the [!DNL Platform] customer does not need to provide any authentication credentials to connect to your destination. In this case, you must create a credentials object using the [Credentials](/help/credentials-configuration.md) configuration. </li><li>Use `NONE` if no authentication is required to send data to your destination platform. </li></ul> |
 |`destinationServerId` | String | This field is not required in the alpha phase of Destination SDK. |
 |`inputSchemaId` | String | This field is not required in the alpha phase of Destination SDK. |
 

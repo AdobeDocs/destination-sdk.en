@@ -20,7 +20,7 @@ To understand the process on the Adobe side, please familiarize yourself with th
 * Experience Data Model (XDM). [XDM overview](https://docs.adobe.com/content/help/en/experience-platform/xdm/home.html) and  [How to create an XDM schema in Adobe Experience Platform](https://docs.adobe.com/content/help/en/experience-platform/xdm/tutorials/create-schema-ui.html).
 * Class. [How to assign a class to a schema](https://docs.adobe.com/content/help/en/experience-platform/xdm/tutorials/create-schema-ui.html#assign-a-class).
 * Mixins. [Mixin definition](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/composition.html#mixin) and [more information about mixins](https://docs.adobe.com/content/help/en/experience-platform/xdm/tutorials/create-schema-ui.html#add-a-mixin).
-* IdentityMap. The identity map represents a map of all end user identities in Adobe Experience Platform. Refer `xdm:identityMap` in the [XDM field dictionary](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/field-dictionary.html).
+* IdentityMap. The identity map represents a map of all end-user identities in Adobe Experience Platform. Refer to `xdm:identityMap` in the [XDM field dictionary](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/field-dictionary.html).
 * SegmentMembership. The [segmentMembership](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/field-dictionary.html) XDM attribute informs which segments a profile is a member of. For the three different values in the `status` field, read the documentation on [Segment Membership Details mixin](https://docs.adobe.com/content/help/en/experience-platform/xdm/mixins/profile/segmentation.html).
 
 ## Overview {#overview}
@@ -30,9 +30,9 @@ Use the content on this page together with the rest of the [configuration option
 Adobe Experience Platform exports data to a significant number of destinations, in various data formats. Some examples of destination types are advertising platforms (Google), social networks (Facebook), cloud storage locations (Amazon S3, Azure Event Hubs).
 
 Experience Platform can adjust the exported message format to match the expected format on your side. To understand this customization, the following concepts are important:
-* the customer (1) and partner (2) XDM schema in Adobe Experience Platform
-* the message format on the partner side (3), and 
-* the transformation layer between the two.
+* The customer (1) and partner (2) XDM schema in Adobe Experience Platform
+* The message format on the partner side (3), and 
+* The transformation layer between the two.
 
 ![Schema to JSON transformation](/help/assets/transformations-3-steps.png)
 
@@ -40,11 +40,11 @@ Experience Platform uses schemas to describe the structure of data in a consiste
 
 Users who want to activate data to your destination need to map the fields that they use for their datasets in Experience Platform to a schema that translates to your destination's expected format. Adobe will create a custom mixin for your company to add to the partner schema. The fields in the mixin depend on the profile attribute fields that you can receive.
 
-**Customer XDM schema (1)**: This refers to the schema that a customer uses in Experience Platform. In Experience Platform, in the [activate destination workflow](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/dest-tutorials/activate-destinations.html), customers would map fields from their schema to the partner schema that we create for your destination (2).
+**Customer XDM schema (1)**: This refers to the schema that a customer uses in Experience Platform. In Experience Platform, in the [activate destination workflow](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/dest-tutorials/activate-destinations.html), customers would map fields from their schema to the partner schema that Adobe create for your destination (2).
 
-**Partner XDM schema (2)**: Based on the JSON standard schema (3) that you would share with Adobe, we will create a custom schema for your destination. Note that in a [future phase of the project](/help/overview.md#phased-approach), you will be able to create the custom schema for your destination on your own.
+**Partner XDM schema (2)**: Based on the JSON standard schema (3) that you share with Adobe, the team at Adobe will create a custom schema for your destination. Note that in a [future phase of the project](/help/overview.md#phased-approach), you will be able to create the custom schema for your destination on your own.
 
-**JSON standard schema of your destination profile attributes (3)**: Please share with us a [JSON schema](https://json-schema.org/learn/miscellaneous-examples.html) of all the profile that your platform supports and their types (e.g. object, string, array). Example fields that your destination could support could be `firstName`, `lastName`, `gender`, `email`, `phone`,  `productId`, `productName`, etc.
+**JSON standard schema of your destination profile attributes (3)**: Please share with us a [JSON schema](https://json-schema.org/learn/miscellaneous-examples.html) of all the profile attributes that your platform supports and their types (for example: object, string, array). Example fields that your destination could support could be `firstName`, `lastName`, `gender`, `email`, `phone`,  `productId`, `productName`, and so on.
 
 Based on the schema transformations described above, here is how the structure of a message changes between the XDM schema and the sample schema on the partner side:
 
@@ -61,7 +61,7 @@ Based on the schema transformations described above, here is how the structure o
 
 ## Getting started - transforming three basic attributes {#getting-started}
 
-To demonstrate the transformation process, we'll look at three common profile attributes in Adobe Experience Platform: **first name**, **last name**, and **email address**.
+To demonstrate the transformation process, the example below uses three common profile attributes in Adobe Experience Platform: **first name**, **last name**, and **email address**.
 
 >[!NOTE]
 >
@@ -719,9 +719,9 @@ Function | Description |
 
 ## What Adobe needs from you to set up your destination {#what-adobe-needs}
 
-Based on the transformations outlined in the sections above, we need the following information to set up your destination:
+Based on the transformations outlined in the sections above, Adobe needs the following information to set up your destination:
 
-* Considering *all* the fields that your platform can receive, *we need the standard JSON schema that corresponds to your expected message format*. Having the template allows Adobe to define transformations and to create a custom XDM schema for your company, which customers would use to export data to your destination.
+* Considering *all* the fields that your platform can receive, Adobe needs the standard JSON schema that corresponds to your expected message format. Having the template allows Adobe to define transformations and to create a custom XDM schema for your company, which customers would use to export data to your destination.
 
 <!--
 
