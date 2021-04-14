@@ -44,7 +44,7 @@ You now have the required authentication headers `x-api-key: {API_KEY}`, `x-gw-i
 
 ## Destination ownership and sandboxes
 
-All resources in Experience Platform are isolated to specific virtual sandboxes. Partners in the Destination SDK program are assigned a common IMS Organization ID and individual sandboxes. Requests to Destination SDK require headers that specify the name and ID of the sandbox the operation will take place in:
+All resources in Experience Platform are isolated to specific virtual sandboxes. Partners in the Destination SDK program are assigned a common IMS Organization ID and individual sandboxes. Requests to Destination SDK require headers that specify the name and ID of the sandbox the operation takes place in:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 * `x-sandbox-id: {SANDBOX_ID}`
