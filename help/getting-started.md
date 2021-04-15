@@ -44,7 +44,7 @@ You now have the required authentication headers `x-api-key: {API_KEY}`, `x-gw-i
 
 ## Destination ownership and sandboxes
 
-All resources in Experience Platform are isolated to specific virtual sandboxes. Partners in the Destination SDK program are assigned a common IMS Organization ID and individual sandboxes. Requests to Destination SDK require headers that specify the name and ID of the sandbox the operation takes place in:
+All resources in Experience Platform are isolated to specific virtual sandboxes. Requests to Destination SDK require headers that specify the name and ID of the sandbox the operation takes place in:
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 * `x-sandbox-id: {SANDBOX_ID}`
@@ -54,6 +54,11 @@ The Adobe Exchange team will provide you with your sandbox name and ID, which yo
 ## Allowlisting
 
 To use the API endpoints described in the [reference documentation](/help/configuration-options.md), you must be added to a list of allowed partners. Work with the Adobe Exchange team to be added to the allowlist.
+
+## Additional considerations
+
+* Any changes that you make to the destination configurations, whether it is to create or edit a destination configuration, trigger a review process on the Adobe side. Edits are not reflected in your destinations immediately. 
+* Only the users that belong to the same organization and have access to the sandbox can make changes to the destination configuration.
 
 ## Next steps
 
