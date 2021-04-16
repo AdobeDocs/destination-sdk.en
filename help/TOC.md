@@ -1,5 +1,6 @@
 ---
-product: Adobe Experience Platform
+product: adobe experience platform
+solution: Experience Platform
 audience: technical-audience
 user-guide-title: Destination SDK Developer Guide
 breadcrumb-title: Destination SDK Guide
