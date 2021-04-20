@@ -1,5 +1,5 @@
 ---
-description: This page describes how to authenticate and start using Adobe Destination SDK. It includes instructions how to obtain Adobe I/O authentication credentials, a sandbox name and ID, and how to be added to an allowed partner list.
+description: This page describes how to authenticate and start using Adobe Destination SDK. It includes instructions on how to obtain Adobe I/O authentication credentials, a sandbox name and ID, and how to be added to an allowed partner list.
 title: Getting started with Destination SDK
 ---
 # Getting started 
@@ -13,7 +13,7 @@ title: Getting started with Destination SDK
 
 ## Overview 
 
-This page describes how to authenticate and start using Adobe Destination SDK. It includes instructions how to obtain Adobe I/O authentication credentials, a sandbox name and ID, and how to be added to an allowed partner list.
+This page describes how to authenticate and start using Adobe Destination SDK. It includes instructions on how to obtain Adobe I/O authentication credentials, a sandbox name and ID, and how to be added to an allowed partner list.
 
 ## Terminology
 
@@ -23,7 +23,7 @@ This guide uses Platform-specific concepts, such as IMS Organization and sandbox
 
 Destination SDK uses the [Adobe I/O](https://www.adobe.io/) gateway for authentication. To make API calls to Destination SDK endpoints, you need to provide certain headers in your API calls. Work with the Adobe Exchange team to set up authentication for you to the [Adobe Developer Console](http://console.adobe.io/).
 
-In order to successfully make calls to Destination SDK API endpoints, follow the [Experience Platform authentication tutorial](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html). Start the tutorial from the "[Generate access credentials in Adobe Developer Console](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#generate-access-credentials-in-adobe-developer-console)" step, as the Adobe Exchange team will handle the steps before that for you. Completing the authentication tutorial provides the values for each of the required headers in Destination SDK API calls, as shown below:
+To successfully make calls to Destination SDK API endpoints, follow the [Experience Platform authentication tutorial](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html). Start the tutorial from the "[Generate access credentials in Adobe Developer Console](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#generate-access-credentials-in-adobe-developer-console)" step. The Adobe Exchange team will handle the previous steps for you. Completing the authentication tutorial provides the values for each of the required headers in Destination SDK API calls, as shown below:
 
 * `x-api-key: {API_KEY}`, also referred to as Client ID
 * `x-gw-ims-org-id: {IMS_ORG}`, also referred to as Organization ID
@@ -40,7 +40,7 @@ You now have the required authentication headers `x-api-key: {API_KEY}`, `x-gw-i
 
 >[!NOTE]
 >
->The access token has an expiration time of 24 hours, expressed in milliseconds (see `expires_in` field in the screenshot), so you will have to refresh it. To refresh the access token, simply repeat the steps outlined in this section.
+>The access token has an expiration time of 24 hours, expressed in milliseconds, so you will have to refresh it. To refresh the access token, repeat the steps outlined in this section.
 
 ## Destination ownership and sandboxes
 
@@ -57,7 +57,7 @@ To use the API endpoints described in the [reference documentation](/help/config
 
 ## Additional considerations
 
-* Any changes that you make to destination configurations, whether it is to create or edit a destination configuration, trigger a review process on the Adobe side. Edits are not reflected in your destinations immediately.
+* Any changes that you make to destination configurations, whether you create or edit a destination configuration, need to be reviewed and approved by Adobe. Your changes are reflected in your destinations only after the review is done.
 * Only the users that belong to the same organization and have access to the sandbox can edit the destination configuration.
 
 ## Next steps
