@@ -25,13 +25,13 @@ Destination SDK uses the [Adobe I/O](https://www.adobe.io/) gateway for authenti
 
 In order to successfully make calls to Destination SDK API endpoints, follow the [Experience Platform authentication tutorial](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html). Start the tutorial from the "[Generate access credentials in Adobe Developer Console](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#generate-access-credentials-in-adobe-developer-console)" step, as the Adobe Exchange team will handle the steps before that for you. Completing the authentication tutorial provides the values for each of the required headers in Destination SDK API calls, as shown below:
 
-* `x-api-key: {API_KEY}` (Client ID)
-* `x-gw-ims-org-id: {IMS_ORG}` (Organization ID)
+* `x-api-key: {API_KEY}`, also referred to as Client ID
+* `x-gw-ims-org-id: {IMS_ORG}`, also referred to as Organization ID
 * `Authorization: Bearer {ACCESS_TOKEN}`. Read the next section to learn how to obtain this token.
 
 ### Obtain `Authorization: Bearer {ACCESS_TOKEN}`
 
-To obtain the `{ACCESS_TOKEN}`, you must generate a JWT token and exchange it for the access token. To do this:
+To obtain the `{ACCESS_TOKEN}`, you must generate a JWT token and exchange it for the access token. Follow the steps below:
 
 1. Follow the instructions in the [Generate JWT section](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/credentials.md) in the credentials guide.
 2. Follow the instructions in [Step 3: try it](https://www.adobe.io/authentication/auth-methods.html#!AdobeDocs/adobeio-auth/master/AuthenticationOverview/ServiceAccountIntegration.md) in the Service account connection guide.
@@ -53,12 +53,12 @@ The Adobe Exchange team will provide you with your sandbox name and ID, which yo
 
 ## Allowlisting
 
-To use the API endpoints described in the [reference documentation](/help/configuration-options.md), you must be added to a list of allowed partners. Work with the Adobe Exchange team to be added to the allowlist.
+To use the API endpoints described in the [reference documentation](/help/configuration-options.md), you must be added to a list of allowed partners. Work with the Adobe Exchange team to be added to the allow list.
 
 ## Additional considerations
 
-* Any changes that you make to the destination configurations, whether it is to create or edit a destination configuration, trigger a review process on the Adobe side. Edits are not reflected in your destinations immediately. 
-* Only the users that belong to the same organization and have access to the sandbox can make changes to the destination configuration.
+* Any changes that you make to destination configurations, whether it is to create or edit a destination configuration, trigger a review process on the Adobe side. Edits are not reflected in your destinations immediately.
+* Only the users that belong to the same organization and have access to the sandbox can edit the destination configuration.
 
 ## Next steps
 
