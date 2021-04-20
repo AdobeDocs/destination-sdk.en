@@ -10,10 +10,6 @@ exl-id: 084c9b69-40a1-4e91-abfb-0ef87617325f
 >* The content on this page is Adobe confidential information, please do not share outside of your company.
 >* The Adobe Experience Platform Destination SDK is currently an alpha release. The documentation and the functionality are subject to change.
 
-## April release {#april-release}
-
-
-
 ## Alpha release {#alpha}
 
 **Release date**: November 18, 2020
