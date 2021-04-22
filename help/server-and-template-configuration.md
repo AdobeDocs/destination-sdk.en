@@ -31,7 +31,7 @@ The server and template specs in Adobe Destination SDK can be configured via the
       "templatingStrategy": "PEBBLE_V1",
       "value": "https://api.moviestar.com/data/{{endpoint.region}}/items"
     },
-    "maxUsersPerRequest": 2,
+    "maxUsersPerRequest": 100,
     "splitUserById": true
   }
 },
@@ -58,7 +58,7 @@ This process delivers user data as a series of HTTP messages to your destination
 |`destinationServerType` | String | `URL_BASED` is the only available option in the alpha release phase. |
 |`templatingStrategy` | String | <ul><li>Use `PEBBLE_V1` if Adobe needs to transform the URL in the `value` field below. Use this option if you have an endpoint like: `https://api.moviestar.com/data/{{endpoint.region}}/items` </li><li> Use `NONE` if no transformation is needed on the Adobe side, for example if you have an endpoint like: `https://api.moviestar.com/data/items` </li></ul>  |
 |`value` | String | Fill in the address of the API endpoint that Experience Platform should connect to. |
-|`maxUsersPerRequest` | Integer | Specifies the maximum number of users per request allowed for your server. If your server does not accept multiple users per request, set this value to `1`. |
+|`maxUsersPerRequest` | Integer | Adobe can aggregate multiple exported profiles it a single HTTP call. Specify the maximum number of profiles that your endpoint should receive in a single HTTP call. Note that this is a best effort aggregation. For example, if you specify the value 100, Adobe might send any number of profiles smaller than 100 on a call. <br> If your server does not accept multiple users per request, set this value to 1. |
 |`splitUserById` | Boolean | Use this flag if the call to the destination should be split by identity. Set this flag to `true` if your server only accepts one identity per call, for a given namespace.  |
 
 <!--
