@@ -1,8 +1,8 @@
 ---
-description: This page describes how to authenticate and start using Adobe Destination SDK. It includes instructions on how to obtain Adobe I/O authentication credentials, a sandbox name and ID, and how to be added to an allowed partner list.
+description: This page describes the various Oauth2 authentication flows supported by Destination SDK, as well as instructions to set up Oauth2 authentication for your destination.
 title: Oauth authentication
 ---
-# Oauth authentication
+# Oauth2 authentication 
 
 
 >[!IMPORTANT]
@@ -13,13 +13,115 @@ title: Oauth authentication
 
 ## Overview 
 
-Adobe Experience Platform supports various forms of authentication, which allow it to connect to destinations. Use the Destination SDK to set up Oauth authentication between Adobe Experience Platform and your destination
+This page describes the various Oauth2 authentication flows supported by Destination SDK, as well as instructions to set up Oauth2 authentication for your destination.
+
+Adobe Experience Platform supports various forms of authentication, which allow it to connect to destinations. Use Destination SDK to set up Oauth authentication between Adobe Experience Platform and your destination.
 
 ## How to add Oauth details to your Destination configuration
 
-You need to add your Oauth configuration in the /destinations endpoint, using the 
+To set up Oauth2 authentication for your destination in Experience Platform, you must to add your Oauth configuration in the `/destinations` endpoint, under the `customerAuthenticationConfigurations` parameter. See [example configuration](/help/destination-configuration.md#example-configuration).
+
+## Types of Oauth2 flows
+
+Experience Platform supports the three Oauth2 grant types below. If you have a custom Oauth2 setup, Adobe will be able to support it with the help of custom fields in your integration. Refer to the sections for each grant type for more information.
 
 <table class="relative-table wrapped confluenceTable"><colgroup><col style="width: 26.2554%;" /><col style="width: 33.8594%;" /><col style="width: 39.8852%;" /></colgroup><tbody><tr><th class="confluenceTh">OAuth 2 Grant</th><th class="confluenceTh">Inputs</th><th class="confluenceTh">Outputs</th></tr><tr><td class="confluenceTd">Authorization Code</td><td class="confluenceTd"><ul><li><strong>clientId</strong></li><li><strong>clientSecret</strong></li><li>scope</li><li><strong>authorizationUrl</strong></li><li><strong>accessTokenUrl</strong></li><li>refreshTokenUrl</li></ul></td><td class="confluenceTd"><ul><li><strong>accessToken</strong></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul></td></tr><tr><td class="confluenceTd">Password</td><td class="confluenceTd"><ul><li><strong>clientId</strong></li><li><strong>clientSecret</strong></li><li>scope</li><li><strong>accessTokenUrl</strong></li><li><strong>username</strong></li><li><strong>password</strong></li></ul></td><td class="confluenceTd"><ul><li><strong>accessToken</strong></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul></td></tr><tr><td class="confluenceTd">Client Credential</td><td class="confluenceTd"><ul><li><strong>clientId</strong></li><li><strong>clientSecret</strong></li><li>scope</li><li><strong>accessTokenUrl</strong></li></ul></td><td class="confluenceTd"><ul><li><strong>accessToken</strong></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul></td></tr></tbody></table>
+
+## Oauth2 with Authorization Code
+
+For a standard OAuth 2.0 Authorization Code flow, see the required and optional fields below:
+
+<table class="relative-table wrapped confluenceTable"><colgroup><col style="width: 26.2554%;" /><col style="width: 33.8594%;" /><col style="width: 39.8852%;" /></colgroup><tbody><tr><th class="confluenceTh">Grant</th><th class="confluenceTh">Inputs</th><th class="confluenceTh">Outputs</th></tr><tr><td class="confluenceTd">Authorization Code</td><td class="confluenceTd"><ul><li><strong>clientId</strong></li><li><strong>clientSecret</strong></li><li>scope</li><li><strong>authorizationUrl</strong></li><li><strong>accessTokenUrl</strong></li><li>refreshTokenUrl</li></ul></td><td class="confluenceTd"><ul><li><strong>accessToken</strong></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul></td></tr></tbody></table>
+
+
+
+``` json
+
+{
+//...
+  "customerAuthenticationConfigurations": [
+    {
+      "authType": "OAUTH2",
+      "grant": "AUTHORIZATION_CODE",
+      "options": {
+        "enableProof": true,
+        "profileFields": [
+          "id",
+          "name",
+          "picture",
+          "email"
+        ]
+      },
+      "accessTokenUrl": "https://graph.facebook.com/v8.0/oauth/access_token", // REQUIRED
+      "authorizationUrl": "https://www.facebook.com/dialog/oauth", // REQUIRED
+      "refreshTokenUrl": "https://www.facebook.com/dialog/oauth/",
+      "clientId": "my-client-id", // REQUIRED
+      "clientSecret": "my-client-secret", // REQUIRED
+      "scope": "read write"
+    }
+  ]
+//...
+}
+
+```
+
+## Oauth2 with Password Grant 
+
+The Password grant works in a similar way to the Authorization Code grant. Adobe makes use of the following standard inputs simplify destination configuration with ability to override values:
+
+<table class="relative-table wrapped confluenceTable"><colgroup><col style="width: 26.2554%;" /><col style="width: 33.8594%;" /><col style="width: 39.8852%;" /></colgroup><tbody><tr><th class="confluenceTh">OAuth 2 Grant</th><th class="confluenceTh">Inputs</th><th class="confluenceTh">Outputs</th></tr><tr><td class="confluenceTd">Password</td><td class="confluenceTd"><ul><li><strong>clientId</strong></li><li><strong>clientSecret</strong></li><li>scope</li><li><strong>accessTokenUrl</strong></li><li><strong>username</strong></li><li><strong>password</strong></li></ul></td><td class="confluenceTd"><ul><li><strong>accessToken</strong></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul></td></tr></tbody></table>
+
+``` json
+
+{
+//...
+  "customerAuthenticationConfigurations": [
+    {
+      "authType": "OAUTH2",
+      "grant": "PASSWORD",
+      "accessTokenUrl": "https://api-stage.demdex.com/portal/oauth/token",// REQUIRED
+      "refreshTokenUrl": "https://api-stage.demdex.com/portal/oauth/token", // will not be used since we will always get a brand new token
+      "clientId": "my-client-id", // REQUIRED
+      "clientSecret": "my-client-secret", // REQUIRED
+      "scope": "read write",
+    },
+
+```
+
+## Oauth2 with Client Credential Grant
+
+You can configure a Client Credential based destination, which supports the following general inputs/outputs:
+
+<table class="relative-table wrapped confluenceTable"><colgroup><col style="width: 26.2554%;" /><col style="width: 33.8594%;" /><col style="width: 39.8852%;" /></colgroup><tbody><tr><th class="confluenceTh">OAuth 2 Grant</th><th class="confluenceTh">Inputs</th><th class="confluenceTh">Outputs</th></tr><tr><td class="confluenceTd">Client Credential</td><td class="confluenceTd"><ul><li><strong>clientId</strong></li><li><strong>clientSecret</strong></li><li>scope</li><li><strong>accessTokenUrl</strong></li></ul></td><td class="confluenceTd"><ul><li><strong>accessToken</strong></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul></td></tr></tbody></table>
+
+
+
+``` json
+
+{
+//...
+  "customerAuthenticationConfigurations": [
+    {
+      "authType": "OAUTH2",
+      "grant": "CLIENT_CREDENTIAL",
+      "accessTokenUrl": "https://graph.facebook.com/v8.0/oauth/access_token", // REQUIRED
+      "refreshTokenUrl": "https://www.facebook.com/dialog/oauth/refresh",
+      "clientId": "my-client-id", // REQUIRED
+      "clientSecret": "my-client-secret", // REQUIRED
+      "scope": "read write"
+    },
+  ]
+//...
+}
+
+```
+
+## Token refresh
+
+//add information about how we have a mechanism to refresh tokens.
+
+## Templating conventions
+
 
 
 ## Next steps
