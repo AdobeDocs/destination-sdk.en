@@ -9,7 +9,7 @@ exl-id: 99700474-8bf6-4176-acc1-38814e17c995
 
 *Start by updating the metadata (title and description) at the top of the page. Please ignore all instances of UICONTROL on this page. This is a tag that helps our machine translation processes correctly translate the page into the multiple languages that we support. We will add tags to your documentation after you submit it.*
 
-## Overview
+## Overview {#overview}
 
 *Provide a short overview for your company, including the value it provides to customers. Include a link to your product documentation homepage, for further reading.*
 
@@ -17,7 +17,7 @@ exl-id: 99700474-8bf6-4176-acc1-38814e17c995
 >
 >This documentation page was created by the *YOURDESTINATION* team. For any inquiries or update requests, please contact them directly at *Insert link or email address where you can be reached for updates*
 
-## Prerequisites
+## Prerequisites {#prerequisites}
 
 *Add information in this section about anything that customers need to be aware of before starting to set up the destination in the Adobe Experience Platform user interface. This can be about:*
 
@@ -27,6 +27,24 @@ exl-id: 99700474-8bf6-4176-acc1-38814e17c995
 * *how to obtain an API key to connect to your platform*
 
 *You can link out to your relevant documentation if that would be useful to customers.*
+
+## Supported identities {#supported-identities}
+
+*Add information in this section about the identities supported by your destination. We have prefilled the table with some standard values.*
+
+*YOURDESTINATION* supports the activation of identities described in the table below. Learn more about [identities](/help/identity-service/namespaces.md).
+
+|Target Identity|Description|Considerations|
+|---|---|---|
+|GAID|Google Advertising ID|Select the GAID target identity when your source identity is a GAID namespace.|
+|IDFA|Apple ID for Advertisers|Select the IDFA target identity when your source identity is an IDFA namespace.|
+|phone_sha256|Phone numbers hashed with the SHA256 algorithm|Both plain text and SHA256 hashed phone numbers are supported by Adobe Experience Platform. When your source field contains unhashed attributes, check the **[!UICONTROL Apply transformation]** option, to have [!DNL Platform] automatically hash the data on activation.|
+|email_lc_sha256|Email addresses hashed with the SHA256 algorithm|Both plain text and SHA256 hashed email addresses are supported by Adobe Experience Platform. When your source field contains unhashed attributes, check the **[!UICONTROL Apply transformation]** option, to have [!DNL Platform] automatically hash the data on activation.|
+|extern_id|Custom user IDs|Select this target identity when your source identity is a custom namespace.|
+
+## Export type {#export-type}
+
+**Segment Export** - you are exporting all members of a segment (audience) with the identifiers (name, phone number, or others) used in the *YOURDESTINATION* destination.
 
 ## Use Cases
 
@@ -101,7 +119,7 @@ If no policy violations have been detected, select **[!UICONTROL Finish]** to co
 
 ![confirm-selection](/help/docs-framework/assets/gcm-review.png)
 
-## Exported Data
+## Exported Data {#exported-data}
 
 *Add a note about how data is exported to your destination. This would help the customer make sure that they have correctly integrated with your destination. For example, you could provide a sample JSON like the one below.*
 
@@ -148,6 +166,6 @@ If no policy violations have been detected, select **[!UICONTROL Finish]** to co
 
 All [!DNL Adobe Experience Platform] destinations are compliant with data usage policies when handling your data. For detailed information on how [!DNL Adobe Experience Platform] enforces data governance, see the [Data Governance overview](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
 
-## Additional resources
+## Additional resources {#additional-resources}
 
 *You can provide further links to your product documentation or any other resources you consider important for the customer to be successful.*
