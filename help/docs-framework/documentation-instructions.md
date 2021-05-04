@@ -61,7 +61,7 @@ Adobe's documentation team is happy to help with this, just ask for assistance i
 
 To assist you in creating your documentation page, Adobe has prefilled a [documentation template](/help/docs-framework/self-service-template.md) for you. Further below, you can find instructions how to edit the template and open a pull request. The Adobe documentation team will review and publish the documentation for your new destination.
 
-You can [download the template here](assets/yourdestination-template.md.zip). Unzip the file to extract the `yourdestination.md` file.
+You can [download the template here](assets/yourdestination-template.zip). Unzip the file to extract the `yourdestination.md` file.
 
 Instructions on using the template to create your documentation page are further below.
 
@@ -132,7 +132,7 @@ The instructions below show you how to use the GitHub web interface to author do
    ![add new file](/help/docs-framework/assets/github-navigate-and-create-file.gif)
 
 1. Name your destination `YOURDESTINATION.md`, where YOURDESTINATION is the name of your destination in Adobe Experience Platform. For example, if your company is called Moviestar, you would name your file `moviestar.md`.
-1. In your new file in GitHub, paste in the content of the [destination template](/help/docs-framework/self-service-template.md). Download the template [here](assets/yourdestination-template.md.zip). Unzip it to extract the `.md` file template.
+1. In your new file in GitHub, paste in the content of the [destination template](/help/docs-framework/self-service-template.md). Download the template [here](assets/yourdestination-template.zip). Unzip it to extract the `.md` file template.
 1. In the GitHub interface, edit the template with relevant information for your destination. Follow the instructions in the template. 
 1. For any screenshots or images that you plan on using, use the GitHub interface to upload the files to `experience-platform.en/help/destinations/assets/catalog/` and link to them from the page you are authoring. See [instructions how to link to images](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/linking.html#link-to-images).
    
@@ -189,7 +189,7 @@ Please see [Install Git and Markdown Authoring tools](https://docs.adobe.com/con
    ![clone repository to local machine](/help/docs-framework/assets/clone-local.png)
 
 1. In your local file structure, navigate to `experience-platform.en/help/destinations/catalog/[...]`, where [...] is the desired category for your destination. For example, if you are adding a personalization destination to Experience Platform, select the `personalization` folder.
-1. Download the [self-service destination template](assets/yourdestination-template.md.zip). Unzip it and extract the file `yourdestination-template.md` to the above directory.  Rename the file `YOURDESTINATION.md`, where YOURDESTINATION is the name of your destination in Adobe Experience Platform. For example, if your company is called Moviestar, you would name your file `moviestar.md`.
+1. Download the [self-service destination template](assets/yourdestination-template.zip). Unzip it and extract the file `yourdestination-template.md` to the above directory.  Rename the file `YOURDESTINATION.md`, where YOURDESTINATION is the name of your destination in Adobe Experience Platform. For example, if your company is called Moviestar, you would name your file `moviestar.md`.
 1. Open your new file in your [text editor of choice](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/install-tools.html#understand-markdown-editors).
 1. Edit the template with relevant information for your destination. Follow the instructions in the template. 
 1.  For any screenshots or images that you plan on adding to your documentation, navigate to `GitHub/experience-platform.en/help/destinations/assets/catalog/[...]`, where [...] is the desired category for your destination. For example, if you are adding a personalization destination to Experience Platform, select the `personalization` folder. Create a new folder for your destination and drop your images here. You can link to them from the page you are authoring. See [instructions how to link to images](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/linking.html#link-to-images).
