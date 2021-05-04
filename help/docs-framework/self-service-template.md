@@ -32,7 +32,7 @@ exl-id: 99700474-8bf6-4176-acc1-38814e17c995
 
 *Add information in this section about the identities supported by your destination. We have prefilled the table with some standard values.*
 
-*YOURDESTINATION* supports the activation of identities described in the table below. Learn more about [identities](/help/identity-service/namespaces.md).
+*YOURDESTINATION* supports the activation of identities described in the table below. Learn more about [identities](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#getting-started).
 
 |Target Identity|Description|Considerations|
 |---|---|---|
