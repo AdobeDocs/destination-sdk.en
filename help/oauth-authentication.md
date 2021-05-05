@@ -137,6 +137,16 @@ To set up this authentication method for your destination, add the following lin
 
 //add information about how we have a mechanism to refresh tokens.
 
+## Adobe Experience Platform callback URL
+
+In your system, you need to set up Adobe's OAuth2 redirect/callback URL
+
+Redirect/callback URL | Environment |
+---------|----------|
+ `https://platform.adobe.io/data/core/activation/oauth/api/v1/callback` | Production |
+ `https://platform-stage.adobe.io/data/core/activation/oauth/api/v1/callback` | Staging |
+
+
 ## Templating conventions
 
 
