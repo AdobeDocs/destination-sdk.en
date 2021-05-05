@@ -15,7 +15,7 @@ title: OAuth authentication
 
 Adobe Experience Platform supports various forms of authentication, which allow it to connect to destinations. Use Destination SDK to allow Adobe Experience Platform to connect to your destination using the [OAuth2 authentication framework](https://tools.ietf.org/html/rfc6749).
 
-This page describes the various OAuth2 authentication flows supported by Destination SDK, as well as instructions to set up OAuth2 authentication for your destination.
+This page describes the various OAuth2 authentication flows supported by Destination SDK, and provides instructions to set up OAuth2 authentication for your destination.
 
 ## How to add OAuth2 details to your Destination configuration
 
