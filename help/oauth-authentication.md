@@ -98,7 +98,64 @@ To set up this authentication method for your destination, add the following lin
 
 ### Variations
 
-The configuration described in the section above describes a standard OAuth2 authorization code grant. However, the system designed by Adobe provides flexibility so you can use custom parameters for any variations in the OAuth2 grant.
+The configuration described in the section above describes a standard OAuth2 authorization code grant. However, the system designed by Adobe provides flexibility so you can use custom parameters for any variations in the OAuth2 grant. To overwrite the standard Oauth2 settings, use 
+
+```json
+
+      "customerAuthenticationConfigurations": [
+            {
+                "authType": "OAUTH2",
+                "options": {},
+                "grant": "OAUTH2_AUTHORIZATION_CODE",
+                "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "authorizationUrl": "https://www.linkedin.com/oauth/v2/authorization",
+                "scope": [
+                    "r_ads",
+                    "r_liteprofile",
+                    "rw_dmp_segments"
+                ],
+                "refreshTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+                "clientSecret": "https://va7stageactivationakv.vault.azure.net/secrets/96b45bb3465a49f0bc0801df32eedf3e/445842decc544a9aa04c5bf3ad0ad49b",
+                "authenticationDataFields": [
+                    {
+                        "name": "refreshTokenExpiration",
+                        "title": "Refresh Token Expires In",
+                        "description": "Time in seconds when the refresh token will expire",
+                        "type": "string",
+                        "isRequired": false,
+                        "readOnly": false,
+                        "hidden": false,
+                        "source": "CUSTOMER",
+                        "authenticationResponsePath": "refresh_token_expires_in"
+                    },
+                    {
+                        "name": "idToken",
+                        "title": "ID Token",
+                        "description": "ID Token",
+                        "type": "string",
+                        "isRequired": false,
+                        "readOnly": false,
+                        "hidden": false,
+                        "source": "CUSTOMER",
+                        "authenticationResponsePath": "idToken"
+                    },
+                    {
+                        "name": "clientId",
+                        "title": "Client Id",
+                        "description": "Client Id",
+                        "type": "string",
+                        "isRequired": false,
+                        "format": "password",
+                        "readOnly": false,
+                        "hidden": false,
+                        "source": "PARTNER",
+                        "value": "https://va7stageactivationakv.vault.azure.net/secrets/0107510ef6954f43af0036037da111fe/e38b468ee7dd416b95b71bf7341517e6"
+                    }
+                ]
+            }
+
+
+```
 
 ## OAuth2 with Password Grant
 
