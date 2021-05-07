@@ -25,32 +25,32 @@ As a first, you must create an app in your system for Adobe Experience Platform.
 
 >[!IMPORTANT]
 >
->The step to register a redirect/callback URL for Adobe Experience Platform in your system is required only for the [Oauth2 with Authorization Code](/help/oauth-authentication.md#authorization-code) grant type. For the other grant types, you can skip this step.
+>The step to register a redirect/callback URL for Adobe Experience Platform in your system is required only for the [Oauth2 with Authorization Code](/help/oauth-authentication.md#authorization-code) grant type. For the other two supported grant types (password and client credentials), you can skip this step.
 
 Redirect/callback URL | Environment |
 ---------|----------|
  `https://platform.adobe.io/data/core/activation/oauth/api/v1/callback` | Production |
  `https://platform-stage.adobe.io/data/core/activation/oauth/api/v1/callback` | Staging |
 
-### To do in Destination SDK
+### What you need to do in Destination SDK
 
 To set up OAuth2 authentication for your destination in Experience Platform, you must add your OAuth2 configuration in the `/destinations` endpoint, under the `customerAuthenticationConfigurations` parameter. See [example configuration](/help/destination-configuration.md#example-configuration). Specific instructions about which fields you need to add to your configuration template, depending on your OAuth2 authentication grant type, are further below on this page.
 
 ## OAuth2 grant types
 
-Experience Platform supports the three OAuth2 grant types below. If you have a custom OAuth2 setup, Adobe will be able to support it with the help of custom fields in your integration. Refer to the sections for each grant type for more information.
+Experience Platform supports the three OAuth2 grant types below. If you have a custom OAuth2 setup, Adobe is able to support it with the help of custom fields in your integration. Refer to the sections for each grant type for more information.
 
 
 >[!IMPORTANT]
 >
->* You provide the input parameters as instructed in the sections below. Adobe-internal systems will produce the output parameters, which will be used to connect and maintain authentication to your destination.
+>* You provide the input parameters as instructed in the sections below. Adobe-internal systems will produce the output parameters, which are used to connect and maintain authentication to your destination.
 >* The input parameters highlighted in bold in the table are required parameters in the Oauth2 authentication flow. The other parameters are optional. There are other custom input parameters that are not shown here, but are described at length in the sections for each authorization grant type. 
 
 <table class="relative-table wrapped confluenceTable"><colgroup><col style="width: 26.2554%;" /><col style="width: 33.8594%;" /><col style="width: 39.8852%;" /></colgroup><tbody><tr><th class="confluenceTh">OAuth 2 Grant</th><th class="confluenceTh">Inputs</th><th class="confluenceTh">Outputs</th></tr><tr><td class="confluenceTd">Authorization Code</td><td class="confluenceTd"><ul><li><strong>clientId</strong></li><li><strong>clientSecret</strong></li><li>scope</li><li><strong>authorizationUrl</strong></li><li><strong>accessTokenUrl</strong></li><li>refreshTokenUrl</li></ul></td><td class="confluenceTd"><ul><li><strong>accessToken</strong></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul></td></tr><tr><td class="confluenceTd">Password</td><td class="confluenceTd"><ul><li><strong>clientId</strong></li><li><strong>clientSecret</strong></li><li>scope</li><li><strong>accessTokenUrl</strong></li><li><strong>username</strong></li><li><strong>password</strong></li></ul></td><td class="confluenceTd"><ul><li><strong>accessToken</strong></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul></td></tr><tr><td class="confluenceTd">Client Credential</td><td class="confluenceTd"><ul><li><strong>clientId</strong></li><li><strong>clientSecret</strong></li><li>scope</li><li><strong>accessTokenUrl</strong></li></ul></td><td class="confluenceTd"><ul><li><strong>accessToken</strong></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul></td></tr></tbody></table>
 
 The above table lists the fields that are used in standard OAuth 2 flows. In addition to these standard fields, various partner integrations may require additional inputs and outputs. Adobe has designed a flexible OAuth 2 authentication/authorization framework for Destination SDK that can handle variations to the above standard fields pattern while supporting a mechanism to automatically regenerate invalid outputs, such as expired access tokens.
 
-The output in all cases includes an access token, which will be used by Adobe Experience Platform to authenticate and maintain authentication to your destination. 
+The output in all cases includes an access token, which will be used by Experience Platform to authenticate and maintain authentication to your destination. 
 
 The system that Adobe has designed for OAuth2 authentication:
 * Supports all three OAuth 2 grants while accounting for any variations in them, such as additional data fields, non-standard API calls, and more. 
@@ -96,7 +96,9 @@ To set up this authentication method for your destination, add the following lin
 |`clientSecret` | String | The client secret that your system assigns to Adobe Experience Platform |
 |`scope` | String | *Optional*. Set the scope of what the access token allows Experience Platform to perform on your resources. Example: "read, write" |
 
-Note that the configuration above describes a standard OAuth2 authorization code grant. You can use custom parameters for any variations in the OAuth2 grant. 
+### Variations
+
+The configuration described in the section above describes a standard OAuth2 authorization code grant. However, the system designed by Adobe provides flexibility so you can use custom parameters for any variations in the OAuth2 grant.
 
 ## OAuth2 with Password Grant
 
