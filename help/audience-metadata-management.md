@@ -443,7 +443,7 @@ A successful response returns HTTP status 200 with detailed information about th
 | `fields` | A list of the exported fields, separated by commas.  |
 | `schema.name` | The name of the schema associated with the dataset where data is to be exported. |
 
-##  Delete a specific audience template {#delete}
+## Delete a specific audience template {#delete}
 
 You can request to delete the specified audience template by making a DELETE request to the `/authoring/v1/audience-templates` endpoint and providing the ID of the audience template you wish to delete in the request path.
 
