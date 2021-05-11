@@ -481,6 +481,8 @@ You can use the following parameters in `accessTokenRequest` to customize your t
 |`accessTokenRequest.responseFields.expectedValue.templatingStrategy` | String |  |
 |`accessTokenRequest.responseFields.expectedValue.value` | String |  |
 
+{style="table-layout:auto"}
+
 ## Templating conventions {#templating-conventions}
 
 Depending on your authentication customization, you might need to access data fields in the authentication response, as shown in the previous section. To do that, refer to the templating conventions below to customize your OAuth2 implementation. 
