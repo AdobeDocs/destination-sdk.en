@@ -1,6 +1,6 @@
 ---
-description: This page describes the various OAuth2 authentication flows supported by Destination SDK, as well as instructions to set up OAuth2 authentication for your destination.
-title: OAuth authentication
+description: This page describes the various OAuth2 authentication flows supported by Destination SDK, and provides instructions to set up OAuth2 authentication for your destination.
+title: OAuth2 authentication
 ---
 # OAuth2 authentication 
 
