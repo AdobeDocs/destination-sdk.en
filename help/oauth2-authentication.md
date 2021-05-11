@@ -44,7 +44,7 @@ At the end of this step, you should have:
 
 To set up OAuth2 authentication for your destination in Experience Platform, you must add your OAuth2 details to the [destination configuration](/help/destination-configuration.md), under the `customerAuthenticationConfigurations` parameter, by using the `platform.adobe.io/data/core/activation/authoring/v1/destinations` API endpoint. See the [example configuration](/help/destination-configuration.md#example-configuration). Specific instructions about which fields you need to add to your configuration template, depending on your OAuth2 authentication grant type, are further below on this page.
 
-## OAuth2 grant types {#oauth2-grant-types}
+## Supported OAuth2 grant types {#oauth2-grant-types}
 
 Experience Platform supports the three OAuth2 grant types in the table below. If you have a custom OAuth2 setup, Adobe is able to support it with the help of custom fields in your integration. Refer to the sections for each grant type for more information.
 
