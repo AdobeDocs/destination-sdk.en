@@ -12,10 +12,6 @@ exl-id: 63ed9a03-eb4d-46c6-85e9-6c1d84acdbad
 
 **API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/audience-templates` 
 
->[!NOTE]
->
->The API endpoint is not available publicly in the alpha release phase of Destination SDK.
-
 Use audience metadata templates to programmatically create, update, or delete audiences (segments) in your destination platform. Based on the configuration of your API, you can use the audience metadata endpoint to create a template. After you define and test the template, it will be used in API calls to your destination.
 
 ## When to use the audience metadata management endpoint
@@ -185,9 +181,59 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 }'
 ```
 
-| Property | Description |
-| -------- | ----------- |
-| `fields` | A list of the exported fields, separated by commas. If left blank, all fields will be exported. |
+| Property | Type | Description |
+| -------- | ----------- | ----------- |
+| `audience.context` | String |  |
+| `audience.description` | String | | 
+| `audience.sid` | String | | 
+| `audience.account` | String | | 
+| `audience.accountType` | String | | 
+| `audience.externalAudienceId` | String | The segment or audience alias in your destination. | 
+| `audience.imsOrgId` | String | | 
+| `audience.metadata.additionalProp1` | String | | 
+| `credential.clientId` | String |  |
+| `credential.clientSecret` | String | | 
+| `credential.token` | String | | 
+| `credential.tokenSecret` | String | | 
+| `credential.refreshToken` | String | | 
+| `credential.developerToken` | String | | 
+| `credential.clientCustomerId` | String | | 
+| `credential.authType` | String | | 
+| `credential.metadata.additionalProp1` | String | | 
+| `metadataTemplate.name` | String |  |
+| `metadataTemplate.host` | String | | 
+| `metadataTemplate.create.uri` | String | | 
+| `metadataTemplate.create.method` | String | | 
+| `metadataTemplate.create.headers.additionalProp1` | String | | 
+| `metadataTemplate.create.params.additionalProp1` | String | | 
+| `metadataTemplate.create.body` | String | | 
+| `metadataTemplate.create.schemaMap.additionalProp1` | String | | 
+| `metadataTemplate.create.errorSchemaMap.additionalProp1` | String | | 
+| `metadataTemplate.update.uri` | String | | 
+| `metadataTemplate.update.method` | String | | 
+| `metadataTemplate.update.headers.additionalProp1` | String | | 
+| `metadataTemplate.update.params.additionalProp1` | String | | 
+| `metadataTemplate.update.body` | String | | 
+| `metadataTemplate.update.schemaMap.additionalProp1` | String | | 
+| `metadataTemplate.update.errorSchemaMap.additionalProp1` | String | | 
+| `metadataTemplate.delete.uri` | String | | 
+| `metadataTemplate.delete.method` | String | | 
+| `metadataTemplate.delete.headers.additionalProp1` | String | | 
+| `metadataTemplate.delete.params.additionalProp1` | String | | 
+| `metadataTemplate.delete.body` | String | | 
+| `metadataTemplate.delete.schemaMap.additionalProp1` | String | | 
+| `metadataTemplate.delete.errorSchemaMap.additionalProp1` | String | | 
+| `metadataTemplate.validate.uri` | String | | 
+| `metadataTemplate.validate.method` | String | | 
+| `metadataTemplate.validate.headers.additionalProp1` | String | | 
+| `metadataTemplate.validate.params.additionalProp1` | String | | 
+| `metadataTemplate.validate.body` | String | | 
+| `metadataTemplate.validate.schemaMap.additionalProp1` | String | | 
+| `metadataTemplate.validate.errorSchemaMap.additionalProp1` | String | | 
+| `validations.field.` | String | | 
+| `validations.regex.` | String | | 
+
+
 
 **Response**
 
@@ -212,7 +258,7 @@ PUT /authoring/v1/audience-templates/{INSTANCE_ID}
 
 The following request updates the audience metadata template, configured by the parameters provided in the payload.
 
-```
+```json
 
 {
     "instanceId": "a54b7a97-1a3b-40cf-8ae5-4dd635cd9a20",
@@ -235,7 +281,7 @@ The following request updates the audience metadata template, configured by the 
     },
     "metadataTemplate": {
         "create": {
-            "uri": "/{{audience.account}}/customaudiences?fields=name,description,account_id&subtype=CUSTOM",
+            "uri": "/{{audience.account}}/segments?fields=name,description,account_id&subtype=CUSTOM",
             "method": "POST",
             "headers": {
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -305,13 +351,13 @@ The following request updates the audience metadata template, configured by the 
                 "message": "error.message"
             }
         },
-        "host": "https://graph.facebook.com/v10.0",
-        "name": "Facebook Stage Test"
+        "host": "https://api.moviestar.com/v1.0",
+        "name": "Moviestar"
     },
     "validations": [
         {
             "field": "{{audience.account}}",
-            "regex": "^act_[0-9]+$"
+            "regex": "^moviestar_id_[0-9]+$"
         }
     ]
 }
@@ -372,7 +418,7 @@ The following response returns HTTP status 200 with a list of audience metadata 
         },
         "metadataTemplate": {
             "create": {
-                "uri": "/v2/dmpSegments",
+                "uri": "/v1/segments",
                 "method": "POST",
                 "headers": {
                     "Content-Type": "application/json",
@@ -385,20 +431,20 @@ The following response returns HTTP status 200 with a list of audience metadata 
                     "accessPolicy": "PRIVATE",
                     "destinations": [
                         {
-                            "destination": "LINKEDIN"
+                            "destination": "Moviestar"
                         }
                     ],
                     "sourcePlatform": "ADOBE"
                 },
                 "schemaMap": {
-                    "externalAudienceId": "{{headers.x-linkedin-id}}"
+                    "externalAudienceId": "{{headers.x-moviestar-id}}"
                 },
                 "errorSchemaMap": {
                     "message": "message"
                 }
             },
             "update": {
-                "uri": "/v2/dmpSegments/{{audience.id}}",
+                "uri": "/v1/segments/{{audience.id}}",
                 "method": "POST",
                 "headers": {
                     "Content-Type": "application/json",
@@ -416,7 +462,7 @@ The following response returns HTTP status 200 with a list of audience metadata 
                 }
             },
             "delete": {
-                "uri": "/v2/dmpSegments/{{audience.externalAudienceId}}",
+                "uri": "/v1/segments/{{audience.externalAudienceId}}",
                 "method": "DELETE",
                 "headers": {
                     "Content-Type": "application/json",
@@ -433,25 +479,15 @@ The following response returns HTTP status 200 with a list of audience metadata 
                     "message": "message"
                 }
             },
-            "host": "https://api.linkedin.com",
-            "name": "LinkedIn Stage Test"
+            "host": "https://api.moveistar.com",
+            "name": "Moviestar audience template"
         }
     }
 ]
     
 ```
 
-| Property | Description |
-| -------- | ----------- |
-| `destination` | Destination information for the exported data:<ul><li>`datasetId`: The ID of the dataset where data was exported.</li><li>`segmentPerBatch`: A Boolean value that shows whether or not segment IDs are consolidated. A value of "false" means all the segment IDs are exported into a single batch ID. A value of "true" means that one segment ID is exported into one batch ID. **Note:** Setting the value to true may affect batch export performance.</li></ul> |
-| `fields` | A list of the exported fields, separated by commas. |
-| `schema.name` | The name of the schema associated with the dataset where data is to be exported. |
-| `filter.segments` | The segments that are exported. The following fields are included:<ul><li>`segmentId`: The segment ID that profiles will be exported to.</li><li>`segmentNs`: Segment namespace for the given `segmentID`.</li><li>`status`: An array of strings providing a status filter for the `segmentID`. By default, `status` will have the value `["realized", "existing"]` which represents all profiles that fall into the segment at the current time. Possible values include: "realized", "existing", and "exited". A value of "realized" means the profile is entering the segment. A value of "existing" means the profile continues to be in the segment. A value of "exiting" means the profile is exiting the segment.</li></ul> |
-| `mergePolicy` | Merge policy information for the exported data. | 
-| `metrics.totalTime` | A field indicating the total time that export job took to run. |
-| `metrics.profileExportTime` | A field indicating the time it took for the profiles to export. |
-| `page` | Information about the pagination of the requested export jobs. | 
-| `link.next` | A link to the next page of export jobs. | 
+
 
 ## Retrieve a specific audience template {#get}
 
@@ -578,249 +614,10 @@ A successful response returns HTTP status 204 with the following message:
 ```json
 {
   "status": true,
-  "message": "Export job has been marked for cancelling"
+  "message": ""
 }
 ```
 
 ## Next steps
 
 After reading this guide you know when to use audience metadata templates and how to perform operations on the API endpoint.
-
-<!--
-
-| `mergePolicy` | Specifies the merge policy to govern the exported data. Include this parameter when there are multiple segments being exported. If not provided, the export will take the same merge policy as the given segment. |
-| `filter` | An object that specifies the segments that are going to be included in the export job by ID, qualification time, or ingest time, depending on the subproperties listed below. If left blank, all the data will be exported. |
-| `filter.segments` | Specifies the segments to export. Omitting this value will result in all data from all profiles being exported. Accepts an array of segment objects, each containing the following fields:<ul><li>`segmentId`: **(Required if using `segments`)** Segment ID for profiles to be exported.</li><li>`segmentNs` *(Optional)* Segment namespace for the given `segmentID`.</li><li>`status` *(Optional)* An array of strings providing a status filter for the `segmentID`. By default, `status` will have the value `["realized", "existing"]` which represents all profiles that fall into the segment at the current time. Possible values include: `"realized"`, `"existing"`, and `"exited"`.  A value of "realized" means the profile is entering the segment. A value of "existing" means the profile continues to be in the segment. A value of "exiting" means the profile is exiting the segment.</li></ul> |
-| `filter.segmentQualificationTime` | Filter based on segment qualification time. The start time and/or end time can be provided. |
-| `filter.segmentQualificationTime.startTime` | Segment qualification start time for a segment ID for a given status. It not provided, there will be no filter on the start time for a segment ID qualification. The timestamp must be provided in [RFC 3339](https://tools.ietf.org/html/rfc3339) format. |
-| `filter.segmentQualificationTime.endTime` | Segment qualification end time for a segment ID for a given status. It not provided, there will be no filter on the end time for a segment ID qualification. The timestamp must be provided in [RFC 3339](https://tools.ietf.org/html/rfc3339) format. |
-| `filter.fromIngestTimestamp `| Limits exported profiles to only include those that have been updated after this timestamp. The timestamp must be provided in [RFC 3339](https://tools.ietf.org/html/rfc3339) format. <ul><li>`fromIngestTimestamp` for **profiles**, if provided: Includes all the merged profiles where merged updated timestamp is greater than the given timestamp. Supports `greater_than` operand.</li><li>`fromIngestTimestamp` for **events**: All events ingested after this timestamp will be exported corresponding to resultant profile result. This is not the event time itself but the ingestion time for the events.</li> |
-| `filter.emptyProfiles` | A boolean value that indicates whether to filter for empty profiles. Profiles can contain profile records, ExperienceEvent records, or both. Profiles with no profile records and only ExperienceEvent records are referred to as "emptyProfiles". To export all profiles in the profile store, including the "emptyProfiles", set the value of `emptyProfiles` to `true`. If `emptyProfiles` is set to `false`, only profiles with profile records in the store are exported. By default, if `emptyProfiles` attribute is not included, only profiles containing profile records are exported. |
-| `additionalFields.eventList` | Controls the time-series event fields exported for child or associated objects by providing one or more of the following settings:<ul><li>`fields`: Control the fields to export.</li><li>`filter`: Specifies criteria that limits the results included from associated objects. Expects a minimum value required for export, typically a date.</li><li>`filter.fromIngestTimestamp`: Filters time-series events to those that have been ingested after the provided timestamp. This is not the event time itself but the ingestion time for the events.</li><li>`filter.toIngestTimestamp`: Filters the timestamp to those that have been ingested before the provided timestamp. This is not the event time itself but the ingestion time for the events.</li></ul> |
-| `destination` | **(Required)** Information about the exported data:<ul><li>`datasetId`: **(Required)** The ID of the dataset where data is to be exported.</li><li>`segmentPerBatch`: *(Optional)* A Boolean value that, if not provided, defaults to "false". A value of "false" exports all segment IDs into a single batch ID. A value of "true" exports one segment ID into one batch ID. Note that setting the value to be "true" may affect batch export performance.</li></ul> |
-| `schema.name` | **(Required)** The name of the schema associated with the dataset where data is to be exported. |
-| `evaluationInfo.segmentation` | *(Optional)* A boolean value that, if not provided, defaults to `false`. A value of `true` indicates that segmentation needs to be done on the export job. |
-
-
-
-
-
-
-
-
-## Retrieve a list of export jobs {#retrieve-list}
-
-You can retrieve a list of all audience templates for your IMS Organization by making a GET request to the `/export/jobs` endpoint.
-
-**API format**
-
-The `/export/jobs` endpoint supports several query parameters to help filter your results. While these parameters are optional, their use is strongly recommended to help reduce expensive overhead. Making a call to this endpoint with no parameters will retrieve all export jobs available for your organization. Multiple parameters can be included, separated by ampersands (`&`).
-
-```http
-GET /export/jobs
-GET /export/jobs?limit={LIMIT}
-GET /export/jobs?offset={OFFSET}
-GET /export/jobs?status={STATUS}
-```
-
-| Parameter | Description |
-| --------- | ----------- |
-| `{LIMIT}` | Specifies the number of export jobs returned. |
-| `{OFFSET}` | Specifies the offset of the pages of results. | 
-| `{STATUS}` | Filters the results based on status. The supported values are "NEW", "SUCCEEDED", and "FAILED". |
-
-**Request**
-
-The following request will retrieve the last two export jobs within your IMS Organization.
-
-```shell
-curl -X GET https://platform.adobe.io/data/core/ups/export/jobs?limit=2 \
- -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
- -H 'x-api-key: {API_KEY}' \
- -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**Response**
-
-The following response returns HTTP status 200 with a list of successfully completed export jobs, based on the query parameter provided in the request path.
-
-
-
-## Create a new export job {#create}
-
-You can create a new export job by making a POST request to the `/export/jobs` endpoint.
-
-**API format**
-
-```http
-POST /export/jobs
-```
-
-**Request**
-
-The following request creates a new export job, configured by the parameters provided in the payload.
-
-```shell
-curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
- -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
- -H 'x-api-key: {API_KEY}' \
- -H 'x-sandbox-name: {SANDBOX_NAME}' \
- -d '
-{
-    "fields": "identities.id,personalEmail.address",
-    "mergePolicy": {
-        "id": "timestampOrdered-none-mp",
-        "version": 1
-    },
-    "filter": {
-        "segments": [
-            {
-                "segmentId": "52c26d0d-45f2-47a2-ab30-ed06abc981ff",
-                "segmentNs": "ups",
-                "status": [
-                    "realized"
-                ]
-            }
-        ],
-        "segmentQualificationTime": {
-            "startTime": "2018-01-01T00:00:00Z",
-            "endTime": "2018-02-01T00:00:00Z"
-        },
-        "fromIngestTimestamp": "2018-01-01T00:00:00Z",
-        "emptyProfiles": true
-    },
-    "additionalFields": {
-        "eventList": {
-            "fields": "string",
-            "filter": {
-                "fromIngestTimestamp": "2018-01-01T00:00:00Z",
-                "toIngestTimestamp": "2020-01-01T00:00:00Z"
-            }
-        }
-    },
-    "destination":{
-        "datasetId": "5b7c86968f7b6501e21ba9df",
-        "segmentPerBatch": false
-    },
-    "schema":{
-        "name": "_xdm.context.profile"
-    },
-    "evaluationInfo": {
-        "segmentation": true
-    }
-}'
-```
-
-| Property | Description |
-| -------- | ----------- |
-| `fields` | A list of the exported fields, separated by commas. If left blank, all fields will be exported. |
-| `mergePolicy` | Specifies the merge policy to govern the exported data. Include this parameter when there are multiple segments being exported. If not provided, the export will take the same merge policy as the given segment. |
-| `filter` | An object that specifies the segments that are going to be included in the export job by ID, qualification time, or ingest time, depending on the subproperties listed below. If left blank, all the data will be exported. |
-| `filter.segments` | Specifies the segments to export. Omitting this value will result in all data from all profiles being exported. Accepts an array of segment objects, each containing the following fields:<ul><li>`segmentId`: **(Required if using `segments`)** Segment ID for profiles to be exported.</li><li>`segmentNs` *(Optional)* Segment namespace for the given `segmentID`.</li><li>`status` *(Optional)* An array of strings providing a status filter for the `segmentID`. By default, `status` will have the value `["realized", "existing"]` which represents all profiles that fall into the segment at the current time. Possible values include: `"realized"`, `"existing"`, and `"exited"`.  A value of "realized" means the profile is entering the segment. A value of "existing" means the profile continues to be in the segment. A value of "exiting" means the profile is exiting the segment.</li></ul> |
-| `filter.segmentQualificationTime` | Filter based on segment qualification time. The start time and/or end time can be provided. |
-| `filter.segmentQualificationTime.startTime` | Segment qualification start time for a segment ID for a given status. It not provided, there will be no filter on the start time for a segment ID qualification. The timestamp must be provided in [RFC 3339](https://tools.ietf.org/html/rfc3339) format. |
-| `filter.segmentQualificationTime.endTime` | Segment qualification end time for a segment ID for a given status. It not provided, there will be no filter on the end time for a segment ID qualification. The timestamp must be provided in [RFC 3339](https://tools.ietf.org/html/rfc3339) format. |
-| `filter.fromIngestTimestamp `| Limits exported profiles to only include those that have been updated after this timestamp. The timestamp must be provided in [RFC 3339](https://tools.ietf.org/html/rfc3339) format. <ul><li>`fromIngestTimestamp` for **profiles**, if provided: Includes all the merged profiles where merged updated timestamp is greater than the given timestamp. Supports `greater_than` operand.</li><li>`fromIngestTimestamp` for **events**: All events ingested after this timestamp will be exported corresponding to resultant profile result. This is not the event time itself but the ingestion time for the events.</li> |
-| `filter.emptyProfiles` | A boolean value that indicates whether to filter for empty profiles. Profiles can contain profile records, ExperienceEvent records, or both. Profiles with no profile records and only ExperienceEvent records are referred to as "emptyProfiles". To export all profiles in the profile store, including the "emptyProfiles", set the value of `emptyProfiles` to `true`. If `emptyProfiles` is set to `false`, only profiles with profile records in the store are exported. By default, if `emptyProfiles` attribute is not included, only profiles containing profile records are exported. |
-| `additionalFields.eventList` | Controls the time-series event fields exported for child or associated objects by providing one or more of the following settings:<ul><li>`fields`: Control the fields to export.</li><li>`filter`: Specifies criteria that limits the results included from associated objects. Expects a minimum value required for export, typically a date.</li><li>`filter.fromIngestTimestamp`: Filters time-series events to those that have been ingested after the provided timestamp. This is not the event time itself but the ingestion time for the events.</li><li>`filter.toIngestTimestamp`: Filters the timestamp to those that have been ingested before the provided timestamp. This is not the event time itself but the ingestion time for the events.</li></ul> |
-| `destination` | **(Required)** Information about the exported data:<ul><li>`datasetId`: **(Required)** The ID of the dataset where data is to be exported.</li><li>`segmentPerBatch`: *(Optional)* A Boolean value that, if not provided, defaults to "false". A value of "false" exports all segment IDs into a single batch ID. A value of "true" exports one segment ID into one batch ID. Note that setting the value to be "true" may affect batch export performance.</li></ul> |
-| `schema.name` | **(Required)** The name of the schema associated with the dataset where data is to be exported. |
-| `evaluationInfo.segmentation` | *(Optional)* A boolean value that, if not provided, defaults to `false`. A value of `true` indicates that segmentation needs to be done on the export job. |
-
-**Response**
-
-A successful response returns HTTP status 200 with details of your newly created export job.
-
-```json
-{
-    "id": 100,
-    "jobType": "BATCH",
-    "destination": {
-        "datasetId": "5b7c86968f7b6501e21ba9df",
-        "segmentPerBatch": false,
-        "batchId": "da5cfb4de32c4b93a09f7e37fa53ad52"
-    },
-    "fields": "identities.id,personalEmail.address",
-    "schema": {
-        "name": "_xdm.context.profile"
-    },
-    "imsOrgId": "{IMS_ORG}",
-    "status": "NEW",
-    "filter": {
-        "segments": [
-            {
-                "segmentId": "52c26d0d-45f2-47a2-ab30-ed06abc981ff",
-                "segmentNs": "ups",
-                "status": [
-                    "realized"
-                ]
-            }
-        ],
-        "segmentQualificationTime": {
-            "startTime": "2018-01-01T00:00:00Z",
-            "endTime": "2018-02-01T00:00:00Z"
-        },
-        "fromIngestTimestamp": "2018-01-01T00:00:00Z",
-        "emptyProfiles": true
-    },
-    "additionalFields": {
-        "eventList": {
-            "fields": "_id, _experience",
-            "filter": {
-                "fromIngestTimestamp": "2018-01-01T00:00:00Z"
-            }
-        }
-    },
-    "mergePolicy": {
-        "id": "timestampOrdered-none-mp",
-        "version": 1
-    },
-    "profileInstanceId": "ups",
-    "metrics": {
-        "totalTime": {
-            "startTimeInMs": 123456789000,
-        }
-    },
-    "computeGatewayJobId": {
-        "exportJob": ""    
-    },
-    "creationTime": 1538615973895,
-    "updateTime": 1538616233239,
-    "requestId": "d995479c-8a08-4240-903b-af469c67be1f"
-}
-```
-
-| Property | Description |
-| -------- | ----------- |
-| `id` | A system-generated read-only value identifying the export job that was just created. |
-
-Alternatively, if `destination.segmentPerBatch` had been set to `true`, the `destination` object above would have a `batches` array, as shown below:
-
-```json
-    "destination": {
-        "dataSetId" : "{DATASET_ID}",
-        "segmentPerBatch": true,
-        "batches" : [
-            {
-                "segmentId": "segment1",
-                "segmentNs": "ups",
-                "status": ["realized"],
-                "batchId": "da5cfb4de32c4b93a09f7e37fa53ad52"
-            },
-            {
-                "segmentId": "segment2",
-                "segmentNs": "AdCloud",
-                "status": "exited",
-                "batchId": "df4gssdfb93a09f7e37fa53ad52"
-            }
-        ]
-    }
-```
-
-
-
-
--->
