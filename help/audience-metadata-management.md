@@ -230,8 +230,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 | `metadataTemplate.validate.body` | String | | 
 | `metadataTemplate.validate.schemaMap.additionalProp1` | String | | 
 | `metadataTemplate.validate.errorSchemaMap.additionalProp1` | String | | 
-| `validations.field.` | String | | 
-| `validations.regex.` | String | | 
+| `validations.field` | String | | 
+| `validations.regex` | String | | 
 
 
 
