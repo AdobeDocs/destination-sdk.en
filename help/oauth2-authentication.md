@@ -1,8 +1,8 @@
 ---
-description: This page describes the various OAuth2 authentication flows supported by Destination SDK, and provides instructions to set up OAuth2 authentication for your destination.
-title: OAuth2 authentication
+description: This page describes the various OAuth 2 authentication flows supported by Destination SDK, and provides instructions to set up OAuth 2 authentication for your destination.
+title: OAuth 2 authentication
 ---
-# OAuth2 authentication 
+# OAuth 2 authentication 
 
 
 >[!IMPORTANT]
@@ -13,19 +13,19 @@ title: OAuth2 authentication
 
 ## Overview {#overview}
 
-Use Destination SDK to allow Adobe Experience Platform to connect to your destination by using the [OAuth2 authentication framework](https://tools.ietf.org/html/rfc6749).
+Use Destination SDK to allow Adobe Experience Platform to connect to your destination by using the [OAuth 2 authentication framework](https://tools.ietf.org/html/rfc6749).
 
-This page describes the various OAuth2 authentication flows supported by Destination SDK, and provides instructions to set up OAuth2 authentication for your destination.
+This page describes the various OAuth 2 authentication flows supported by Destination SDK, and provides instructions to set up OAuth 2 authentication for your destination.
 
-## How to add OAuth2 authentication details to your destination configuration {#how-to-setup}
+## How to add OAuth 2 authentication details to your destination configuration {#how-to-setup}
 
 ### Prerequisites in your system {#prerequisites}
 
-As a first step, you must create an app in your system for Adobe Experience Platform, or otherwise register Experience Platform in your system. The goal is to generate a client ID and client secret, which are needed to authenticate Experience Platform to your destination. As part of this configuration in your system, you need the Adobe Experience Platform OAuth2 redirect/callback URL, which you can get from the table below.
+As a first step, you must create an app in your system for Adobe Experience Platform, or otherwise register Experience Platform in your system. The goal is to generate a client ID and client secret, which are needed to authenticate Experience Platform to your destination. As part of this configuration in your system, you need the Adobe Experience Platform OAuth 2 redirect/callback URL, which you can get from the table below.
 
 >[!IMPORTANT]
 >
->The step to register a redirect/callback URL for Adobe Experience Platform in your system is required only for the [OAuth2 with Authorization Code](/help/oauth2-authentication.md#authorization-code) grant type. For the other two supported grant types (password and client credentials), you can skip this step.
+>The step to register a redirect/callback URL for Adobe Experience Platform in your system is required only for the [OAuth 2 with Authorization Code](/help/oauth2-authentication.md#authorization-code) grant type. For the other two supported grant types (password and client credentials), you can skip this step.
 
 Redirect/callback URL | Environment |
 ---------|----------|
@@ -41,16 +41,16 @@ At the end of this step, you should have:
 
 ### What you need to do in Destination SDK {#to-do-in-destination-sdk}
 
-To set up OAuth2 authentication for your destination in Experience Platform, you must add your OAuth2 details to the [destination configuration](/help/destination-configuration.md), under the `customerAuthenticationConfigurations` parameter, by using the `platform.adobe.io/data/core/activation/authoring/v1/destinations` API endpoint. See the [example configuration](/help/destination-configuration.md#example-configuration). Specific instructions about which fields you need to add to your configuration template, depending on your OAuth2 authentication grant type, are further below on this page.
+To set up OAuth 2 authentication for your destination in Experience Platform, you must add your OAuth 2 details to the [destination configuration](/help/destination-configuration.md), under the `customerAuthenticationConfigurations` parameter, by using the `platform.adobe.io/data/core/activation/authoring/v1/destinations` API endpoint. See the [example configuration](/help/destination-configuration.md#example-configuration). Specific instructions about which fields you need to add to your configuration template, depending on your OAuth 2 authentication grant type, are further below on this page.
 
-## Supported OAuth2 grant types {#oauth2-grant-types}
+## Supported OAuth 2 grant types {#oauth2-grant-types}
 
-Experience Platform supports the three OAuth2 grant types in the table below. If you have a custom OAuth2 setup, Adobe is able to support it with the help of custom fields in your integration. Refer to the sections for each grant type for more information.
+Experience Platform supports the three OAuth 2 grant types in the table below. If you have a custom OAuth 2 setup, Adobe is able to support it with the help of custom fields in your integration. Refer to the sections for each grant type for more information.
 
 >[!IMPORTANT]
 >
 >* You provide the input parameters as instructed in the sections below. Adobe-internal systems connect to your platform's authentication system and grab output parameters, which are used to authenticate the user and maintain authentication to your destination.
->* The input parameters highlighted in bold in the table are required parameters in the OAuth2 authentication flow. The other parameters are optional. There are other custom input parameters that are not shown here, but are described at length in the sections [Customize your OAuth2 configuration](/help/oauth2-authentication.md#customize-configuration) and [Access token refresh](/help/oauth2-authentication.md#access-token-refresh). 
+>* The input parameters highlighted in bold in the table are required parameters in the OAuth 2 authentication flow. The other parameters are optional. There are other custom input parameters that are not shown here, but are described at length in the sections [Customize your OAuth 2 configuration](/help/oauth2-authentication.md#customize-configuration) and [Access token refresh](/help/oauth2-authentication.md#access-token-refresh). 
 
 OAuth 2 Grant | Inputs | Outputs |
 ---------|----------|---------|
@@ -64,12 +64,12 @@ The above table lists the fields that are used in standard OAuth 2 flows. In add
 
 The output in all cases includes an access token, which is be used by Experience Platform to authenticate and maintain authentication to your destination.
 
-The system that Adobe has designed for OAuth2 authentication:
+The system that Adobe has designed for OAuth 2 authentication:
 * Supports all three OAuth 2 grants while accounting for any variations in them, such as additional data fields, non-standard API calls, and more.
 * Supports access tokens with varying lifetime values, be it 90 days, 30 minutes, or any other lifetime value that you specify.
-* Supports OAuth2 authorization flows with or without refresh tokens.
+* Supports OAuth 2 authorization flows with or without refresh tokens.
 
-## OAuth2 with Authorization Code {#authorization-code}
+## OAuth 2 with Authorization Code {#authorization-code}
 
 If your destination supports a standard OAuth 2.0 Authorization Code flow (read the [RFC standards specs](https://tools.ietf.org/html/rfc6749#section-4.1)) or a variation of it, consult the required and optional fields below:
 
@@ -87,14 +87,14 @@ To set up this authentication method for your destination, add the following lin
 //...
   "customerAuthenticationConfigurations": [
     {
-      "authType": "OAuth2",
+      "authType": "OAUTH2",
       "grant": "OAUTH2_AUTHORIZATION_CODE",
-      "accessTokenUrl": "https://api.moviestar.com/OAuth/access_token", // REQUIRED
-      "authorizationUrl": "https://www.moviestar.com/dialog/OAuth", // REQUIRED
+      "accessTokenUrl": "https://api.moviestar.com/OAuth/access_token",
+      "authorizationUrl": "https://www.moviestar.com/dialog/OAuth",
       "refreshTokenUrl": "https://api.moviestar.com/OAuth/refresh_token",
-      "clientId": "Experience-Platform-client-id", // REQUIRED
-      "clientSecret": "Experience-Platform-client-secret", // REQUIRED
-      "scope": "read write"
+      "clientId": "Experience-Platform-client-id",
+      "clientSecret": "Experience-Platform-client-secret",
+      "scope": ["read", "write"]
     }
   ]
 //...
@@ -104,7 +104,7 @@ To set up this authentication method for your destination, add the following lin
 
 |Parameter | Type | Description|
 |---------|----------|------|
-|`authType` | String | Use "OAuth2". |
+|`authType` | String | Use "OAUTH2". |
 |`grant` | String | Use "OAUTH2_AUTHORIZATION_CODE". |
 |`accessTokenUrl` | String | The URL on your side, which issues access tokens and, optionally, refresh tokens.|
 |`authorizationUrl` | String | The URL of your authorization server, where you redirect the user to log into your application. |
@@ -115,9 +115,9 @@ To set up this authentication method for your destination, add the following lin
 
 {style="table-layout:auto"}
 
-## OAuth2 with Password Grant
+## OAuth 2 with Password Grant
 
-For the OAuth2 Password grant (read the [RFC standards specs](https://tools.ietf.org/html/rfc6749#section-4.3)), Experience Platform requires the user's username and password. In the authentication flow, Experience Platform  exchanges these credentials for an access token and, optionally, a refresh token.
+For the OAuth 2 Password grant (read the [RFC standards specs](https://tools.ietf.org/html/rfc6749#section-4.3)), Experience Platform requires the user's username and password. In the authentication flow, Experience Platform  exchanges these credentials for an access token and, optionally, a refresh token.
 Adobe makes use of the standard inputs below to simplify destination configuration, with the ability to override values:
 
 OAuth 2 Grant | Inputs | Outputs |
@@ -138,19 +138,19 @@ To set up this authentication method for your destination, add the following lin
 //...
   "customerAuthenticationConfigurations": [
     {
-      "authType": "OAuth2",
+      "authType": "OAUTH2",
       "grant": "OAUTH2_PASSWORD",
-      "accessTokenUrl": "https://www.moviestar.com/dialog/OAuth",// REQUIRED
-      "clientId": "Experience-Platform-client-id", // REQUIRED
-      "clientSecret": "Experience-Platform-client-secret", // REQUIRED
-      "scope": "read write",
+      "accessTokenUrl": "https://api.moviestar.com/OAuth/access_token",
+      "clientId": "Experience-Platform-client-id",
+      "clientSecret": "Experience-Platform-client-secret",
+      "scope": ["read", "write"]
     },
 
 ```
 
 |Parameter | Type | Description|
 |---------|----------|------|
-|`authType` | String | Use "OAuth2". |
+|`authType` | String | Use "OAUTH2". |
 |`grant` | String | Use "OAUTH2_PASSWORD". |
 |`accessTokenUrl` | String | The URL on your side, which issues access tokens and, optionally, refresh tokens.|
 |`clientId` | String | The client ID that your system assigns to Adobe Experience Platform.  |
@@ -159,9 +159,9 @@ To set up this authentication method for your destination, add the following lin
 
 {style="table-layout:auto"}
 
-## OAuth2 with Client Credential Grant
+## OAuth 2 with Client Credentials Grant
 
-You can configure an OAuth2 Client Credential (read the [RFC standards specs](https://tools.ietf.org/html/rfc6749#section-4.3)) destination, which supports the standard inputs and outputs listed below. You have the ability to customize the values. See [Customize your OAuth2 configuration](/help/oauth2-authentication.md#customize-configuration) for details.
+You can configure an OAuth 2 Client Credentials (read the [RFC standards specs](https://tools.ietf.org/html/rfc6749#section-4.4)) destination, which supports the standard inputs and outputs listed below. You have the ability to customize the values. See [Customize your OAuth 2 configuration](/help/oauth2-authentication.md#customize-configuration) for details.
 
 OAuth 2 Grant | Inputs | Outputs |
 ---------|----------|---------|
@@ -177,13 +177,13 @@ To set up this authentication method for your destination, add the following lin
 //...
   "customerAuthenticationConfigurations": [
     {
-      "authType": "OAuth2",
-      "grant": "OAUTH2_CLIENT_CREDENTIAL",
-      "accessTokenUrl": "https://api.moviestar.com/OAuth/access_token", // REQUIRED
+      "authType": "OAUTH2",
+      "grant": "OAUTH2_CLIENT_CREDENTIALS",
+      "accessTokenUrl": "https://api.moviestar.com/OAuth/access_token",
       "refreshTokenUrl": "https://api.moviestar.com/OAuth/refresh_token",
-      "clientId": "Experience-Platform-client-id", // REQUIRED
-      "clientSecret": "Experience-Platform-client-secret", // REQUIRED
-      "scope": "read write"
+      "clientId": "Experience-Platform-client-id",
+      "clientSecret": "Experience-Platform-client-secret",
+      "scope": ["read", "write"]
     },
   ]
 //...
@@ -193,7 +193,7 @@ To set up this authentication method for your destination, add the following lin
 
 |Parameter | Type | Description|
 |---------|----------|------|
-|`authType` | String | Use "OAuth2". |
+|`authType` | String | Use "OAUTH2". |
 |`grant` | String | Use "OAUTH2_CLIENT_CREDENTIAL". |
 |`accessTokenUrl` | String | The URL of your authorization server, which issues an access token and an optional refresh token.|
 |`refreshTokenUrl` | String | *Optional.* The URL on your side, which issues refresh tokens. Often, the `refreshTokenUrl` is the same as the `accessTokenUrl`. |
@@ -203,9 +203,9 @@ To set up this authentication method for your destination, add the following lin
 
 {style="table-layout:auto"}
 
-## Customize your OAuth2 configuration {#customize-configuration}
+## Customize your OAuth 2 configuration {#customize-configuration}
 
-The configurations described in the sections above describe standard OAuth2 grants. However, the system designed by Adobe provides flexibility so you can use custom parameters for any variations in the OAuth2 grant. To customize the standard OAuth2 settings, use the `authenticationDataFields` parameters, as shown in the examples below.
+The configurations described in the sections above describe standard OAuth 2 grants. However, the system designed by Adobe provides flexibility so you can use custom parameters for any variations in the OAuth 2 grant. To customize the standard OAuth 2 settings, use the `authenticationDataFields` parameters, as shown in the examples below.
 
 **Example 1: Using `authenticationDataFields` to capture information coming from the authentication response**
 
@@ -269,7 +269,7 @@ In this example, instead of creating a global client ID and client secret as sho
     "customerAuthenticationConfigurations": [
         {
             "authType": "OAUTH2",
-            "grant": "CLIENT_CREDENTIAL",
+            "grant": "CLIENT_CREDENTIALS",
             "authenticationDataFields": [
                 {
                     "name": "clientId",
@@ -302,7 +302,7 @@ In this example, instead of creating a global client ID and client secret as sho
                 "urlBasedDestination": {
                     "url": {
                         "templatingStrategy": "PEBBLE_V1",
-                        "value": "https://{{ authData.accountId }}.yourdestination.com/identity/oauth/token"
+                        "value": "https://{{ authData.moviestarId }}.yourdestination.com/identity/oauth/token"
                     }
                 },
                 "httpTemplate": {
@@ -345,7 +345,7 @@ In this example, instead of creating a global client ID and client secret as sho
 
 
 
-You can use the following parameters in `authenticationDataFields` to customize your OAuth2 configuration:
+You can use the following parameters in `authenticationDataFields` to customize your OAuth 2 configuration:
 
 |Parameter | Type | Description|
 |---------|----------|------|
@@ -356,7 +356,7 @@ You can use the following parameters in `authenticationDataFields` to customize 
 |`authenticationDataFields.isRequired` | Boolean | Specifies whether the custom data field is required in the authentication flow. |
 |`authenticationDataFields.format` | String | When you select `"format":"password"`, Adobe encrypts the value of the authentication data field. When used with `"fieldType": "CUSTOMER"`, this also hides the input in the UI when the user types into the field. |
 |`authenticationDataFields.fieldType` | String | Indicates whether the input comes from the partner (you) or from the user, when they set up your destination in Experience Platform.  |
-|`authenticationDataFields.value` | String | The value of the custom data field. For example, if you  |
+|`authenticationDataFields.value` | String. Boolean. Integer | The value of the custom data field. The value matches the chosen type from `authenticationDataFields.type`.  |
 |`authenticationDataFields.authenticationResponsePath` | String | Indicates which field from the API response path you are referencing. |
 
 {style="table-layout:auto"}
@@ -405,7 +405,6 @@ To set up access token refresh, you may need to configure a templatized HTTP req
                     ],
                     "validations": [
                         {
-                            "valid": false,
                             "name": "access_token validation",
                             "actualValue": {
                                 "templatingStrategy": "PEBBLE_V1",
@@ -417,7 +416,6 @@ To set up access token refresh, you may need to configure a templatized HTTP req
                             }
                         },
                         {
-                            "valid": false,
                             "name": "response status",
                             "actualValue": {
                                 "templatingStrategy": "PEBBLE_V1",
@@ -437,28 +435,27 @@ You can use the following parameters in `accessTokenRequest` to customize your t
 
 |Parameter | Type | Description|
 |---------|----------|------|
-|`accessTokenRequest.destinationServerType` | String | Use `URL_BASED` |
-|`accessTokenRequest.urlBasedDestination.url.templatingStrategy` | String | Use `PEBBLE_V1`.  |
+|`accessTokenRequest.destinationServerType` | String | Use `URL_BASED`. |
+|`accessTokenRequest.urlBasedDestination.url.templatingStrategy` | String | <ul><li>Use `PEBBLE_V1` if you use templates for the value in `accessTokenRequest.urlBasedDestination.url.value`.</li><li> Use `NONE` if the value in the field `accessTokenRequest.urlBasedDestination.url.value` is a constant. </li></li>  |
 |`accessTokenRequest.urlBasedDestination.url.value` | String | The URL where Experience Platform requests the access token. |
-|`accessTokenRequest.httpTemplate.requestBody.templatingStrategy` | String | Use `PEBBLE_V1`. |
+|`accessTokenRequest.httpTemplate.requestBody.templatingStrategy` | String | <ul><li>Use `PEBBLE_V1` if you use templates for the values in `accessTokenRequest.httpTemplate.requestBody.value`.</li><li> Use `NONE` if the value in the field `accessTokenRequest.httpTemplate.requestBody.value` is a constant. </li></li> |
 |`accessTokenRequest.httpTemplate.requestBody.value` | String | Use templating language to customize fields in the HTTP request to the access token endpoint. For information on how to use templating to customize fields, refer to the [templating conventions](/help/oauth2-authentication.md#templating-conventions) section. |
-|`accessTokenRequest.httpTemplate.httpMethod` | String | Specifies the HTTP method used to call your access token endpoint. Use `POST`. |
-|`accessTokenRequest.httpTemplate.contentType` | String | Specifies the content type of the HTTP call to your access token endpoint. Use `application/x-www-form-urlencoded`. |
+|`accessTokenRequest.httpTemplate.httpMethod` | String | Specifies the HTTP method used to call your access token endpoint. In most cases, this value is `POST`. |
+|`accessTokenRequest.httpTemplate.contentType` | String | Specifies the content type of the HTTP call to your access token endpoint. <br> For example: `application/x-www-form-urlencoded` or `application/json`. |
 |`accessTokenRequest.httpTemplate.headers` | String | Specifies if any headers should be added to the HTTP call to your access token endpoint. |
-|`accessTokenRequest.responseFields.templatingStrategy` | String | Use `PEBBLE_V1`. |
+|`accessTokenRequest.responseFields.templatingStrategy` | String | <ul><li>Use `PEBBLE_V1` if you use templates for the values in `accessTokenRequest.responseFields.value`.</li><li> Use `NONE` if the value in the field `accessTokenRequest.responseFields.value` is a constant. </li></li> |
 |`accessTokenRequest.responseFields.value` | String | Use templating language to access fields in the HTTP response from your access token endpoint. For information on how to use templating to customize fields, refer to the [templating conventions](/help/oauth2-authentication.md#templating-conventions) section. |
-|`accessTokenRequest.validations.valid` | Boolean | Indicates if this validation should be run. |
-|`accessTokenRequest.responseFields.name` | String | Indicates the name you provided for this validation. |
-|`accessTokenRequest.responseFields.actualValue.templatingStrategy` | String | Use `PEBBLE_V1`.  |
-|`accessTokenRequest.responseFields.actualValue.value` | String | Use templating language to access fields in the HTTP response. For information on how to use templating to customize fields, refer to the [templating conventions](/help/oauth2-authentication.md#templating-conventions) section. |
-|`accessTokenRequest.responseFields.expectedValue.templatingStrategy` | String | Use `PEBBLE_V1`.  |
-|`accessTokenRequest.responseFields.expectedValue.value` | String | Use templating language to access fields in the HTTP response. For information on how to use templating to customize fields, refer to the [templating conventions](/help/oauth2-authentication.md#templating-conventions) section. |
+|`accessTokenRequest.validations.name` | String | Indicates the name you provided for this validation. |
+|`accessTokenRequest.validations.actualValue.templatingStrategy` | String | <ul><li>Use `PEBBLE_V1` if you use templates for the values in `accessTokenRequest.validations.actualValue.value`.</li><li> Use `NONE` if the value in the field `accessTokenRequest.validations.actualValue.value` is a constant. </li></li>  |
+|`accessTokenRequest.validations.actualValue.value` | String | Use templating language to access fields in the HTTP response. For information on how to use templating to customize fields, refer to the [templating conventions](/help/oauth2-authentication.md#templating-conventions) section. |
+|`accessTokenRequest.validations.expectedValue.templatingStrategy` | String | <ul><li>Use `PEBBLE_V1` if you use templates for the values in `accessTokenRequest.validations.expectedValue.value`.</li><li> Use `NONE` if the value in the field `accessTokenRequest.validations.expectedValue.value` is a constant. </li></li>  |
+|`accessTokenRequest.validations.expectedValue.value` | String | Use templating language to access fields in the HTTP response. For information on how to use templating to customize fields, refer to the [templating conventions](/help/oauth2-authentication.md#templating-conventions) section. |
 
 {style="table-layout:auto"}
 
 ## Templating conventions {#templating-conventions}
 
-Depending on your authentication customization, you might need to access data fields in the authentication response, as shown in the previous section. To do that, refer to the templating conventions below to customize your OAuth2 implementation. Adobe uses Pebble, 
+Depending on your authentication customization, you might need to access data fields in the authentication response, as shown in the previous section. To do that, please familiarize yourself with the [Pebble templating language](https://pebbletemplates.io/) used by Adobe and refer to the templating conventions below to customize your OAuth 2 implementation.
 
 
 Prefix | Description | Example |
@@ -473,4 +470,4 @@ Prefix | Description | Example |
 
 ## Next steps {#next-steps}
 
-By reading this article, you now have an understanding of the OAuth2 authentication patterns supported by Adobe Experience Platform and know how to configure your destination with OAuth2 authentication support. Next, you can set up your OAuth2-supported destination using the Destination SDK. Read [Use the Destination SDK to configure your destination](./configure-destination-instructions.md) for next steps.
+By reading this article, you now have an understanding of the OAuth 2 authentication patterns supported by Adobe Experience Platform and know how to configure your destination with OAuth 2 authentication support. Next, you can set up your OAuth 2-supported destination using the Destination SDK. Read [Use the Destination SDK to configure your destination](./configure-destination-instructions.md) for next steps.
