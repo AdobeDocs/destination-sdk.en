@@ -165,7 +165,7 @@ You can configure an OAuth 2 Client Credentials (read the [RFC standards specs](
 
 OAuth 2 Grant | Inputs | Outputs |
 ---------|----------|---------|
- Client Credential | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>scope</li><li><b>accessTokenUrl</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
+ Client Credentials | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>scope</li><li><b>accessTokenUrl</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
 
  {style="table-layout:auto"}
 
@@ -194,7 +194,7 @@ To set up this authentication method for your destination, add the following lin
 |Parameter | Type | Description|
 |---------|----------|------|
 |`authType` | String | Use "OAUTH2". |
-|`grant` | String | Use "OAUTH2_CLIENT_CREDENTIAL". |
+|`grant` | String | Use "OAUTH2_CLIENT_CREDENTIALS". |
 |`accessTokenUrl` | String | The URL of your authorization server, which issues an access token and an optional refresh token.|
 |`refreshTokenUrl` | String | *Optional.* The URL on your side, which issues refresh tokens. Often, the `refreshTokenUrl` is the same as the `accessTokenUrl`. |
 |`clientId` | String | The client ID that your system assigns to Adobe Experience Platform.  |
