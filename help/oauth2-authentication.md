@@ -39,7 +39,6 @@ At the end of this step, you should have:
 * A client secret;
 * Adobe's callback URL (for the authorization code grant).
 
-
 ### What you need to do in Destination SDK {#to-do-in-destination-sdk}
 
 To set up OAuth2 authentication for your destination in Experience Platform, you must add your OAuth2 details to the [destination configuration](/help/destination-configuration.md), under the `customerAuthenticationConfigurations` parameter, by using the `platform.adobe.io/data/core/activation/authoring/v1/destinations` API endpoint. See the [example configuration](/help/destination-configuration.md#example-configuration). Specific instructions about which fields you need to add to your configuration template, depending on your OAuth2 authentication grant type, are further below on this page.
