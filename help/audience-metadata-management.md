@@ -45,6 +45,16 @@ If the shell segment can be created programmatically (pre-requisite: you have an
 
 If your destination system honors the Experience Platform segment ID space, you must configure a template. Customers do not have to populate "segment mapping ID" when activating a segment.
 
+## Generic and extensible audience template
+
+To satisfy the use cases listed above, Adobe provides you with a generic template, that can be customized to adjust to your API specifications.
+
+Select the Generic option when you [create a new audience template](/help/audience-metadata-management.md#create) if your API supports:
+
+* The HTTP methods: POST, GET, PUT, DELETE, PATCH
+* The authentication types OAuth 1, OAuth 2 with Bearer Token, OAuth 2 with client ID and client secret
+* The functions: create audience, update audience, get audience, delete audience, validate credentials 
+
 ## Getting started with audience templates API operations
 
 Before continuing, please review the [getting started guide](./getting-started.md) for important information that you need to know in order to successfully make calls to the API, including how to obtain required headers and how to get allowlisted.
@@ -204,11 +214,11 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 | `metadataTemplate.name` | String | The name of the audience metadata template for your destination. |
 | `metadataTemplate.host` | String | The URL of the API on your side. Two industry examples are: `https://ads-api.twitter.com/` and `https://graph.facebook.com/v10.0`. | 
 | `metadataTemplate.create.uri` | String | The endpoint of your API, which is used for creating audiences/segments in your platform. | 
-| `metadataTemplate.create.method` | String | The method used on your endpoint to programmatically create the segment/audience in your destination. | 
-| `metadataTemplate.create.headers.additionalProp1` | String | | 
-| `metadataTemplate.create.params.additionalProp1` | String | | 
-| `metadataTemplate.create.body` | String | | 
-| `metadataTemplate.create.schemaMap.additionalProp1` | String | | 
+| `metadataTemplate.create.method` | String | The method used on your endpoint to programmatically create the segment/audience in your destination. Examples: `POST`, `PUT` | 
+| `metadataTemplate.create.headers.additionalProp1` | String | Specifies any headers that should be added to the call to your API. For example, `"Content-Type": "application/x-www-form-urlencoded"` | 
+| `metadataTemplate.create.params.additionalProp1` | String | Specifies any parameters that should be added to the body of the call to your API. | 
+| `metadataTemplate.create.body` | String | Specifies the content of the message body that should be sent to your API. |
+| `metadataTemplate.create.schemaMap.additionalProp1` | String |  | 
 | `metadataTemplate.create.errorSchemaMap.additionalProp1` | String | | 
 | `metadataTemplate.update.uri` | String | | 
 | `metadataTemplate.update.method` | String | The method used on your endpoint to programmatically update the segment/audience in your destination. | 
@@ -621,4 +631,4 @@ A successful response returns HTTP status 204 with the following message:
 
 ## Next steps
 
-After reading this guide you know when to use audience metadata templates and how to perform operations on the API endpoint.
+After reading this guide, you now know when to use audience metadata templates and how to configure an audience metadata template using the `/authoring/v1/audience-templates` API endpoint.
