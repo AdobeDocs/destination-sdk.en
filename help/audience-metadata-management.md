@@ -14,13 +14,13 @@ exl-id: 63ed9a03-eb4d-46c6-85e9-6c1d84acdbad
 
 Use audience metadata templates to programmatically create, update, or delete audiences (segments) in your destination. Based on the configuration of your API, you can use the audience metadata endpoint to create a template. After you define and test the template, it will be used by Adobe to structure the API calls to your destination.
 
-## When to use the audience metadata management endpoint
+## When to use the audience metadata management endpoint {#when-to-use}
 
 Depending on your configuration, you may or may not need to use the audience metadata management API as you configure your destination. Use the decision tree diagram below to understand when to use the audience metadata endpoint.
 
 ![Whiteboard diagram](/help/assets/audience-metadata-decision-tree.png)
 
-## Use cases supported by audience metadata management
+## Use cases supported by audience metadata management {#use-cases}
 
 With audience metadata support in Destination SDK, when you configure your Experience Platform destination, you can give Experience Platform customers one of several options when they map and activate segments to your destination:
 
@@ -45,7 +45,7 @@ If the shell segment can be created programmatically (pre-requisite: you have an
 
 If your destination system honors the Experience Platform segment ID space, you must configure a template. Customers do not have to populate "segment mapping ID" when activating a segment.
 
-## Generic and extensible audience template
+## Generic and extensible audience template {#generic-and-extensible}
 
 To satisfy the use cases listed above, Adobe provides you with a generic template, that can be customized to adjust to your API specifications.
 
@@ -193,7 +193,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 
 | Property | Type | Description |
 | -------- | ----------- | ----------- |
-| `audience.context` | String | Use "context": "GENERIC" if your API endpoint supports: |
+| `audience.context` | String | Use "context": "GENERIC" if your API satisfies the requirements in the [generic and extensible](/help/audience-metadata-management.md#generic-and-extensible) section. |
 | `audience.description` | String | Use `"{{segment.description}}"` to pass the description of the Experience Platform segment to your API endpoint. | 
 | `audience.name` | String | Use `"{{segment.name}}"` to pass the name of the Experience Platform segment to your API endpoint. | 
 | `audience.sid` | String | Use `"{{segment.sid}}"` to pass the ID of the Experience Platform segment to your API endpoint. | 
@@ -374,11 +374,6 @@ The following request updates the audience metadata template, configured by the 
 }
 
 ```
-
-| Property | Description |
-| -------- | ----------- |
-| `audience.context` | Use "GENERIC". |
-
 
 ## Retrieve a list of audience templates {#retrieve-list}
 
@@ -587,11 +582,6 @@ A successful response returns HTTP status 200 with detailed information about th
 }
 ```
 
-| Property | Description |
-| -------- | ----------- |
-| `destination` | Destination information for the exported data:<ul><li>`datasetId`: The ID of the dataset where the data was exported.</li><li>`segmentPerBatch`: A Boolean value that shows whether or not segment IDs are consolidated. A value of `false` means all the segment IDs were into a single batch ID. A value of `true` means that one segment ID is exported into one batch ID.</li></ul> |
-| `fields` | A list of the exported fields, separated by commas.  |
-| `schema.name` | The name of the schema associated with the dataset where data is to be exported. |
 
 ## Delete a specific audience template {#delete}
 
@@ -627,6 +617,99 @@ A successful response returns HTTP status 204 with the following message:
   "status": true,
   "message": ""
 }
+```
+
+## Template examples
+
+This section includes some example templates, for your reference. They all use a fictional destination, called Moviestar.
+
+```
+
+{
+  "name": "Moviestar",
+  "host": "https://api.moviestar.com",
+  "get": {
+    "uri": "/v2/segments/{{audience.id}}",
+    "method": "GET",
+    "headers": {
+      "Authorization": "Bearer {{credential.token}}"
+    },
+    "schemaMap": {
+      "externalAudienceId": "{{response.id}}",
+      "name": "{{response.name}}",
+      "account": "{{response.account}}"
+    }
+  },
+  "create": {
+    "uri": "/v2/segments",
+    "method": "POST",
+    "headers": {
+      "Authorization": "Bearer {{credential.token}}",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "name": "{{audience.name}}",
+      "sourcePlatform": "ADOBE",
+      "account": "{{audience.account}}",
+      "accessPolicy": "PRIVATE",
+      "type": "USER",
+      "destinations": [{
+        "destination": "Moviestar"
+      }]
+    },
+    "schemaMap": {
+      "externalAudienceId": "{{headers.x-moviestar-id}}"
+    },
+    "errorSchemaMap": {
+      "message": "message"
+    }
+  },
+  "update": {
+    "uri": "/v2/segments/{{audience.externalAudienceId}}",
+    "method": "POST",
+    "headers": {
+      "Authorization": "Bearer {{credential.token}}",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "patch": {
+        "$set": {
+          "name": "{{audience.name}}"
+        }
+      }
+    },
+    "errorSchemaMap": {
+      "message": "message"
+    }
+  },
+  "delete": {
+    "uri": "/v2/segments/{{audience.externalAudienceId}}",
+    "method": "DELETE",
+    "headers": {
+      "Authorization": "Bearer {{credential.token}}",
+      "Content-Type": "application/json"
+    ,
+    "errorSchemaMap": {
+      "message": "message"
+    }
+  },
+  "validate": {
+    "uri": "/v2/validate",
+    "method": "GET",
+    "headers": {
+      "Authorization": "Bearer {{credential.token}}",
+      "Content-Type": "application/json"
+    },
+    "schemaMap": {
+      "Id": "{{response.id}}"
+    },
+    "errorSchemaMap": {
+      "message": "message"
+    }
+  }
+  }
+}
+
 ```
 
 ## Next steps
