@@ -62,7 +62,7 @@ OAuth 2 Grant | Inputs | Outputs |
 
 The above table lists the fields that are used in standard OAuth 2 flows. In addition to these standard fields, various partner integrations may require additional inputs and outputs. Adobe has designed a flexible OAuth 2 authentication/authorization framework for Destination SDK that can handle variations to the above standard fields pattern while supporting a mechanism to automatically regenerate invalid outputs, such as expired access tokens.
 
-The output in all cases includes an access token, which is be used by Experience Platform to authenticate and maintain authentication to your destination.
+The output in all cases includes an access token, which is used by Experience Platform to authenticate and maintain authentication to your destination.
 
 The system that Adobe has designed for OAuth 2 authentication:
 * Supports all three OAuth 2 grants while accounting for any variations in them, such as additional data fields, non-standard API calls, and more.
@@ -107,17 +107,17 @@ To set up this authentication method for your destination, add the following lin
 |`authType` | String | Use "OAUTH2". |
 |`grant` | String | Use "OAUTH2_AUTHORIZATION_CODE". |
 |`accessTokenUrl` | String | The URL on your side, which issues access tokens and, optionally, refresh tokens.|
-|`authorizationUrl` | String | The URL of your authorization server, where you redirect the user to log into your application. |
+|`authorizationUrl` | String | The URL of your authorization server, where you redirect the user to log in to your application. |
 |`refreshTokenUrl` | String | *Optional.* The URL on your side, which issues refresh tokens. Often, the `refreshTokenUrl` is the same as the `accessTokenUrl`. |
 |`clientId` | String | The client ID that your system assigns to Adobe Experience Platform. |
 |`clientSecret` | String | The client secret that your system assigns to Adobe Experience Platform. |
-|`scope` | String | *Optional*. Set the scope of what the access token allows Experience Platform to perform on your resources. Example: "read, write". |
+|`scope` | List of Strings | *Optional*. Set the scope of what the access token allows Experience Platform to perform on your resources. Example: "read, write". |
 
 {style="table-layout:auto"}
 
 ## OAuth 2 with Password Grant
 
-For the OAuth 2 Password grant (read the [RFC standards specs](https://tools.ietf.org/html/rfc6749#section-4.3)), Experience Platform requires the user's username and password. In the authentication flow, Experience Platform  exchanges these credentials for an access token and, optionally, a refresh token.
+For the OAuth 2 Password grant (read the [RFC standards specs](https://tools.ietf.org/html/rfc6749#section-4.3)), Experience Platform requires the user's username and password. In the authentication flow, Experience Platform exchanges these credentials for an access token and, optionally, a refresh token.
 Adobe makes use of the standard inputs below to simplify destination configuration, with the ability to override values:
 
 OAuth 2 Grant | Inputs | Outputs |
@@ -144,7 +144,8 @@ To set up this authentication method for your destination, add the following lin
       "clientId": "Experience-Platform-client-id",
       "clientSecret": "Experience-Platform-client-secret",
       "scope": ["read", "write"]
-    },
+    }
+  ]
 
 ```
 
@@ -155,7 +156,7 @@ To set up this authentication method for your destination, add the following lin
 |`accessTokenUrl` | String | The URL on your side, which issues access tokens and, optionally, refresh tokens.|
 |`clientId` | String | The client ID that your system assigns to Adobe Experience Platform.  |
 |`clientSecret` | String | The client secret that your system assigns to Adobe Experience Platform. |
-|`scope` | String | *Optional*. Set the scope of what the access token allows Experience Platform to perform on your resources. Example: "read, write". |
+|`scope` | List of Strings | *Optional*. Set the scope of what the access token allows Experience Platform to perform on your resources. Example: "read, write". |
 
 {style="table-layout:auto"}
 
@@ -184,7 +185,7 @@ To set up this authentication method for your destination, add the following lin
       "clientId": "Experience-Platform-client-id",
       "clientSecret": "Experience-Platform-client-secret",
       "scope": ["read", "write"]
-    },
+    }
   ]
 //...
 }
@@ -199,7 +200,7 @@ To set up this authentication method for your destination, add the following lin
 |`refreshTokenUrl` | String | *Optional.* The URL on your side, which issues refresh tokens. Often, the `refreshTokenUrl` is the same as the `accessTokenUrl`. |
 |`clientId` | String | The client ID that your system assigns to Adobe Experience Platform.  |
 |`clientSecret` | String | The client secret that your system assigns to Adobe Experience Platform. |
-|`scope` | String | *Optional*. Set the scope of what the access token allows Experience Platform to perform on your resources. Example: "read, write". |
+|`scope` | List of Strings | *Optional*. Set the scope of what the access token allows Experience Platform to perform on your resources. Example: "read, write". |
 
 {style="table-layout:auto"}
 
@@ -269,7 +270,7 @@ In this example, instead of creating a global client ID and client secret as sho
     "customerAuthenticationConfigurations": [
         {
             "authType": "OAUTH2",
-            "grant": "CLIENT_CREDENTIALS",
+            "grant": "OAUTH2_CLIENT_CREDENTIALS",
             "authenticationDataFields": [
                 {
                     "name": "clientId",
