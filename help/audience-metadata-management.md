@@ -366,7 +366,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/v1/audienc
 | `validations.field` | String | Indicates if validations should be run for any fields before API calls are made to your destination. For example, you can use `{{validations.accountId}}` to validate the user's account ID. |
 | `validations.regex` | String | Indicates how the field should be structured in order for the validation to pass.  |
 
-
+{style="table-layout:auto"}
 
 **Response**
 
