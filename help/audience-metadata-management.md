@@ -99,7 +99,7 @@ This section includes an example of a generic audience template, for your refere
                     "externalAudienceId": "{{response.id}}"
                 },
                 "errorSchemaMap": {
-                    "message": "error.message"
+                    "message": "{{error.message}}"
                 }
             },
             "update": {
@@ -120,7 +120,7 @@ This section includes an example of a generic audience template, for your refere
                     "externalAudienceId": "{{response.id}}"
                 },
                 "errorSchemaMap": {
-                    "message": "error.message"
+                    "message": "{{error.message}}"
                 }
             },
             "delete": {
@@ -138,7 +138,7 @@ This section includes an example of a generic audience template, for your refere
                     "externalAudienceId": "{{response.id}}"
                 },
                 "errorSchemaMap": {
-                    "message": "error.message"
+                    "message": "{{error.message}}"
                 }
             },
             "validate": {
@@ -152,7 +152,7 @@ This section includes an example of a generic audience template, for your refere
                 },
                 "errorSchemaMap": {
                     "message": "{{error.message}}"
-            }
+                }
             },
             "host": "https://api.moviestar.com/v8.0",
             "name": "Moviestar fictional destination template"
