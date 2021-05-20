@@ -151,8 +151,8 @@ This section includes an example of a generic audience template, for your refere
                     "Id": "{{response.id}}"
                 },
                 "errorSchemaMap": {
-                    "message": "error.message"
-                }
+                    "message": "{{error.message}}"
+            }
             },
             "host": "https://api.moviestar.com/v8.0",
             "name": "Moviestar fictional destination template"
