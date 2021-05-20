@@ -56,9 +56,13 @@ We recommend you read and understand the following Adobe Experience Platform doc
 
 ## Where to start {#where-to-start}
 
+<!--
+
 First, see the [integration patterns](/help/integration-methods.md). This page presents an overview of integration patterns and should help you decide which configuration options to select for your destination.
 
-Next, read [Configuration options for the Destination SDK](/help/configuration-options.md) and [Message format](/help/message-format.md) for information on the configuration options available to you.
+-->
+
+Read [Configuration options for the Destination SDK](/help/configuration-options.md) and [Message format](/help/message-format.md) for information on the configuration options available to you.
 
 <!--
 
