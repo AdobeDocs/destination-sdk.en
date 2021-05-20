@@ -15,13 +15,13 @@ exl-id: bd348e99-56f7-449e-a639-8da6fd2cafaf
 
 ## Prerequisites - Adobe Experience Platform concepts {#prerequisites}
 
-To understand the process on the Adobe side, please familiarize yourself with the following concepts:
+To understand the process on the Adobe side, please familiarize yourself with the following Experience Platform concepts:
 
 * Experience Data Model (XDM). [XDM overview](https://docs.adobe.com/content/help/en/experience-platform/xdm/home.html) and  [How to create an XDM schema in Adobe Experience Platform](https://docs.adobe.com/content/help/en/experience-platform/xdm/tutorials/create-schema-ui.html).
 * Class. [How to assign a class to a schema](https://docs.adobe.com/content/help/en/experience-platform/xdm/tutorials/create-schema-ui.html#assign-a-class).
-* Mixins. [Mixin definition](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/composition.html#mixin) and [more information about mixins](https://docs.adobe.com/content/help/en/experience-platform/xdm/tutorials/create-schema-ui.html#add-a-mixin).
+* Field group. [Field group definition](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/composition.html#field-group) and [more information about field groups](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en#field-group).
 * IdentityMap. The identity map represents a map of all end-user identities in Adobe Experience Platform. Refer to `xdm:identityMap` in the [XDM field dictionary](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/field-dictionary.html).
-* SegmentMembership. The [segmentMembership](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/field-dictionary.html) XDM attribute informs which segments a profile is a member of. For the three different values in the `status` field, read the documentation on [Segment Membership Details mixin](https://docs.adobe.com/content/help/en/experience-platform/xdm/mixins/profile/segmentation.html).
+* SegmentMembership. The [segmentMembership](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/field-dictionary.html) XDM attribute informs which segments a profile is a member of. For the three different values in the `status` field, read the documentation on [Segment Membership Details schema field group](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html).
 
 ## Overview {#overview}
 
@@ -38,7 +38,7 @@ Experience Platform can adjust the exported message format to match the expected
 
 Experience Platform uses schemas to describe the structure of data in a consistent and reusable way.
 
-Users who want to activate data to your destination need to map the fields that they use for their datasets in Experience Platform to a schema that translates to your destination's expected format. Adobe will create a custom mixin for your company to add to the partner schema. The fields in the mixin depend on the profile attribute fields that you can receive.
+Users who want to activate data to your destination need to map the fields that they use for their datasets in Experience Platform to a schema that translates to your destination's expected format. Adobe will create a custom field group for your company to add to the partner schema. The fields in the field group depend on the profile attribute fields that you can receive.
 
 **Customer XDM schema (1)**: This refers to the schema that a customer uses in Experience Platform. In Experience Platform, in the [activate destination workflow](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/dest-tutorials/activate-destinations.html), customers would map fields from their schema to the partner schema that Adobe create for your destination (2).
 
@@ -272,7 +272,7 @@ To transform the profile attributes exported to your destination, see the JSON a
 ### Segment membership {#segment-membership}
 
 The [segmentMembership](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/field-dictionary.html) XDM attribute informs which segments a profile is a member of.
-For the three different values in the `status` field, read the documentation on [Segment Membership Details mixin](https://docs.adobe.com/content/help/en/experience-platform/xdm/mixins/profile/segmentation.html).
+For the three different values in the `status` field, read the documentation on [Segment Membership Details schema field group](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html).
 
 **Input**
 
