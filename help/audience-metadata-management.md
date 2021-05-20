@@ -434,7 +434,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/v1/audience
                 "externalAudienceId": "{{response.id}}"
             },
             "errorSchemaMap": {
-                "message": "error.message"
+                "message": "{{error.message}}"
             }
         },
         "update": {
@@ -455,7 +455,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/v1/audience
                 "externalAudienceId": "{{response.id}}"
             },
             "errorSchemaMap": {
-                "message": "error.message"
+                "message": "{{error.message}}"
             }
         },
         "delete": {
@@ -473,7 +473,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/v1/audience
                 "externalAudienceId": "{{response.id}}"
             },
             "errorSchemaMap": {
-                "message": "error.message"
+                "message": "{{error.message}}"
             }
         },
         "validate": {
@@ -486,7 +486,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/v1/audience
                 "Id": "{{response.id}}"
             },
             "errorSchemaMap": {
-                "message": "error.message"
+                "message": "{{error.message}}"
             }
         },
         "host": "https://api.moviestar.com/v1.0",
