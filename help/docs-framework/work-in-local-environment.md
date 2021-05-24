@@ -7,7 +7,7 @@ exl-id: 125f2d10-0190-4255-909c-5bd5bb59fcba
 ---
 # Use a text editor in your local environment to create a destination documentation page {#local-authoring}
 
-The instructions on this page show you how to use a text editor to work in your local environment to author documentation and submit a pull request. Before going through the steps indicated here, make sure you read [Document your destination in Adobe Experience Platform Destinations](/help/docs-framework/documentation-instructions.md).
+The instructions on this page show you how to use a text editor to work in your local environment to author documentation and submit a pull request (PR). Before going through the steps indicated here, make sure you read [Document your destination in Adobe Experience Platform Destinations](/help/docs-framework/documentation-instructions.md).
 
 >[!TIP]
 >
