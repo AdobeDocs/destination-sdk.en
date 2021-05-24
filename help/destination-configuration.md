@@ -19,7 +19,7 @@ exl-id: 2ecd0bdf-55c3-4946-a304-0147bc16ff39
 This configuration allows you to indicate basic information like your destination name, category, description, logo, and more. The settings in this configuration also determine how your destination appears in the Experience Platform user interface and the identities that can be exported to your destination.
 
 
-## Example configuration
+## Example configuration {#example-configuration}
 
 Below is an example configuration for a fictional destination, Moviestar, which has endpoints in four locations on the globe. The destination belongs to the mobile destinations category.
 

@@ -7,7 +7,7 @@ exl-id: 125f2d10-0190-4255-909c-5bd5bb59fcba
 ---
 # Use a text editor in your local environment to create a destination documentation page {#local-authoring}
 
-The instructions on this page show you how to use a text editor to work in your local environment to author documentation and submit a pull request. Before going through the steps indicated here, make sure you read [Document your destination in Adobe Experience Platform Destinations](/help/docs-framework/documentation-instructions.md).
+The instructions on this page show you how to use a text editor to work in your local environment to author documentation and submit a pull request (PR). Before going through the steps indicated here, make sure you read [Document your destination in Adobe Experience Platform Destinations](/help/docs-framework/documentation-instructions.md).
 
 >[!TIP]
 >
@@ -31,7 +31,7 @@ The instructions on this page show you how to use a text editor to work in your 
 
 ## Author the documentation page for your destination {#author-documentation}
 
-1. Your documentation page is based on the [self-service destination template](/help/docs-framework/self-service-template.md). Download the [destination template](assets/yourdestination-template.md.zip). Unzip it and extract the file `yourdestination-template.md` to the directory mentioned in step 4 above.  Rename the file `YOURDESTINATION.md`, where YOURDESTINATION is the name of your destination in Adobe Experience Platform. For example, if your company is called Moviestar, you would name your file `moviestar.md`.
+1. Your documentation page is based on the [self-service destination template](/help/docs-framework/self-service-template.md). Download the [destination template](assets/yourdestination-template.zip). Unzip it and extract the file `yourdestination-template.md` to the directory mentioned in step 4 above.  Rename the file `YOURDESTINATION.md`, where YOURDESTINATION is the name of your destination in Adobe Experience Platform. For example, if your company is called Moviestar, you would name your file `moviestar.md`.
 2. Open your new file in your [text editor of choice](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/install-tools.html#understand-markdown-editors).
 3. Edit the template with relevant information for your destination. Follow the instructions in the template. 
 4.  For any screenshots or images that you plan on adding to your documentation, go to `GitHub/experience-platform.en/help/destinations/assets/catalog/[...]`, where `[...]` is the desired category for your destination. For example, if you are adding a personalization destination to Experience Platform, select the `personalization` folder. Create a new folder for your destination and save your images here. You must link to them from the page you are authoring. See [instructions how to link to images](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/linking.html#link-to-images).
