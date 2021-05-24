@@ -1,9 +1,9 @@
 ---
-description: Use audience metadata templates to programmatically create, update, or delete audiences (segments) in your destination.
-title: Configuration options for credentials in Destination SDK
+description: Use audience metadata templates to programmatically create, update, or delete audiences in your destination. Adobe provides an extensible audience metadata template, which you can configure based on the specifications of your marketing API. After you define, test, and submit the template, it will be used by Adobe to structure the API calls to your destination.
+title: Audience metadata management
 exl-id: 63ed9a03-eb4d-46c6-85e9-6c1d84acdbad
 ---
-# Audience metadata management {#credentials}
+# Audience metadata management {#audience-metadata-management}
 
 >[!IMPORTANT]
 >
