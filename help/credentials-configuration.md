@@ -20,8 +20,7 @@ exl-id: 63ed9a03-eb4d-46c6-85e9-6c1d84acdbad
 
 >[!IMPORTANT]
 >
->The API endpoint is not available publicly in the alpha release phase of Destination SDK.
-In most cases, you *do not* need to use the `/credentials` API endpoint. Instead, you can configure the authentication information for your destination in the `customerAuthenticationConfigurations` parameters of the `/destinations` endpoint.
+>In most cases, you *do not* need to use the `/credentials` API endpoint. Instead, you can configure the authentication information for your destination in the `customerAuthenticationConfigurations` parameters of the `/destinations` endpoint.
 
 Use this API endpoint and select `PLATFORM_AUTHENTICATION` in the [destination configuration](/help/destination-configuration.md#destination-delivery) if there is a global authentication system between Adobe and your destination and the [!DNL Platform] customer does not need to provide any authentication credentials to connect to your destination. In this case, you must create a credentials object using the `/credentials` API endpoint.
 
