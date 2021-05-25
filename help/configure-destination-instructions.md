@@ -25,6 +25,10 @@ This page describes how to use the reference information in [Configuration optio
 >In the alpha release phase of Destination SDK, we ask that you provide the configurations to the Adobe team, and they will set up the destination for you.
 
 
+## Prerequisites
+
+Before advancing to the steps illustrated below, please read the [Destination SDK getting started](/help/getting-started.md) page for information on obtaining the necessary Adobe I/O authentication credentials and being added to an allowed list.
+
 ## Use the Configuration options in Adobe Experience Platform Destination SDK to set up your destination
 
 ![Illustrated steps of using the Destination SDK endpoints](/help/assets/destination-sdk-steps.png)
@@ -35,10 +39,11 @@ As a first step, based on the payloads that your destination supports, you must 
 
 ## Step 2: Create a server and template configuration
 
-Insert the template you created in step 1 in the `value` parameter, under `requestBody`.
+Insert the template that you created in step 1 in the `value` parameter, under `requestBody`, in the `/destination-servers` configuration.
 
 For more information about the server and template configuration, refer to [Server and template specs](/help/configuration-options.md#server-and-template) in the reference section.
 
+Shown below is an example configuration, with the message transformation template added in the `requestBody.value` parameter.
 
 ```json
 
@@ -64,32 +69,17 @@ POST platform.adobe.io/data/core/activation/authoring/v1/destination-servers
 
 ```
 
+## Step 3: Create audience metadata configuration
 
-## Step 3: Create credentials configuration
-
-Shown below is an example configuration for a destination which supports Oauth2 authentication. For more information, refer to [Credentials configuration](/help/credentials-configuration.md) in the reference documentation.
-
-```json
-
-POST platform.adobe.io/data/core/activation/authoring/v1/credentials
-
-  "oauth2ClientAuthentication": {
-    "url": "string",
-    "clientId": "string",
-    "clientSecret": "string",
-    "header": "string",
-    "developerToken": "string"
-  }
-
-```
+For some destinations, Destination SDK requires that you configure an audience metadata template to programmatically create, update, or delete audiences in your destination. Refer to [Audience metadata management](/help/audience-metadata-management.md) for information on when you need to set up this configuration and how to do it.
 
 ## Step 4: Create destination configuration
 
-Shown below is an example configuration for a destination template. For more information about this template, refer to [Destination configuration](/help/destination-configuration.md) in the reference documentation. 
+Shown below is an example configuration for a destination template, created by using the `/destinations` API endpoint. For more information about this template, refer to [Destination configuration](/help/destination-configuration.md) in the reference documentation. 
 
 ```json
 
-POST platform.adobe.io/data/core/activation/authoring/v1/destination
+POST platform.adobe.io/data/core/activation/authoring/v1/destinations
  
 {
   "name": "Moviestar",
@@ -152,9 +142,34 @@ POST platform.adobe.io/data/core/activation/authoring/v1/destination
 
 ```
 
-<!-- 
+## Step 5: Create credentials configuration / Set up authentication
 
-commenting out this part at the request of Product Management
+Depending on whether you specify `"authenticationRule": "CUSTOMER_AUTHENTICATION"` or `"authenticationRule": "PLATFORM_AUTHENTICATION"` in the destination configuration above, you can set up authentication for your destination using the `/destination` or the `/credentials` endpoint. 
+
+* If you selected `"authenticationRule": "CUSTOMER_AUTHENTICATION"` and your destination supports the OAuth 2 authentication method, read [OAuth 2 authentication](/help/oauth2-authentication.md).
+* If you selected `"authenticationRule": "PLATFORM_AUTHENTICATION"`, refer to [Credentials configuration](/help/credentials-configuration.md) in the reference documentation.
+
+<!--
+
+Commenting out this part, as the configuration shown here is outdated. Will very likely delete this part for beta. 
+
+Shown below is an example configuration for a destination which supports OAuth2 authentication. For more information, refer to [Credentials configuration](/help/credentials-configuration.md) in the reference documentation.
+
+```json
+
+POST platform.adobe.io/data/core/activation/authoring/v1/credentials
+
+  "oauth2ClientAuthentication": {
+    "url": "string",
+    "clientId": "string",
+    "clientSecret": "string",
+    "header": "string",
+    "developerToken": "string"
+  }
+
+```
+
+Commenting out this part at the request of Product Management
 
 ### Step 5 - Provide your configurations to Adobe
 

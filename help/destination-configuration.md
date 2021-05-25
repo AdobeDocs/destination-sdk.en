@@ -95,7 +95,7 @@ Below is an example configuration for a fictional destination, Moviestar, which 
 |`customerAuthenticationConfigurations` | String | Indicates the configuration used to authenticate Experience Platform customers to your server. See `authType` below for accepted values. |
 |`authType` | String | Accepted values are `S3, SFTP_WITH_SSH_KEY, SFTP_WITH_PASSWORD, OAUTH1, OAUTH2, BASIC, BEARER`. |
 
-## Customer Data Fields
+## Customer Data Fields {#customer-data-fields}
 
 This section allows partners to introduce custom fields. In the example configuration above, `customerDataFields` requires users to select an endpoint in the authentication flow and indicate their customer ID with the destination. The configuration is reflected in the authentication flow as shown below:
 
@@ -111,7 +111,7 @@ This section allows partners to introduce custom fields. In the example configur
 |`enum` | String | Renders the custom field as a dropdown menu and lists the options available to the user. |
 |`pattern` | String | Enforces a pattern for the custom field, if needed. Use regular expressions to enforce a pattern. For example, if your customer IDs don't include numbers or underscores, enter `^[A-Za-z]+$` in this field. |
 
-## UI attributes
+## UI attributes {#ui-attributes}
 
 This section refers to the UI elements in the configuration template above that Adobe should use for your destination in the Adobe Experience Platform user interface. See below:
 
@@ -123,7 +123,7 @@ This section refers to the UI elements in the configuration template above that 
 |`connectionType` | String | In the alpha release phase of Destination SDK, `Server-to-server` is the only available option. |
 |`frequency` | String | In the alpha release phase of Destination SDK, `Streaming` is the only available option. |
 
-## Identities
+## Identities {#identities}
 
 Adobe needs to know which [!DNL Platform] identities customers will be able to export to your destination. Some examples are [!DNL Experience Cloud ID], hashed email, device ID ([!DNL IDFA], [!DNL GAID]). These values are [!DNL Platform] identity namespaces that customers can map to identity namespaces from your destination.
 
@@ -139,7 +139,7 @@ For instance, customers could map a [!DNL Platform] [!DNL IDFA] namespace to an 
 |`allowedAttributesTransformation` | String | _Not shown in example configuration_. Used, for example, when the [!DNL Platform] customer has plain email addresses as an attribute and your platform only accepts hashed emails. This is where you would provide the transformation that needs to be applied (for example, transform the email to lowercase, then hash).   |
 |`acceptedGlobalNamespaces` | - | _Not shown in example configuration_. Used for cases when your platform accepts [standard identity namespaces](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces) (for example, IDFA), so you can restrict Platform users to only selecting these identity namespaces. |
 
-## Destination delivery
+## Destination delivery {#destination-delivery}
 
 |Parameter | Type | Description|
 |---------|----------|------|
