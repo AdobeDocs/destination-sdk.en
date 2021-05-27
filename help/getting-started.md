@@ -7,7 +7,7 @@ title: Getting started with Destination SDK
 
 >[!IMPORTANT]
 >
->* This feature is in limited Beta and is only available to select [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) members. If you are interested in using Destination SDK, please contact Adobe Exchange. 
+>* This feature is in limited beta and is only available to select [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) members. If you are interested in using Destination SDK, please contact Adobe Exchange. 
 >* The documentation and the functionality are subject to change.
 
 ## Overview 

@@ -9,7 +9,7 @@ exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
 
 >[!IMPORTANT]
 >
->* This feature is in limited Beta and is only available to select [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) members. If you are interested in using Destination SDK, please contact Adobe Exchange. 
+>* This feature is in limited beta and is only available to select [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) members. If you are interested in using Destination SDK, please contact Adobe Exchange. 
 >* The documentation and the functionality are subject to change.
 
 ## Destination SDK for partners {#destinations-sdk}
