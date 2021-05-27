@@ -9,9 +9,8 @@ exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
 
 >[!IMPORTANT]
 >
->* Contact [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) if you are interested in using Destination SDK.
->* The content on this page is Adobe confidential information, please do not share outside of your company.
->* The Adobe Experience Platform Destination SDK is currently a beta release. The documentation and the functionality are subject to change.
+>* This feature is in limited Beta and is only available to select [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) members. If you are interested in using Destination SDK, please contact Adobe Exchange. 
+>* The documentation and the functionality are subject to change.
 
 ## Destination SDK for partners {#destinations-sdk}
 
@@ -20,8 +19,6 @@ Adobe Experience Platform Destination SDK provides you with self-serve API acces
 This documentation set provides all the configuration options needed for *Destination Authoring*. For the elements listed in the image below in the *Destinations Authoring* section, use the Destination SDK API endpoints to configure your destination in Experience Platform. Find more information in [Configuration options for the Destination SDK](/help/configuration-options.md).
 
 ![Destinations framework architecture](/help/assets/aep-destination-framework.png)
-
-
 
 ## Adobe Real-time Customer Data Platform and the destinations service - an overview {#overview}
 
