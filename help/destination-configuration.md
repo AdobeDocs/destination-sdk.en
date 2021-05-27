@@ -7,7 +7,7 @@ exl-id: 2ecd0bdf-55c3-4946-a304-0147bc16ff39
 
 >[!IMPORTANT]
 >
->* This feature is in limited Beta and is only available to select [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) members. If you are interested in using Destination SDK, please contact Adobe Exchange. 
+>* This feature is in limited beta and is only available to select [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) members. If you are interested in using Destination SDK, please contact Adobe Exchange. 
 >* The documentation and the functionality are subject to change.
 
 **API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/destinations` 
