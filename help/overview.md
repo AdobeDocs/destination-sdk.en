@@ -5,19 +5,19 @@ seo-title: Adobe Experience Platform Destination SDK
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
 ---
-# (Alpha) Adobe Experience Platform Destination SDK
+# (Beta) Adobe Experience Platform Destination SDK
 
 >[!IMPORTANT]
 >
 >* Contact [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) if you are interested in using Destination SDK.
 >* The content on this page is Adobe confidential information, please do not share outside of your company.
->* The Adobe Experience Platform Destination SDK is currently an alpha release. The documentation and the functionality are subject to change.
+>* The Adobe Experience Platform Destination SDK is currently a beta release. The documentation and the functionality are subject to change.
 
 ## Destination SDK for partners {#destinations-sdk}
 
 Adobe Experience Platform Destination SDK provides you with self-serve API access, allowing you to build and maintain an integration with Adobe Experience Platform and receive profile attribute and audience data from Adobe with a partner-defined schema and a configurable and extensible framework.
 
-This documentation set provides all the configuration options needed for *Destination Authoring*. For the elements listed in the image below in the *Destinations Authoring* section, we will need to know which settings you would like for your destination and our team will configure it for you. Find more information in [Configuration options for the Destination SDK](/help/configuration-options.md).
+This documentation set provides all the configuration options needed for *Destination Authoring*. For the elements listed in the image below in the *Destinations Authoring* section, use the Destination SDK API endpoints to configure your destination in Experience Platform. Find more information in [Configuration options for the Destination SDK](/help/configuration-options.md).
 
 ![Destinations framework architecture](/help/assets/aep-destination-framework.png)
 

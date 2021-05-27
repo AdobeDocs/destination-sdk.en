@@ -12,18 +12,13 @@ exl-id: 8fe68f3e-972a-40c5-9b63-8a51d5eff820
 >
 >* Contact [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) if you are interested in using Destination SDK.
 >* The content on this page is Adobe confidential information, please do not share outside of your company.
->* The Adobe Experience Platform Destination SDK is currently an alpha release. The documentation and the functionality are subject to change.
+>* The Adobe Experience Platform Destination SDK is currently a beta release. The documentation and the functionality are subject to change.
 
 <br>&nbsp;
 
 ## Overview 
 
 This page describes how to use the reference information in [Configuration options for the Destinations SDK](/help/configuration-options.md) to configure your destination using Destination SDK. The steps are laid out in sequential order below.
-
->[!NOTE]
->
->In the alpha release phase of Destination SDK, we ask that you provide the configurations to the Adobe team, and they will set up the destination for you.
-
 
 ## Prerequisites
 
@@ -33,7 +28,7 @@ Before advancing to the steps illustrated below, please read the [Destination SD
 
 ![Illustrated steps of using the Destination SDK endpoints](/help/assets/destination-sdk-steps.png)
 
-## Step 1:  Create transformation template - Use a templating language to specify the message output format
+## Step 1: Create transformation template - Use a templating language to specify the message output format
 
 As a first step, based on the payloads that your destination supports, you must create a template that transforms the format of the exported data from Adobe XDM format into your supported format. See template examples in the section [Using a templating language for the identity, attributes, and segment membership transformations](/help/message-format.md#using-templating).
 
