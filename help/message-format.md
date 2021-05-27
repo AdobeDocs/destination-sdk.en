@@ -11,7 +11,7 @@ exl-id: bd348e99-56f7-449e-a639-8da6fd2cafaf
 >[!IMPORTANT]
 >
 >* The content on this page is Adobe confidential information, please do not share outside of your company.
->* The Adobe Experience Platform Destination SDK is currently an alpha release. The documentation and the functionality are subject to change.
+>* The Adobe Experience Platform Destination SDK is currently a beta release. The documentation and the functionality are subject to change.
 
 ## Prerequisites - Adobe Experience Platform concepts {#prerequisites}
 
