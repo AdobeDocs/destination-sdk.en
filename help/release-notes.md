@@ -18,7 +18,7 @@ exl-id: 084c9b69-40a1-4e91-abfb-0ef87617325f
 
 | Feature | Description |
 | ------- | ----------- |
-| Adobe I/O integration | The Destination SDK API endpoints are now available for partners. To make API calls to configure and administer your destination, you must first obtain authentication credentials for Adobe I/O and get allowlisted. For more information, read the documentation on [getting started with Destination SDK](../../sources/tutorials/ui/update-dataflows.md). |
+| Adobe I/O integration | The Destination SDK API endpoints are now available for partners. To make API calls to configure and administer your destination, you must first obtain authentication credentials for Adobe I/O and get allowlisted. For more information, read the documentation on [getting started with Destination SDK](/help/getting-started.md). |
 | Audience metadata support | Use audience metadata templates to programmatically create, update, or delete audiences in your destination. Adobe provides an extensible audience metadata template, which you can configure based on the specifications of your marketing API. For more information, read the documentation on [audience metadata management](/help/audience-metadata-management.md). |
 | OAuth 2 support | You can now use Destination SDK to configure OAuth 2 authentication for your destination. For more information, read the documentation on [OAuth 2 authentication](/help/oauth2-authentication.md). |
 
