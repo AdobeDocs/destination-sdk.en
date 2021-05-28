@@ -385,7 +385,7 @@ PUT /authoring/v1/audience-templates/{INSTANCE_ID}
 
 | Parameter | Description |
 | -------- | ----------- |
-| {INSTANCE_ID} | The ID of the audience metadata template that you want to update. |
+| `{INSTANCE_ID}` | The ID of the audience metadata template that you want to update. |
 
 **Request**
 
@@ -635,7 +635,7 @@ GET /authoring/v1/audience-templates/{INSTANCE_ID}
 
 | Parameter | Description |
 | -------- | ----------- |
-| {INSTANCE_ID} | The ID of the audience metadata template you want to retrieve. |
+| `{INSTANCE_ID}` | The ID of the audience metadata template you want to retrieve. |
 
 **Request**
 
