@@ -33,19 +33,19 @@ With audience metadata support in Destination SDK, when you configure your Exper
 
 ### Use case 1 - You have a 3rd party API and users don't need to input mapping IDs
 
-If you have an API endpoint to create/update/delete shell segments, you can use audience metadata templates to configure Destination SDK to match the specs of your segment create/update/delete endpoint. Experience Platform can programmatically create/update/delete segments and synchronize metadata back to Experience Platform.
+If you have an API endpoint to create/update/delete segments or audiences, you can use audience metadata templates to configure Destination SDK to match the specs of your segment create/update/delete endpoint. Experience Platform can programmatically create/update/delete segments and synchronize metadata back to Experience Platform.
 
-Experience Platform users don't need to manually fill in the segment mapping ID field in the activation workflow to your destination.
+When activating segments to your destination in the Experience Platform user interface (UI), users don't need to manually fill in the segment mapping ID field in the activation workflow.
 
 ### Use case 2 - Users need to create a segment in your destination first and are required to manually input mapping ID
 
-If "shell segments" and other metadata need to be created by partners or users manually, then users must manually fill in the segment mapping ID field in the activation workflow to sync the segment metadata between your destination and Experience Platform.
+If segments and other metadata need to be created by partners or users manually in your destination, then users must manually fill in the segment mapping ID field in the activation workflow to sync the segment metadata between your destination and Experience Platform.
 
 ![Input mapping ID](/help/assets/input-mapping-id.png)
 
-### Use case 3 - Your destination honors the Experience Platform segment ID, users don't need to manually input mapping ID  
+### Use case 3 - Your destination accepts the Experience Platform segment ID, users don't need to manually input mapping ID  
 
-If your destination system honors the Experience Platform segment ID space, you can configure this in your audience metadata template. Users do not have to populate a segment mapping ID when activating a segment.
+If your destination system accepts the Experience Platform segment ID, you can configure this in your audience metadata template. Users do not have to populate a segment mapping ID when activating a segment.
 
 ## Generic and extensible audience template {#generic-and-extensible}
 
@@ -55,7 +55,7 @@ Select the `Generic` option when you [create a new audience template](/help/audi
 
 * The HTTP methods: POST, GET, PUT, DELETE, PATCH
 * The authentication types: OAuth 1, OAuth 2 with refresh token, OAuth 2 with bearer token
-* The functions: create audience, update audience, get audience, delete audience, validate credentials 
+* The functions: create an audience, update an audience, get an audience, delete an audience, validate credentials 
 
 
 ## Template example
@@ -169,10 +169,10 @@ This section includes an example of a generic audience template, for your refere
 
 Template section | Description |
 ---------|----------|
-``audience`` | Includes all metadata from Experience Platform needed to create an audience in the destination platform. |
-``credential`` | Specifies the authorization type for your destination. |
-``metadataTemplate`` | Includes basic information for HTTP calls to your destination, to create, update, validate, and delete audiences. |
-``validations`` | Runs validations for any fields in the template configuration before making a call to the partner API. For example, you could validate that the user's account ID is input correctly. |
+`audience` | Includes all metadata from Experience Platform needed to create an audience in the destination platform. |
+`credential` | Specifies the authorization type for your destination. |
+`metadataTemplate` | Includes basic information for HTTP calls to your destination, to create, update, validate, and delete audiences. |
+`validations` | Runs validations for any fields in the template configuration before making a call to the partner API. For example, you could validate that the user's account ID is input correctly. |
 
 Descriptions of all parameters in the template are further below on this page.
 
@@ -712,7 +712,7 @@ A successful response returns HTTP status 200 with detailed information about th
 
 ## Delete a specific audience template {#delete}
 
-You can request to delete the specified audience template by making a DELETE request to the `/authoring/v1/audience-templates` endpoint and providing the ID of the audience template you wish to delete in the request path.
+You can delete the specified audience template by making a DELETE request to the `/authoring/v1/audience-templates` endpoint and providing the ID of the audience template you wish to delete in the request path.
 
 **API format**
 
@@ -745,4 +745,4 @@ Destination SDK API endpoints follow the general Experience Platform API error m
 
 ## Next steps
 
-After reading this guide, you now know when to use audience metadata templates and how to configure an audience metadata template using the `/authoring/v1/audience-templates` API endpoint. 
+After reading this guide, you now know when to use audience metadata templates and how to configure an audience metadata template using the `/authoring/v1/audience-templates` API endpoint. Read [how to use Destination SDK to configure your destination](/help/configure-destination-instructions.md) to understand where this step fits into the process of configuring your destination.
