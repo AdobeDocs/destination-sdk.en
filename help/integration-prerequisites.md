@@ -14,14 +14,14 @@ To use Destination SDK, make sure that you meet the technical and partnership pr
 
 ## Technical / API prerequisites
 
-You must have a REST API for audience transfer, which can receive:
+You have a REST API for audience transfer, which can receive:
 * Segment membership information
 * Profile identity information
 * (Optional) additional attributes for profile enrichment
 
-Your REST API must support the OAuth 2.0 protocol for authentication.
+Your REST API supports the OAuth 2.0 protocol for authentication.
 
-(Optional) A segment create/update/delete API or API endpoint for programmatic metadata management.
+(Optional) You have a segment create/update/delete API or API endpoint for programmatic metadata management.
 
 ## Partnership prerequisites
 
