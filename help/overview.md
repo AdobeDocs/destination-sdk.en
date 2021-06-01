@@ -1,7 +1,5 @@
 ---
-description: Adobe Experience Platform Destination SDK provides you with self-serve API access, allowing you to build and maintain an integration with Adobe Experience Platform and receive profile attribute and audience data from Adobe with a partner-defined schema and a configurable and extensible framework.
-seo-description: Adobe Experience Platform Destination SDK provides you with self-serve API access, allowing you to build and maintain an integration with Adobe Experience Platform and receive profile attribute and audience data from Adobe with a partner-defined schema and a configurable and extensible framework.
-seo-title: Adobe Experience Platform Destination SDK
+description: Adobe Experience Platform Destination SDK is a set of configuration APIs that allow you to configure destination integration patterns for Experience Platform to deliver audience and profile data to your endpoint, based on data and authentication formats of your choice. The configurations will be stored in Experience Platform and can be retrieved via API for additional updates.
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
 ---
