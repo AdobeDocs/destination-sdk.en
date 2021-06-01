@@ -16,6 +16,8 @@ exl-id: 084c9b69-40a1-4e91-abfb-0ef87617325f
 
 **Notes**
 
+Adobe Experience Platform Destination SDK is now a beta release. New and updated functionality is described below:
+
 | Feature | Description |
 | ------- | ----------- |
 | Adobe I/O integration | The Destination SDK API endpoints are now available for partners. To make API calls to configure and manage your destination, you must first obtain authentication credentials for Adobe I/O and get allowlisted. For more information, read the documentation on [getting started with Destination SDK](/help/getting-started.md). |
