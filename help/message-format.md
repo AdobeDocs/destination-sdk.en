@@ -10,8 +10,8 @@ exl-id: bd348e99-56f7-449e-a639-8da6fd2cafaf
 
 >[!IMPORTANT]
 >
->* The content on this page is Adobe confidential information, please do not share outside of your company.
->* The Adobe Experience Platform Destination SDK is currently an alpha release. The documentation and the functionality are subject to change.
+>* This feature is in limited beta and is only available to select [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) members. If you are interested in using Destination SDK, please contact Adobe Exchange. 
+>* The documentation and the functionality are subject to change.
 
 ## Prerequisites - Adobe Experience Platform concepts {#prerequisites}
 

@@ -7,15 +7,11 @@ exl-id: 9bda8aa7-d7cf-4729-8890-6945da104719
 
 >[!IMPORTANT]
 >
->* The content on this page is Adobe confidential information, please do not share outside of your company.
->* The Adobe Experience Platform Destination SDK is currently an alpha release. The documentation and the functionality are subject to change.
+>* This feature is in limited beta and is only available to select [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) members. If you are interested in using Destination SDK, please contact Adobe Exchange. 
+>* The documentation and the functionality are subject to change.
 
 
 **API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/destination-servers`
-
->[!NOTE]
->
->The API endpoint is not available publicly in the alpha release phase of Destination SDK.
 
 The server and template specs in Adobe Destination SDK can be configured via the common endpoint `/authoring/v1/destination-servers`.
 
@@ -55,7 +51,7 @@ This process delivers user data as a series of HTTP messages to your destination
 |Parameter | Type | Description|
 |---|---|---|
 |`name` | String | Represents a friendly name of your server, visible only to Adobe. This name is not visible to partners or customers. Example `Moviestar destination server`.  |
-|`destinationServerType` | String | `URL_BASED` is the only available option in the alpha release phase. |
+|`destinationServerType` | String | `URL_BASED` is the only available option in the beta release phase. |
 |`templatingStrategy` | String | <ul><li>Use `PEBBLE_V1` if Adobe needs to transform the URL in the `value` field below. Use this option if you have an endpoint like: `https://api.moviestar.com/data/{{endpoint.region}}/items` </li><li> Use `NONE` if no transformation is needed on the Adobe side, for example if you have an endpoint like: `https://api.moviestar.com/data/items` </li></ul>  |
 |`value` | String | Fill in the address of the API endpoint that Experience Platform should connect to. |
 |`maxUsersPerRequest` | Integer | Adobe can aggregate multiple exported profiles in a single HTTP call. Specify the maximum number of profiles that your endpoint should receive in a single HTTP call. Note that this is a best effort aggregation. For example, if you specify the value 100, Adobe might send any number of profiles smaller than 100 on a call. <br> If your server does not accept multiple users per request, set this value to 1. |
