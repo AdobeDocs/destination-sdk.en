@@ -22,7 +22,7 @@ Adobe Experience Platform Destination SDK is now a beta release. New and updated
 | ------- | ----------- |
 | Adobe I/O integration | The Destination SDK API endpoints are now available for partners. To make API calls to configure and manage your destination, you must first obtain authentication credentials for Adobe I/O and get allowlisted. For more information, read the documentation on [getting started with Destination SDK](/help/getting-started.md). |
 | Audience metadata support | Use audience metadata templates to programmatically create, update, or delete audiences in your destination. Adobe provides an extensible audience metadata template, which you can configure based on the specifications of your marketing API. For more information, read the documentation on [audience metadata management](/help/audience-metadata-management.md). |
-| OAuth 2 support | Destination SDK now supporters additional OAuth 2 authentication patters, which you can use to to configure OAuth 2 authentication for your destination. For more information about the supported OAuth 2 authentication patterns, read the documentation on [OAuth 2 authentication](/help/oauth2-authentication.md). |
+| OAuth 2 support | Destination SDK now supporters additional OAuth 2 authentication patterns, which you can use to to configure OAuth 2 authentication for your destination. For more information about the supported OAuth 2 authentication patterns, read the documentation on [OAuth 2 authentication](/help/oauth2-authentication.md). |
 
 ## Alpha release {#alpha}
 
