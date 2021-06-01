@@ -19,7 +19,7 @@ You have a REST API for audience transfer, which can receive:
 * Profile identity information
 * (Optional) additional attributes for profile enrichment
 
-Your REST API supports the OAuth 2.0 protocol for authentication.
+Your REST API supports basic authentication, API token bearer authentication, or the OAuth 2.0 authentication protocol.
 
 (Optional) You have a segment create/update/delete API or API endpoint for programmatic metadata management.
 
