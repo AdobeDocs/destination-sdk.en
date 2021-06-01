@@ -11,9 +11,8 @@ user-guide-description: Adobe Experience Platform Destination SDK provides you w
 
 + [Overview](/help/overview.md)
 + [Getting started](/help/getting-started.md)
-+ Prerequisites
-+ Scope of work
-+ Destination SDK functionality {#reference}
++ [Integration prerequisites](/help/integration-prerequisites.md)
++ Reference {#reference}
   + [Configuration options](/help/configuration-options.md)
   + [Destination configuration](/help/destination-configuration.md)
   + [Server and template specs](/help/server-and-template-configuration.md)

@@ -10,8 +10,8 @@ exl-id: d2d1ebd3-bc08-46bf-8ec7-09ab14e991b7
 
 >[!IMPORTANT]
 >
->* The content on this page is Adobe confidential information, please do not share outside of your company.
->* The Adobe Experience Platform Destination SDK is currently an alpha release. The documentation and the functionality are subject to change.
+>* This feature is in limited beta and is only available to select [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) members. If you are interested in using Destination SDK, please contact Adobe Exchange. 
+>* The documentation and the functionality are subject to change.
 
 <br>&nbsp;
 
@@ -23,13 +23,16 @@ The destinations service in Adobe Experience Platform uses configuration templat
 * **Server and template specs**: Ties together information about the server specs and the templating used by Adobe to deliver payloads to your destination
   * **Server specs**: a template that stores your endpoint details.
   * **Template specs**: in this template, you can define how to transform profile attribute fields between XDM schema and the format that your platform supports. For in-depth information about supported templating languages, message formats, and the information required by Adobe to set up the integration with your platform, see [Message format](/help/message-format.md). 
-* **Credentials**: This template defines how Adobe Experience Platform users connect to your destination.
+* **Authentication configuration**: These settings define how Adobe Experience Platform users connect to your destination.
+* **Audience metadata configuration**: This template allows you to configure how audiences/segments are programmatically created, updated, or deleted in your destination.
 
-![Self-service configuration](/help/assets/self-service-configuration.png)
+![Destination SDK templates and configurations](/help/assets/self-service-configuration.png)
 
 The pages below provide more detail about the configuration options available for the templates.
 
 * [Destination configuration](/help/destination-configuration.md)
 * [Server and template specs](/help/server-and-template-configuration.md)
 * [Credentials configuration](/help/credentials-configuration.md)
+* [Audience metadata configuration](/help/audience-metadata-management.md)
+* [OAuth 2 configuration](/help/oauth2-authentication.md)
 * [Message format](/help/message-format.md)

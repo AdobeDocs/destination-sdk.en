@@ -1,27 +1,26 @@
 ---
-description: Adobe Experience Platform Destination SDK provides you with self-serve API access, allowing you to build and maintain an integration with Adobe Experience Platform and receive profile attribute and audience data from Adobe with a partner-defined schema and a configurable and extensible framework.
-seo-description: Adobe Experience Platform Destination SDK provides you with self-serve API access, allowing you to build and maintain an integration with Adobe Experience Platform and receive profile attribute and audience data from Adobe with a partner-defined schema and a configurable and extensible framework.
-seo-title: Adobe Experience Platform Destination SDK
+description: Adobe Experience Platform Destination SDK is a set of configuration APIs that allow you to configure destination integration patterns for Experience Platform to deliver audience and profile data to your endpoint, based on data and authentication formats of your choice. The configurations will be stored in Experience Platform and can be retrieved via API for additional updates.
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
 ---
-# (Alpha) Adobe Experience Platform Destination SDK
+# (Beta) Adobe Experience Platform Destination SDK
 
 >[!IMPORTANT]
 >
->* Contact [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) if you are interested in using Destination SDK.
->* The content on this page is Adobe confidential information, please do not share outside of your company.
->* The Adobe Experience Platform Destination SDK is currently an alpha release. The documentation and the functionality are subject to change.
+>* This feature is in limited beta and is only available to select [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) members. If you are interested in using Destination SDK, please contact Adobe Exchange. 
+>* The documentation and the functionality are subject to change.
 
 ## Destination SDK for partners {#destinations-sdk}
 
-Adobe Experience Platform Destination SDK provides you with self-serve API access, allowing you to build and maintain an integration with Adobe Experience Platform and receive profile attribute and audience data from Adobe with a partner-defined schema and a configurable and extensible framework.
+Adobe Experience Platform Destination SDK is a set of configuration APIs that allow you to configure destination integration patterns for Experience Platform to deliver audience and profile data to your endpoint, based on data and authentication formats of your choice. The configurations will be stored in Experience Platform and can be retrieved via API for additional updates.
 
-This documentation set provides all the configuration options needed for *Destination Authoring*. For the elements listed in the image below in the *Destinations Authoring* section, we will need to know which settings you would like for your destination and our team will configure it for you. Find more information in [Configuration options for the Destination SDK](/help/configuration-options.md).
+<!--
+
+This documentation set provides all the configuration options needed for *Destination Authoring*. For the elements listed in the image below in the *Destinations Authoring* section, use the Destination SDK API endpoints to configure your destination in Experience Platform. Find more information in [Configuration options for the Destination SDK](/help/configuration-options.md).
 
 ![Destinations framework architecture](/help/assets/aep-destination-framework.png)
 
-
+-->
 
 ## Adobe Real-time Customer Data Platform and the destinations service - an overview {#overview}
 
@@ -38,16 +37,16 @@ This documentation set provides instructions for you to use the Adobe Experience
 
 ## Types of destinations in Adobe Experience Platform {#types-of-destinations}
 
-In Adobe Experience Platform, we distinguish between two destination types - *connections* and *extensions*. In the user interface, customers can choose between two types of connection destinations, Profile Export destinations and Segment Export destinations. For more details around the difference between the different destination types, see [Destination Types and Categories](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destination-types.html#destination-types).
+In Adobe Experience Platform, we distinguish between two destination types - *connections* and *extensions*. In the user interface, customers can choose between two types of connection destinations, Profile Export destinations and Segment Export destinations. For more details around the difference between the different destination types, read [Destination Types and Categories](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destination-types.html#destination-types).
 
 ![Destination types](/help/assets/types-of-destinations.png)
 
-This documentation set provides you with all the necessary information to add your destination to Adobe Experience Platform, as a *connection*, either Profile Export or Segment Export. To set up an extension, see the [Experience Platform Launch developer portal](https://developer.adobelaunch.com/extensions/).
+This documentation set provides you with all the necessary information to add your destination to Adobe Experience Platform, as a *connection*, either Profile Export or Segment Export. To set up an extension, visit the [Experience Platform Launch developer portal](https://developer.adobelaunch.com/extensions/).
 
 
 ## Prerequisites {#prerequisites}
 
-We recommend you read and understand the following Adobe Experience Platform documentation:
+Adobe recommends that you read and understand the following Experience Platform documentation:
 
 * [Basis of XDM schema composition](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/composition.html)
 * [Identity namespace overview](https://docs.adobe.com/content/help/en/experience-platform/identity/namespaces.html)
@@ -76,10 +75,8 @@ See the tech specs below for configuration options for each destination type in 
 
 -->
 
-## Phased approach to the Destination SDK {#phased-approach}
+## Known limitations {#known-limitations}
 
-The alpha phase of the Destination SDK is a configuration-driven approach. Partners should provide Adobe a list of configurations for their destinations. Adobe will use the configuration options on your behalf to set up your destination in Adobe Experience Platform.
-
-In the first phase, read and understand the [configuration options](/help/configuration-options.md) and the [messaging template](/help/message-format.md) for destinations and let us know how we should configure your destination in Experience Platform.
-
-At general availability release, the configuration options will be made available as a set of APIs, along with API documentation. This will allow you to set up the destination configurations yourself. You will be able to own this process yourself without much input by Adobe. Note that Adobe will review your configuration before setting it live.
+This feature is currently a limited beta release and is only available to select Adobe partners in the Adobe Exchange partner program. Developers using the beta feature should expect the following known product limitation:
+* Updates to your destination configurations require 3-5 business days to take effect in your [Experience Platform sandbox](https://experienceleague.adobe.com/docs/experience-platform/sandbox/home.html?lang=en#sandboxes-in-the-experience-platform-ui);
+* You are expected to ingest test data into your sandbox in order to test the destination integration.

@@ -7,14 +7,10 @@ exl-id: 63ed9a03-eb4d-46c6-85e9-6c1d84acdbad
 
 >[!IMPORTANT]
 >
->* The content on this page is Adobe confidential information, please do not share outside of your company.
->* The Adobe Experience Platform Destination SDK is currently an alpha release. The documentation and the functionality are subject to change.
+>* This feature is in limited beta and is only available to select [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) members. If you are interested in using Destination SDK, please contact Adobe Exchange. 
+>* The documentation and the functionality are subject to change.
 
 **API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/credentials` 
-
->[!NOTE]
->
->The API endpoint is not available publicly in the alpha release phase of Destination SDK.
 
 ## When to use the `/credentials` API endpoint {#when-to-use}
 

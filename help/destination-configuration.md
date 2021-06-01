@@ -7,14 +7,10 @@ exl-id: 2ecd0bdf-55c3-4946-a304-0147bc16ff39
 
 >[!IMPORTANT]
 >
->* The content on this page is Adobe confidential information, please do not share outside of your company.
->* The Adobe Experience Platform Destination SDK is currently an alpha release. The documentation and the functionality are subject to change.
+>* This feature is in limited beta and is only available to select [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) members. If you are interested in using Destination SDK, please contact Adobe Exchange. 
+>* The documentation and the functionality are subject to change.
 
 **API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/destinations` 
-
->[!NOTE]
->
->The API endpoint is not available publicly in the alpha release phase of Destination SDK.
 
 This configuration allows you to indicate basic information like your destination name, category, description, logo, and more. The settings in this configuration also determine how your destination appears in the Experience Platform user interface and the identities that can be exported to your destination.
 
@@ -90,7 +86,7 @@ Below is an example configuration for a fictional destination, Moviestar, which 
 |---------|----------|------|
 |`name` | String | Indicates the title of your destination in the Experience Platform catalog |
 |`description` | String | Provide a description that Adobe will use in the Experience Platform destinations catalog for your destination card. Aim for no more than 4-5 sentences. |
-|`releaseNotes` | String | This field is not necessary in the alpha phase of Destination SDK. |
+|`releaseNotes` | String | This field is not necessary in the beta phase of Destination SDK. |
 |`status` | String | Indicates the lifecycle status of the destination card. Accepted values are `TEST`, `PUBLISHED`, and `DELETED`. Use `TEST` when you first configure your destination. |
 |`customerAuthenticationConfigurations` | String | Indicates the configuration used to authenticate Experience Platform customers to your server. See `authType` below for accepted values. |
 |`authType` | String | Accepted values are `S3, SFTP_WITH_SSH_KEY, SFTP_WITH_PASSWORD, OAUTH1, OAUTH2, BASIC, BEARER`. |
@@ -120,8 +116,8 @@ This section refers to the UI elements in the configuration template above that 
 |`documentationLink` | String | Refers to the documentation page in the [Destinations Catalog](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog) for your destination. Use `http://www.adobe.com/go/destinations-YOURDESTINATION-en`, where `YOURDESTINATION` is the name of your destination. For a destination called Moviestar, you would use `http://www.adobe.com/go/destinations-moviestar-en` |
 |`category` | String | Refers to the category assigned to your destination in Adobe Experience Platform. For more information, read [Destination Categories](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html?lang=en#destination-categories). Use one of the following values: `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments` |
 |`iconUrl` | String | Provide the logo that Adobe will display in the Adobe Experience Platform destinations catalog for your destination card. |
-|`connectionType` | String | In the alpha release phase of Destination SDK, `Server-to-server` is the only available option. |
-|`frequency` | String | In the alpha release phase of Destination SDK, `Streaming` is the only available option. |
+|`connectionType` | String | In the beta release phase of Destination SDK, `Server-to-server` is the only available option. |
+|`frequency` | String | In the beta release phase of Destination SDK, `Streaming` is the only available option. |
 
 ## Identities {#identities}
 
@@ -144,8 +140,8 @@ For instance, customers could map a [!DNL Platform] [!DNL IDFA] namespace to an 
 |Parameter | Type | Description|
 |---------|----------|------|
 |`authenticationRule` | String | Indicates how [!DNL Platform] customers connect to your destination. Accepted values are `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Use `CUSTOMER_AUTHENTICATION` if Platform customers log into your system via a username and password, a bearer token, or another method of authentication. For example, you would select this option if you also selected `authType: OAUTH2` or `authType:BEARER` in `customerAuthenticationConfigurations`. </li><li> Use `PLATFORM_AUTHENTICATION` if there is a global authentication system between Adobe and your destination and the [!DNL Platform] customer does not need to provide any authentication credentials to connect to your destination. In this case, you must create a credentials object using the [Credentials](/help/credentials-configuration.md) configuration. </li><li>Use `NONE` if no authentication is required to send data to your destination platform. </li></ul> |
-|`destinationServerId` | String | This field is not required in the alpha phase of Destination SDK. |
-|`inputSchemaId` | String | This field is not required in the alpha phase of Destination SDK. |
+|`destinationServerId` | String | This field is not required in the beta phase of Destination SDK. |
+|`inputSchemaId` | String | This field is not required in the beta phase of Destination SDK. |
 
 <!--
 
