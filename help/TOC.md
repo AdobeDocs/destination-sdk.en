@@ -12,7 +12,7 @@ user-guide-description: Adobe Experience Platform Destination SDK provides you w
 + [Overview](/help/overview.md)
 + [Getting started](/help/getting-started.md)
 + [Integration prerequisites](/help/integration-prerequisites.md)
-+ Reference {#reference}
++ Destination SDK functionality {#functionality}
   + [Configuration options](/help/configuration-options.md)
   + [Destination configuration](/help/destination-configuration.md)
   + [Server and template specs](/help/server-and-template-configuration.md)
@@ -20,11 +20,11 @@ user-guide-description: Adobe Experience Platform Destination SDK provides you w
   + [Message format](/help/message-format.md)
   + [Audience metadata management](/help/audience-metadata-management.md)
   + [Oauth2 authentication](/help/oauth2-authentication.md) 
-+ API reference
++ API reference {#api-reference}
   + API reference overview
   + Configure destination endpoint
-  + Configure server and template
-  + Configure audience metadata endpoint 
+  + [Configure server and template](/help/destination-server-api.md)
+  + [Configure audience metadata](/help/audience-metadata-api.md)
   + Configure credentials endpoint
 + Guides {#guides}
   + [Use the Destination SDK to configure your destination](/help/configure-destination-instructions.md)
