@@ -7,7 +7,7 @@ breadcrumb-title: Destination SDK Guide
 user-guide-description: Adobe Experience Platform Destination SDK provides you with self-serve API access, allowing you to build and maintain an integration with Adobe Experience Platform.
 ---
 
-# Adobe Destination SDK {#help}
+# Adobe Destination SDK
 
 + [Overview](/help/overview.md)
 + [Getting started](/help/getting-started.md)
