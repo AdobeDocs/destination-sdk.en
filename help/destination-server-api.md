@@ -208,7 +208,7 @@ The following request updates an existing destination server configuration, conf
 
 ```shell
 
-curl -X GET https://platform.adobe.io/data/core/activation/authoring/v1/destination-servers/bd4ec8f0-e98f-4b6a-8064-dd7adbfffec9 \
+curl -X PUT https://platform.adobe.io/data/core/activation/authoring/v1/destination-servers/bd4ec8f0-e98f-4b6a-8064-dd7adbfffec9 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'x-gw-ims-org-id: {IMS_ORG}' \
  -H 'x-api-key: {API_KEY}' \
@@ -275,59 +275,25 @@ A successful response returns HTTP status 200 with detailed information about th
 
 ```json
 {
-    "instanceId": "bd4ec8f0-e98f-4b6a-8064-dd7adbfffec9",
-    "createdDate": "2021-04-15T20:40:39.500796Z",
-    "lastModifiedDate": "2021-04-15T20:40:39.500796Z",
-    "audience": {
-        "context": "Generic",
-        "name": "{{segment.name}}",
-        "account": "{{targetConnection.params.accountId}}",
-        "externalAudienceId": "{{segment.alias}}"
+  "name": "Moviestar destination server",
+  "destinationServerType": "URL_BASED",
+  "urlBasedDestination": {
+    "url": {
+      "templatingStrategy": "PEBBLE_V1",
+      "value": "https://api.moviestar.com/data/{{endpoint.region}}/items"
     },
-    "credential": {
-        "clientId": "{{authentication.oauth1Authentication.apiKey}}",
-        "clientSecret": "{{authentication.oauth1Authentication.apiSecret}}",
-        "token": "{{baseConnection.auth.params.accessToken}}",
-        "tokenSecret": "{{baseConnection.auth.params.tokenSecret}}",
-        "authType": "OAUTH1"
-    },
-    "metadataTemplate": {
-        "create": {
-            "uri": "/accounts/{{audience.account}}/tailored_audiences?name={{audience.name}}",
-            "method": "POST",
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "schemaMap": {
-                "externalAudienceId": "{{response.data.id}}"
-            },
-            "errorSchemaMap": {
-                "message": "errors[0].message"
-            }
+    "maxUsersPerRequest": 100,
+    "splitUserById": true
+  }
+},
+  "httpTemplate": {
+    "httpMethod": "POST",
+    "requestBody": {
+            "templatingStrategy": "PEBBLE_V1",
+            "value": "{ \"attributes\": [ {% for ns in [\"external_id\", \"yourdestination_id\"] %} {% if input.profile.identityMap[ns] is not empty and first_namespace_encountered %} , {% endif %} {% set first_namespace_encountered = true %} {% for identity in input.profile.identityMap[ns]%} { \"{{ ns }}\": \"{{ identity.id }}\" {% if input.profile.segmentMembership.ups is not empty %} , \"AEPSegments\": { \"add\": [ {% for segment in input.profile.segmentMembership.ups %} {% if segment.value.status == \"realized\" or segment.value.status == \"existing\" %} {% if added_segment_found %} , {% endif %} {% set added_segment_found = true %} \"{{ destination.segmentAliases[segment.key] }}\" {% endif %} {% endfor %} ], \"remove\": [ {% for segment in input.profile.segmentMembership.ups %} {% if segment.value.status == \"exited\" %} {% if removed_segment_found %} , {% endif %} {% set removed_segment_found = true %} \"{{ destination.segmentAliases[segment.key] }}\" {% endif %} {% endfor %} ] } {% set removed_segment_found = false %} {% set added_segment_found = false %} {% endif %} {% if input.profile.attributes is not empty %} , {% endif %} {% for attribute in input.profile.attributes %} \"{{ attribute.key }}\": {% if attribute.value is empty %} null {% else %} \"{{ attribute.value.value }}\" {% endif %} {% if not loop.last%} , {% endif %} {% endfor %} } {% if not loop.last %} , {% endif %} {% endfor %} {% endfor %} ] }"
         },
-        "update": {
-            "uri": "/accounts/{{audience.account}}/tailored_audiences/{{audience.externalAudienceId}}?name={{audience.name}}",
-            "method": "PUT",
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "errorSchemaMap": {
-                "message": "errors[0].message"
-            }
-        },
-        "delete": {
-            "uri": "/accounts/{{audience.account}}/tailored_audiences/{{audience.externalAudienceId}}",
-            "method": "DELETE",
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "errorSchemaMap": {
-                "message": "errors[0].message"
-            }
-        },
-        "host": "https://ads-api.moviestar.com/8"
+        "contentType": "application/json"
     }
-}
 ```
 
 

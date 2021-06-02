@@ -229,7 +229,7 @@ The following request updates an existing audience metadata template, configured
 
 ```shell
 
-curl -X GET https://platform.adobe.io/data/core/activation/authoring/v1/audience-templates/bd4ec8f0-e98f-4b6a-8064-dd7adbfffec9 \
+curl -X PUT https://platform.adobe.io/data/core/activation/authoring/v1/audience-templates/bd4ec8f0-e98f-4b6a-8064-dd7adbfffec9 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'x-gw-ims-org-id: {IMS_ORG}' \
  -H 'x-api-key: {API_KEY}' \
@@ -460,7 +460,7 @@ The following response returns HTTP status 200 with a list of audience metadata 
 
 ## Retrieve a specific audience template {#get}
 
-You can retrieve detailed information about a specific audience template by making a GET request to the `/authoring/v1/audience-templates` endpoint and providing the instance ID of the audience template you want to update.
+You can retrieve detailed information about a specific audience template by making a GET request to the `/authoring/v1/audience-templates` endpoint and providing the instance ID of the audience template you want to retrieve.
 
 **API format**
 
