@@ -21,7 +21,7 @@ This documentation set provides all the configuration options needed for *Destin
 ![Destinations framework architecture](/help/assets/aep-destination-framework.png)
 
 -->
-
+ 
 ## Adobe Real-time Customer Data Platform and the destinations service - an overview {#overview}
 
 Built on [Adobe Experience Platform](https://www.adobe.com/experience-platform/documentation-and-developer-resources.html), [Adobe Real-time Customer Data Platform](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html) (Real-time CDP) helps companies bring together known and unknown data to activate customer profiles with intelligent decisioning throughout the customer journey. Real-time CDP combines multiple enterprise data sources to create unified profiles in real time that can be used to provide one-to-one personalized customer experiences across all channels and devices.
