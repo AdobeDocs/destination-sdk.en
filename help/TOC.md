@@ -19,7 +19,7 @@ user-guide-description: Adobe Experience Platform Destination SDK provides you w
   + [Credentials configuration](/help/credentials-configuration.md)
   + [Message format](/help/message-format.md)
   + [Audience metadata management](/help/audience-metadata-management.md)
-  + [Oauth2 authentication](/help/oauth2-authentication.md) 
+  + [OAuth 2 authentication](/help/oauth2-authentication.md) 
 + Guides {#guides}
   + [Use the Destination SDK to configure your destination](/help/configure-destination-instructions.md)
 + Document your destination {#document-destination}

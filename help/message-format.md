@@ -239,7 +239,7 @@ To transform the profile attributes exported to your destination, see the JSON a
 
 >[!IMPORTANT]
 >
->For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination configuration](/help/configuration-options.md). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+>For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination server configuration](/help/server-and-template-configuration.md#template-specs). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 
 ```python
 
@@ -304,7 +304,7 @@ For the three different values in the `status` field, read the documentation on 
 
 >[!IMPORTANT]
 >
->For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination configuration](/help/configuration-options.md). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+>For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination server configuration](/help/server-and-template-configuration.md#template-specs). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 
 ```python
 
@@ -377,7 +377,7 @@ For information about identities in Experience Platform, see the [Identity names
 
 >[!IMPORTANT]
 >
->For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination configuration](/help/configuration-options.md). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+>For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination server configuration](/help/server-and-template-configuration.md#template-specs). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 
 ```python
 
@@ -479,7 +479,7 @@ The example below shows you how to transform the segment membership and identiti
 
 >[!IMPORTANT]
 >
->For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination configuration](/help/configuration-options.md). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+>For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination server configuration](/help/server-and-template-configuration.md#template-specs). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 
 ```python
 
@@ -611,7 +611,7 @@ Another common use case is exporting data that contains segment membership, iden
 
 >[!IMPORTANT]
 >
->For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination configuration](/help/configuration-options.md). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+>For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination server configuration](/help/server-and-template-configuration.md#template-specs). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 
 ```python
 
