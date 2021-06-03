@@ -24,9 +24,9 @@ This documentation set provides all the configuration options needed for *Destin
 
 ## Adobe Real-time Customer Data Platform and the destinations service - an overview {#overview}
 
-Built on [Adobe Experience Platform](https://www.adobe.com/experience-platform/documentation-and-developer-resources.html), [Adobe Real-time Customer Data Platform](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html) (Real-time CDP) helps companies bring together known and unknown data to activate customer profiles with intelligent decisioning throughout the customer journey. Real-time CDP combines multiple enterprise data sources to create unified profiles in real time that can be used to provide one-to-one personalized customer experiences across all channels and devices.
+Built on [Adobe Experience Platform](https://www.adobe.com/experience-platform/documentation-and-developer-resources.html), [Adobe Real-time Customer Data Platform](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=en) (Real-time CDP) helps companies bring together known and unknown data to activate customer profiles with intelligent decisioning throughout the customer journey. Real-time CDP combines multiple enterprise data sources to create unified profiles in real time that can be used to provide one-to-one personalized customer experiences across all channels and devices.
 
-In Adobe Real-time CDP, [destinations](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destinations-overview.html) are pre-built integrations with destination platforms that allow for the seamless activation of data.
+In Adobe Real-time CDP, [destinations](https://experienceleague.adobe.com/docs/experience-platform/destinations/home.html?lang=en) are pre-built integrations with destination platforms that allow for the seamless activation of data.
 
 Adobe connects to a large ecosystem of partners, not to mention native integrations with Adobe Experience Cloud, allowing customers to seamlessly activate these audiences and deliver great customer experiences across all channels, from on-site or in-app personalization to email, paid media, call centers, connected devices, and more.
 
@@ -37,7 +37,7 @@ This documentation set provides instructions for you to use the Adobe Experience
 
 ## Types of destinations in Adobe Experience Platform {#types-of-destinations}
 
-In Adobe Experience Platform, we distinguish between two destination types - *connections* and *extensions*. In the user interface, customers can choose between two types of connection destinations, Profile Export destinations and Segment Export destinations. For more details around the difference between the different destination types, read [Destination Types and Categories](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destination-types.html#destination-types).
+In Adobe Experience Platform, we distinguish between two destination types - *connections* and *extensions*. In the user interface, customers can choose between two types of connection destinations, Profile Export destinations and Segment Export destinations. For more details around the difference between the different destination types, read [Destination Types and Categories](https://experienceleague.adobe.com/docs/experience-platform/destinations/destination-types.html?lang=en).
 
 ![Destination types](/help/assets/types-of-destinations.png)
 
@@ -48,9 +48,9 @@ This documentation set provides you with all the necessary information to add yo
 
 Adobe recommends that you read and understand the following Experience Platform documentation:
 
-* [Basis of XDM schema composition](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/composition.html)
-* [Identity namespace overview](https://docs.adobe.com/content/help/en/experience-platform/identity/namespaces.html)
-* [Adobe Real-time CDP destinations overview](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destinations-overview.html)
+* [Basis of XDM schema composition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en)
+* [Identity namespace overview](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en)
+* [Adobe Real-time CDP destinations overview](https://experienceleague.adobe.com/docs/experience-platform/destinations/home.html?lang=en)
 
 
 ## Where to start {#where-to-start}
