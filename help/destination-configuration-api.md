@@ -3,7 +3,7 @@ description: The destinations configuration allows you to indicate basic informa
 title: Destination configuration options for the Destination SDK
 exl-id: 2ecd0bdf-55c3-4946-a304-0147bc16ff39
 ---
-# Destination configuration {#destination-configuration}
+# Destinations API reference {#destination-configuration}
 
 >[!IMPORTANT]
 >

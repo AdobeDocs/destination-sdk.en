@@ -1,9 +1,8 @@
 ---
-description: This configuration determines how Adobe Experience Platform users authenticate to your destination endpoint to activate data.
-title: Configuration options for credentials in Destination SDK
-exl-id: 63ed9a03-eb4d-46c6-85e9-6c1d84acdbad
+description: This page describes all the API operations that you can perform using the `/authoring/v1/credentials` API endpoint.
+title: Credentials API reference
 ---
-# Credentials configuration {#credentials}
+# Credentials API reference {#credentials}
 
 >[!IMPORTANT]
 >
@@ -12,24 +11,15 @@ exl-id: 63ed9a03-eb4d-46c6-85e9-6c1d84acdbad
 
 **API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/credentials` 
 
+This page lists and describes all the API operations that you can perform using the `/authoring/v1/credentials` API endpoint.
+
 ## When to use the `/credentials` API endpoint {#when-to-use}
 
 >[!IMPORTANT]
 >
->In most cases, you *do not* need to use the `/credentials` API endpoint. Instead, you can configure the authentication information for your destination in the `customerAuthenticationConfigurations` parameters of the `/destinations` endpoint.
+>In most cases, you *do not* need to use the `/credentials` API endpoint. Instead, you can configure the authentication information for your destination in the `customerAuthenticationConfigurations` parameters of the `/destinations` endpoint. Read [Credentials configuration](/help/credentials-configuration.md) for more information.
 
 Use this API endpoint and select `PLATFORM_AUTHENTICATION` in the [destination configuration](/help/destination-configuration.md#destination-delivery) if there is a global authentication system between Adobe and your destination and the [!DNL Platform] customer does not need to provide any authentication credentials to connect to your destination. In this case, you must create a credentials object using the `/credentials` API endpoint.
-
-## Supported authentication types {#supported-authentication-types}
-
-Adobe Experience Platform supports several authentication types:
-
-* Basic authentication
-* Oauth1
-* OAuth2 user credentials
-* OAuth2 client credentials
-* OAuth2 access token
-* OAuth2 refresh token
 
 ## Example configurations
 
@@ -70,8 +60,8 @@ The sections below list out the necessary parameters for each authentication typ
 
 |Parameter | Type | Description|
 |---------|----------|------|
-|`username` | String | Destination Server login username |
-|`password` | String | Destination Server login password |
+|`username` | String | credentials configuration login username |
+|`password` | String | credentials configuration login password |
 
 <!--
 
@@ -81,15 +71,15 @@ The sections below list out the necessary parameters for each authentication typ
 
 |Parameter | Type | Description|
 |---------|----------|------|
-|accessId | String | Destination Server S3 credential Access key ID |
-|secretKey | String | Destination Server S3 credential Secret key |
+|accessId | String | credentials configuration S3 credential Access key ID |
+|secretKey | String | credentials configuration S3 credential Secret key |
 
 ### SSH 
 
 |Parameter | Type | Description|
 |---------|----------|------|
-|username | String | Destination Server SSH username |
-|SSHKey | String | Destination Server SSH key |
+|username | String | credentials configuration SSH username |
+|SSHKey | String | credentials configuration SSH key |
 
 -->
 
@@ -143,3 +133,336 @@ The sections below list out the necessary parameters for each authentication typ
 |`url` | String | URL of authorization provider |
 |`expiration` | String | The time-to-live for the refresh token |
 |`header` | String | Any header required for authorization |
+
+## Getting started with credentials configuration API operations
+
+Before continuing, please review the [getting started guide](./getting-started.md) for important information that you need to know in order to successfully make calls to the API, including how to obtain required headers and how to get allow listed.
+
+## Create a credentials configuration {#create}
+
+You can create a new credentials configuration by making a POST request to the `/authoring/v1/credentials` endpoint.
+
+**API format**
+
+
+```http
+POST /authoring/v1/credentials
+```
+
+**Request**
+
+The following request creates a new credentials configuration, configured by the parameters provided in the payload. The payload below includes all parameters accepted by the `/authoring/v1/credentials` endpoint. Note that you do not have to add all parameters on the call and that the template is customizable, according to your API requirements.
+
+```shell
+curl -X POST https://platform.adobe.io/data/core/activation/authoring/v1/credentials \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'Content-Type: application/json' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -H 'x-sandbox-id: {SANDBOX_ID}' \
+ -d '
+{
+  "type": "BASIC",
+  "name": "string",
+  "basicAuthentication": {
+    "username": "string",
+    "password": "string"
+  },
+  "oauth2UserAuthentication": {
+    "url": "string",
+    "clientId": "string",
+    "clientSecret": "string",
+    "username": "string",
+    "password": "string",
+    "header": "string"
+  },
+  "oauth2ClientAuthentication": {
+    "url": "string",
+    "clientId": "string",
+    "clientSecret": "string",
+    "header": "string",
+    "developerToken": "string"
+  },
+  "oauth2AccessTokenAuthentication": {
+    "accessToken": "string",
+    "expiration": "string",
+    "username": "string",
+    "userId": "string",
+    "url": "string",
+    "header": "string"
+  },
+  "oauth2RefreshTokenAuthentication": {
+    "refreshToken": "string",
+    "expiration": "string",
+    "clientId": "string",
+    "clientSecret": "string",
+    "url": "string",
+    "header": "string"
+  }
+```
+
+| Parameter | Type | Description |
+| -------- | ----------- | ----------- |
+|`name` | String | Represents a friendly name of your server, visible only to Adobe. This name is not visible to partners or customers. Example `Moviestar credentials configuration`.  |
+|`destinationServerType` | String | `URL_BASED` is the only available option in the beta release phase. |
+|`templatingStrategy` | String | <ul><li>Use `PEBBLE_V1` if Adobe needs to transform the URL in the `value` field below. Use this option if you have an endpoint like: `https://api.moviestar.com/data/{{endpoint.region}}/items` </li><li> Use `NONE` if no transformation is needed on the Adobe side, for example if you have an endpoint like: `https://api.moviestar.com/data/items` </li></ul>  |
+|`value` | String | Fill in the address of the API endpoint that Experience Platform should connect to. |
+|`maxUsersPerRequest` | Integer | Adobe can aggregate multiple exported profiles in a single HTTP call. Specify the maximum number of profiles that your endpoint should receive in a single HTTP call. Note that this is a best effort aggregation. For example, if you specify the value 100, Adobe might send any number of profiles smaller than 100 on a call. <br> If your server does not accept multiple users per request, set this value to 1. |
+|`splitUserById` | Boolean | Use this flag if the call to the destination should be split by identity. Set this flag to `true` if your server only accepts one identity per call, for a given namespace. |
+|`httpMethod` | String | The method that Adobe will use in calls to your server. Options are `GET`, `PUT`, `POST`, `DELETE`, `PATCH`. |
+|`templatingStrategy` | String | Use `PEBBLE_V1`. |
+|`value` | String | This string is the character-escaped version that transforms Platform customers' data to the format your service expects. <br> For information how to write the template, read the [Using templating section](/help/message-format.md#using-templating). <br> For more information about character escaping, refer to the [RFC JSON standard, section seven](https://tools.ietf.org/html/rfc8259#section-7). <br> For an example of a simple transformation, refer to the [Profile Attributes](/help/message-format.md#attributes) transformation. |
+|`contentType` | String | The content type that your server accepts. This value is most likely `application/json`. |
+
+{style="table-layout:auto"}
+
+**Response**
+
+A successful response returns HTTP status 200 with details of your newly created credentials configuration.
+
+## List credentials configurations {#retrieve-list}
+
+You can retrieve a list of all credentials configurations for your IMS Organization by making a GET request to the `/authoring/v1/credentials` endpoint.
+
+**API format**
+
+
+```http
+GET /authoring/v1/credentials
+```
+
+**Request**
+
+The following request will retrieve the list of credentials configurations that you have access to, based on IMS Organization and sandbox configuration.
+
+```shell
+curl -X GET https://platform.adobe.io/data/core/activation/authoring/v1/credentials \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}'
+ -H 'x-sandbox-id: {SANDBOX_ID}'  
+```
+
+**Response**
+
+The following response returns HTTP status 200 with a list of credentials configurations that you have access to, based on the IMS Organization ID, sandbox name, and sandbox ID that you used. One `instanceId` corresponds to the template for one credentials configuration. The response is truncated for brevity.
+
+```json
+
+[
+       {
+        "instanceId": "2307ec2b-4798-45a4-9239-5d0a2fb0ed67",
+        "createdDate": "2020-11-17T06:49:24.331012Z",
+        "lastModifiedDate": "2020-11-17T06:49:24.331012Z",
+        "name": "Moviestar credentials configuration",
+        "destinationServerType": "URL_BASED",
+        "urlBasedDestination": {
+            "url": {
+                "templatingStrategy": "PEBBLE_V1",
+                "value": "https://go.{% if destination.config.domain == \"US\" %}moviestar.com{% else %}moviestar.eu{% endif%}/api/named_users/tags"
+            },
+            "splitUserById": false
+        },
+        "httpTemplate": {
+            "requestBody": {
+                "templatingStrategy": "PEBBLE_V1",
+                "value": "{ \"audience\": { \"named_user_id\": [ {% for named_user in input.profile.identityMap.named_user_id %} \"{{ named_user.id }}\"{% if not loop.last %},{% endif %} {% endfor %} ] }, {% if addedSegments(input.profile.segmentMembership.ups) is not empty %} \"add\": { \"adobe-segments\": [ {% for added_segment in addedSegments(input.profile.segmentMembership.ups) %} \"{{ destination.segmentNames[added_segment.key] }}\"{% if not loop.last %},{% endif %} {% endfor %} ] } {% endif %} {% if addedSegments(input.profile.segmentMembership.ups) is not empty and removedSegments(input.profile.segmentMembership.ups) is not empty %} , {% endif %} {% if removedSegments(input.profile.segmentMembership.ups) is not empty %} \"remove\": { \"adobe-segments\": [ {% for removed_segment in removedSegments(input.profile.segmentMembership.ups) %} \"{{ destination.segmentNames[removed_segment.key] }}\"{% if not loop.last %},{% endif %} {% endfor %} ] } {% endif %} }"
+            },
+            "httpMethod": "POST",
+            "contentType": "application/json",
+            "headers": [
+                {
+                    "header": "Accept",
+                    "value": {
+                        "templatingStrategy": "NONE",
+                        "value": "application/vnd.moviestar+json; version=3;"
+                    }
+                }
+            ]
+        },
+        "qos": {
+            "name": "freeform"
+        }
+    },
+    {
+        "instanceId": "d88de647-a352-4824-8b46-354afc7acbff",
+        "createdDate": "2020-11-17T16:50:59.635228Z",
+        "lastModifiedDate": "2020-11-17T16:50:59.635228Z",
+        "name": "Test11 credentials configuration",
+        "destinationServerType": "URL_BASED",
+        "urlBasedDestination": {
+            "url": {
+                "templatingStrategy": "PEBBLE_V1",
+                "value": "https://go.{% if destination.config.domain == \"US\" %}moviestar.com{% else %}airship.eu{% endif%}/api/named_users/tags"
+            },
+            "splitUserById": false
+        },
+        "httpTemplate": {
+            "requestBody": {
+                "templatingStrategy": "PEBBLE_V1",
+                "value": "{ \"audience\": { \"named_user_id\": [ {% for named_user in input.profile.identityMap.named_user_id %} \"{{ named_user.id }}\"{% if not loop.last %},{% endif %} {% endfor %} ] }, {% if addedSegments(input.profile.segmentMembership.ups) is not empty %} \"add\": { \"adobe-segments\": [ {% for added_segment in addedSegments(input.profile.segmentMembership.ups) %} \"{{ destination.segmentNames[added_segment.key] }}\"{% if not loop.last %},{% endif %} {% endfor %} ] } {% endif %} {% if addedSegments(input.profile.segmentMembership.ups) is not empty and removedSegments(input.profile.segmentMembership.ups) is not empty %} , {% endif %} {% if removedSegments(input.profile.segmentMembership.ups) is not empty %} \"remove\": { \"adobe-segments\": [ {% for removed_segment in removedSegments(input.profile.segmentMembership.ups) %} \"{{ destination.segmentNames[removed_segment.key] }}\"{% if not loop.last %},{% endif %} {% endfor %} ] } {% endif %} }"
+            },
+            "httpMethod": "POST",
+            "contentType": "application/json",
+            "headers": [
+                {
+                    "header": "Accept",
+                    "value": {
+                        "templatingStrategy": "NONE",
+                        "value": "application/vnd.moviestar+json; version=3;"
+                    }
+                }
+            ]
+        },
+        "qos": {
+            "name": "freeform"
+        }
+    },
+]
+    
+```
+
+## Update an existing credentials configuration {#update}
+
+You can update an existing credentials configuration by making a PUT request to the `/authoring/v1/credentials` endpoint and providing the instance ID of the credentials configuration you want to update. In the body of the call, provide the updated credentials configuration.
+
+**API format**
+
+
+```http
+PUT /authoring/v1/credentials/{INSTANCE_ID}
+```
+
+| Parameter | Description |
+| -------- | ----------- |
+| `{INSTANCE_ID}` | The ID of the credentials configuration that you want to update. |
+
+**Request**
+
+The following request updates an existing credentials configuration, configured by the parameters provided in the payload.
+
+```shell
+
+curl -X PUT https://platform.adobe.io/data/core/activation/authoring/v1/credentials/bd4ec8f0-e98f-4b6a-8064-dd7adbfffec9 \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -H 'x-sandbox-id: {SANDBOX_ID}' \
+ -d '
+{
+  "name": "Moviestar credentials configuration",
+  "destinationServerType": "URL_BASED",
+  "urlBasedDestination": {
+    "url": {
+      "templatingStrategy": "PEBBLE_V1",
+      "value": "https://api.moviestar.com/data/{{endpoint.region}}/items"
+    },
+    "maxUsersPerRequest": 100,
+    "splitUserById": true
+  }
+},
+  "httpTemplate": {
+    "httpMethod": "POST",
+    "requestBody": {
+            "templatingStrategy": "PEBBLE_V1",
+            "value": "{ \"attributes\": [ {% for ns in [\"external_id\", \"yourdestination_id\"] %} {% if input.profile.identityMap[ns] is not empty and first_namespace_encountered %} , {% endif %} {% set first_namespace_encountered = true %} {% for identity in input.profile.identityMap[ns]%} { \"{{ ns }}\": \"{{ identity.id }}\" {% if input.profile.segmentMembership.ups is not empty %} , \"AEPSegments\": { \"add\": [ {% for segment in input.profile.segmentMembership.ups %} {% if segment.value.status == \"realized\" or segment.value.status == \"existing\" %} {% if added_segment_found %} , {% endif %} {% set added_segment_found = true %} \"{{ destination.segmentAliases[segment.key] }}\" {% endif %} {% endfor %} ], \"remove\": [ {% for segment in input.profile.segmentMembership.ups %} {% if segment.value.status == \"exited\" %} {% if removed_segment_found %} , {% endif %} {% set removed_segment_found = true %} \"{{ destination.segmentAliases[segment.key] }}\" {% endif %} {% endfor %} ] } {% set removed_segment_found = false %} {% set added_segment_found = false %} {% endif %} {% if input.profile.attributes is not empty %} , {% endif %} {% for attribute in input.profile.attributes %} \"{{ attribute.key }}\": {% if attribute.value is empty %} null {% else %} \"{{ attribute.value.value }}\" {% endif %} {% if not loop.last%} , {% endif %} {% endfor %} } {% if not loop.last %} , {% endif %} {% endfor %} {% endfor %} ] }"
+        },
+        "contentType": "application/json"
+    }
+
+```
+
+
+
+
+
+## Retrieve a specific credentials configuration {#get}
+
+You can retrieve detailed information about a specific credentials configuration by making a GET request to the `/authoring/v1/credentials` endpoint and providing the instance ID of the credentials configuration you want to update.
+
+**API format**
+
+
+```http
+GET /authoring/v1/credentials/{INSTANCE_ID}
+```
+
+| Parameter | Description |
+| -------- | ----------- |
+| `{INSTANCE_ID}` | The ID of the credentials configuration you want to retrieve. |
+
+**Request**
+
+```shell
+curl -X GET https://platform.adobe.io/data/core/activation/authoring/v1/credentials/bd4ec8f0-e98f-4b6a-8064-dd7adbfffec9 \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}'
+ -H 'x-sandbox-id: {SANDBOX_ID}'
+```
+
+**Response**
+
+A successful response returns HTTP status 200 with detailed information about the specified credentials configuration.
+
+```json
+{
+  "name": "Moviestar credentials configuration",
+  "destinationServerType": "URL_BASED",
+  "urlBasedDestination": {
+    "url": {
+      "templatingStrategy": "PEBBLE_V1",
+      "value": "https://api.moviestar.com/data/{{endpoint.region}}/items"
+    },
+    "maxUsersPerRequest": 100,
+    "splitUserById": true
+  }
+},
+  "httpTemplate": {
+    "httpMethod": "POST",
+    "requestBody": {
+            "templatingStrategy": "PEBBLE_V1",
+            "value": "{ \"attributes\": [ {% for ns in [\"external_id\", \"yourdestination_id\"] %} {% if input.profile.identityMap[ns] is not empty and first_namespace_encountered %} , {% endif %} {% set first_namespace_encountered = true %} {% for identity in input.profile.identityMap[ns]%} { \"{{ ns }}\": \"{{ identity.id }}\" {% if input.profile.segmentMembership.ups is not empty %} , \"AEPSegments\": { \"add\": [ {% for segment in input.profile.segmentMembership.ups %} {% if segment.value.status == \"realized\" or segment.value.status == \"existing\" %} {% if added_segment_found %} , {% endif %} {% set added_segment_found = true %} \"{{ destination.segmentAliases[segment.key] }}\" {% endif %} {% endfor %} ], \"remove\": [ {% for segment in input.profile.segmentMembership.ups %} {% if segment.value.status == \"exited\" %} {% if removed_segment_found %} , {% endif %} {% set removed_segment_found = true %} \"{{ destination.segmentAliases[segment.key] }}\" {% endif %} {% endfor %} ] } {% set removed_segment_found = false %} {% set added_segment_found = false %} {% endif %} {% if input.profile.attributes is not empty %} , {% endif %} {% for attribute in input.profile.attributes %} \"{{ attribute.key }}\": {% if attribute.value is empty %} null {% else %} \"{{ attribute.value.value }}\" {% endif %} {% if not loop.last%} , {% endif %} {% endfor %} } {% if not loop.last %} , {% endif %} {% endfor %} {% endfor %} ] }"
+        },
+        "contentType": "application/json"
+    }
+```
+
+
+## Delete a specific credentials configuration {#delete}
+
+You can delete the specified credentials configuration by making a DELETE request to the `/authoring/v1/credentials` endpoint and providing the ID of the credentials configuration you wish to delete in the request path.
+
+**API format**
+
+```http
+DELETE /authoring/v1/credentials/{INSTANCE_ID}
+```
+
+| Parameter | Description |
+| --------- | ----------- |
+| `{INSTANCE_ID}` | The `id` of the credentials configuration you want to delete. |
+
+**Request**
+
+```shell
+curl -X DELETE https://platform.adobe.io/data/core/activation/authoring/v1/credentials/bd4ec8f0-e98f-4b6a-8064-dd7adbfffec9 \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -H 'x-sandbox-id: {SANDBOX_ID}'
+```
+
+**Response**
+
+A successful response returns HTTP status 200 along with an empty HTTP response.
+
+## API error handling
+
+Destination SDK API endpoints follow the general Experience Platform API error message principles. Refer to [API status codes](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) and [request header errors](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) in the Platform troubleshooting guide.

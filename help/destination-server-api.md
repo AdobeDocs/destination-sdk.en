@@ -1,9 +1,8 @@
 ---
 description: The server and template specs in Adobe Destination SDK can be configured via the common endpoint `/authoring/v1/destination-servers`.
-title: Configuration options for server and template specs in Destination SDK
-exl-id: 9bda8aa7-d7cf-4729-8890-6945da104719
+title: Destination server endpoint API operations
 ---
-# Destination server API reference
+# Destination server endpoint API operations
 
 >[!IMPORTANT]
 >
@@ -13,7 +12,7 @@ exl-id: 9bda8aa7-d7cf-4729-8890-6945da104719
 
 **API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/destination-servers`
 
-The server and template specs in Adobe Destination SDK can be configured via the common endpoint `/authoring/v1/destination-servers`. For a description of the functionality provided by this endpoint, read [server and template specs](/help/server-and-template-configuration.md). 
+This page lists and describes all the API operations that you can perform using the `/authoring/v1/destination-servers` API endpoint. The server and template specs in Adobe Destination SDK can be configured via the common endpoint `/authoring/v1/destination-servers`. For a description of the functionality provided by this endpoint, read [server and template specs](/help/server-and-template-configuration.md). 
 
 ## Getting started with destination server API operations
 
@@ -69,14 +68,14 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/v1/destina
 | -------- | ----------- | ----------- |
 |`name` | String | Represents a friendly name of your server, visible only to Adobe. This name is not visible to partners or customers. Example `Moviestar destination server`.  |
 |`destinationServerType` | String | `URL_BASED` is the only available option in the beta release phase. |
-|`templatingStrategy` | String | <ul><li>Use `PEBBLE_V1` if Adobe needs to transform the URL in the `value` field below. Use this option if you have an endpoint like: `https://api.moviestar.com/data/{{endpoint.region}}/items` </li><li> Use `NONE` if no transformation is needed on the Adobe side, for example if you have an endpoint like: `https://api.moviestar.com/data/items` </li></ul>  |
-|`value` | String | Fill in the address of the API endpoint that Experience Platform should connect to. |
-|`maxUsersPerRequest` | Integer | Adobe can aggregate multiple exported profiles in a single HTTP call. Specify the maximum number of profiles that your endpoint should receive in a single HTTP call. Note that this is a best effort aggregation. For example, if you specify the value 100, Adobe might send any number of profiles smaller than 100 on a call. <br> If your server does not accept multiple users per request, set this value to 1. |
-|`splitUserById` | Boolean | Use this flag if the call to the destination should be split by identity. Set this flag to `true` if your server only accepts one identity per call, for a given namespace. |
-|`httpMethod` | String | The method that Adobe will use in calls to your server. Options are `GET`, `PUT`, `POST`, `DELETE`, `PATCH`. |
-|`templatingStrategy` | String | Use `PEBBLE_V1`. |
-|`value` | String | This string is the character-escaped version that transforms Platform customers' data to the format your service expects. <br> For information how to write the template, read the [Using templating section](/help/message-format.md#using-templating). <br> For more information about character escaping, refer to the [RFC JSON standard, section seven](https://tools.ietf.org/html/rfc8259#section-7). <br> For an example of a simple transformation, refer to the [Profile Attributes](/help/message-format.md#attributes) transformation. |
-|`contentType` | String | The content type that your server accepts. This value is most likely `application/json`. |
+|`urlBasedDestination.url.templatingStrategy` | String | <ul><li>Use `PEBBLE_V1` if Adobe needs to transform the URL in the `value` field below. Use this option if you have an endpoint like: `https://api.moviestar.com/data/{{endpoint.region}}/items` </li><li> Use `NONE` if no transformation is needed on the Adobe side, for example if you have an endpoint like: `https://api.moviestar.com/data/items` </li></ul>  |
+|`urlBasedDestination.url.value` | String | Fill in the address of the API endpoint that Experience Platform should connect to. |
+|`urlBasedDestination.maxUsersPerRequest` | Integer | Adobe can aggregate multiple exported profiles in a single HTTP call. Specify the maximum number of profiles that your endpoint should receive in a single HTTP call. Note that this is a best effort aggregation. For example, if you specify the value 100, Adobe might send any number of profiles smaller than 100 on a call. <br> If your server does not accept multiple users per request, set this value to 1. |
+|`urlBasedDestination.splitUserById` | Boolean | Use this flag if the call to the destination should be split by identity. Set this flag to `true` if your server only accepts one identity per call, for a given namespace. |
+|`httpTemplate.httpMethod` | String | The method that Adobe will use in calls to your server. Options are `GET`, `PUT`, `POST`, `DELETE`, `PATCH`. |
+|`httpTemplate.requestBody.templatingStrategy` | String | Use `PEBBLE_V1`. |
+|`httpTemplate.requestBody.value` | String | This string is the character-escaped version that transforms Platform customers' data to the format your service expects. <br> For information how to write the template, read the [Using templating section](/help/message-format.md#using-templating). <br> For more information about character escaping, refer to the [RFC JSON standard, section seven](https://tools.ietf.org/html/rfc8259#section-7). <br> For an example of a simple transformation, refer to the [Profile Attributes](/help/message-format.md#attributes) transformation. |
+|`httpTemplate.contentType` | String | The content type that your server accepts. This value is most likely `application/json`. |
 
 {style="table-layout:auto"}
 

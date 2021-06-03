@@ -1,8 +1,8 @@
 ---
-description: 
-title: Audience metadata management
+description: This page describes all the API operations that you can perform using the `/authoring/v1/audience-templates` API endpoint.
+title: Audience metadata endpoint API operations
 ---
-# Audience metadata API reference {#audience-metadata-api-reference}
+# Audience metadata endpoint API operations
 
 >[!IMPORTANT]
 >
@@ -11,7 +11,7 @@ title: Audience metadata management
 
 **API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/audience-templates` 
 
-This page lists all the API operations that you can perform using the `/authoring/v1/audience-templates` API endpoint. For a description of when to use this endpoint, read [audience management management](/help/audience-metadata-management.md). 
+This page lists and describes all the API operations that you can perform using the `/authoring/v1/audience-templates` API endpoint. For a description of when to use this endpoint, read [audience management management](/help/audience-metadata-management.md). 
 
 ## Getting started with audience templates API operations
 

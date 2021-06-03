@@ -21,10 +21,10 @@ user-guide-description: Adobe Experience Platform Destination SDK provides you w
   + [Audience metadata management](/help/audience-metadata-management.md)
   + [OAuth 2 authentication](/help/oauth2-authentication.md) 
 + API reference {#api-reference}
-  + [Configure destination](/help/destination-configuration-api.md)
-  + [Configure server and template](/help/destination-server-api.md)
-  + [Configure audience metadata](/help/audience-metadata-api.md)
-  + [Configure credentials](/help/credentials-configuration-api.md)
+  + [Destinations endpoint API operations](/help/destination-configuration-api.md)
+  + [Destination server endpoint API operations](/help/destination-server-api.md)
+  + [Audience metadata endpoint API operations](/help/audience-metadata-api.md)
+  + [Credentials endpoint API operations](/help/credentials-configuration-api.md)
 + Guides {#guides}
   + [Use the Destination SDK to configure your destination](/help/configure-destination-instructions.md)
 + Document your destination {#document-destination}
