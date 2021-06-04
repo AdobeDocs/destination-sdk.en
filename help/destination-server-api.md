@@ -1,18 +1,17 @@
 ---
-description: The server and template specs in Adobe Destination SDK can be configured via the common endpoint `/authoring/v1/destination-servers`.
+description: The server and template specs in Adobe Destination SDK can be configured via the common endpoint `/authoring/v1/destination-servers`. This page lists and describes all the API operations that you can perform using the `/authoring/v1/destination-servers` API endpoint.
 title: Destination server endpoint API operations
 ---
 # Destination server endpoint API operations
+
+**API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/destination-servers`
 
 >[!IMPORTANT]
 >
 >* This feature is in limited beta and is only available to select [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) members. If you are interested in using Destination SDK, please contact Adobe Exchange. 
 >* The documentation and the functionality are subject to change.
 
-
-**API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/destination-servers`
-
-This page lists and describes all the API operations that you can perform using the `/authoring/v1/destination-servers` API endpoint. The server and template specs in Adobe Destination SDK can be configured via the common endpoint `/authoring/v1/destination-servers`. For a description of the functionality provided by this endpoint, read [server and template specs](/help/server-and-template-configuration.md). 
+This page lists and describes all the API operations that you can perform using the `/authoring/v1/destination-servers` API endpoint. The server and template specs in Adobe Destination SDK can be configured via the common endpoint `/authoring/v1/destination-servers`. For a description of the functionality provided by this endpoint, read [server and template specs](/help/server-and-template-configuration.md).
 
 ## Getting started with destination server API operations
 

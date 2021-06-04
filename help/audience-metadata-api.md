@@ -4,14 +4,14 @@ title: Audience metadata endpoint API operations
 ---
 # Audience metadata endpoint API operations
 
+**API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/audience-templates`
+
 >[!IMPORTANT]
 >
 >* This feature is in limited beta and is only available to select [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) members. If you are interested in using Destination SDK, please contact Adobe Exchange. 
->* The documentation and the functionality are subject to change.
+>* The documentation and the functionality are subject to change. 
 
-**API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/audience-templates` 
-
-This page lists and describes all the API operations that you can perform using the `/authoring/v1/audience-templates` API endpoint. For a description of when to use this endpoint, read [audience management management](/help/audience-metadata-management.md). 
+This page lists and describes all the API operations that you can perform using the `/authoring/v1/audience-templates` API endpoint. For a description of when to use this endpoint, read [audience metadata management](/help/audience-metadata-management.md). 
 
 ## Getting started with audience templates API operations
 

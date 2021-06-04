@@ -1,15 +1,15 @@
 ---
 description: This page describes all the API operations that you can perform using the `/authoring/v1/credentials` API endpoint.
-title: Credentials API reference
+title: Credentials endpoint API operations
 ---
-# Credentials API reference {#credentials}
+# Credentials endpoint API operations {#credentials}
+
+**API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/credentials`
 
 >[!IMPORTANT]
 >
 >* This feature is in limited beta and is only available to select [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) members. If you are interested in using Destination SDK, please contact Adobe Exchange. 
 >* The documentation and the functionality are subject to change.
-
-**API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/credentials` 
 
 This page lists and describes all the API operations that you can perform using the `/authoring/v1/credentials` API endpoint.
 
