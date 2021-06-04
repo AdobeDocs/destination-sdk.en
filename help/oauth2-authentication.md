@@ -40,7 +40,7 @@ At the end of this step, you should have:
 
 ### What you need to do in Destination SDK {#to-do-in-destination-sdk}
 
-To set up OAuth 2 authentication for your destination in Experience Platform, you must add your OAuth 2 details to the [destination configuration](/help/destination-configuration.md), under the `customerAuthenticationConfigurations` parameter, by using the `platform.adobe.io/data/core/activation/authoring/v1/destinations` API endpoint. See the [example configuration](/help/destination-configuration.md#example-configuration). Specific instructions about which fields you need to add to your configuration template, depending on your OAuth 2 authentication grant type, are further below on this page.
+To set up OAuth 2 authentication for your destination in Experience Platform, you must add your OAuth 2 details to the [destination configuration](/help/destination-configuration.md), under the `customerAuthenticationConfigurations` parameter, by using the `platform.adobe.io/data/core/activation/authoring/v1/destinations` [API endpoint](/help/destination-configuration-api.md). See the [example configuration](/help/destination-configuration.md#example-configuration). Specific instructions about which fields you need to add to your configuration template, depending on your OAuth 2 authentication grant type, are further below on this page.
 
 ## Supported OAuth 2 grant types {#oauth2-grant-types}
 

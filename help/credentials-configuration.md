@@ -18,14 +18,13 @@ exl-id: 63ed9a03-eb4d-46c6-85e9-6c1d84acdbad
 >
 >In most cases, you *do not* need to use the `/credentials` API endpoint. Instead, you can configure the authentication information for your destination in the `customerAuthenticationConfigurations` parameters of the `/destinations` endpoint.
 
-Use this API endpoint and select `PLATFORM_AUTHENTICATION` in the [destination configuration](/help/destination-configuration.md#destination-delivery) if there is a global authentication system between Adobe and your destination and the [!DNL Platform] customer does not need to provide any authentication credentials to connect to your destination. In this case, you must create a credentials object using the `/credentials` API endpoint.
+Use this API endpoint and select `PLATFORM_AUTHENTICATION` in the [destination configuration](/help/destination-configuration.md#destination-delivery) if there is a global authentication system between Adobe and your destination and the [!DNL Platform] customer does not need to provide any authentication credentials to connect to your destination. In this case, you must create a credentials object using the `/credentials` API endpoint. Read [Credentials API endpoint operations](/help/credentials-configuration-api.md) for a complete list of operations you can perform on the `/credentials` endpoint.
 
 ## Supported authentication types {#supported-authentication-types}
 
 Adobe Experience Platform supports several authentication types:
 
 * Basic authentication
-* Oauth1
 * OAuth2 user credentials
 * OAuth2 client credentials
 * OAuth2 access token
@@ -47,7 +46,7 @@ Adobe Experience Platform supports several authentication types:
 
 ```
 
-**Example configuration for an Oauth2 credential configuration**
+**Example configuration for an OAuth 2 credential configuration**
 
 ```json
 
@@ -75,7 +74,7 @@ The sections below list out the necessary parameters for each authentication typ
 
 <!--
 
-// commenting out this part as these types of authentication methods are not supported in phase one
+// commenting out this part as these types of authentication methods are not supported in Destination SDK beta
 
 ### S3 authentication
 
@@ -91,7 +90,7 @@ The sections below list out the necessary parameters for each authentication typ
 |username | String | Destination Server SSH username |
 |SSHKey | String | Destination Server SSH key |
 
--->
+
 
 ## OAuth1
 
@@ -101,6 +100,8 @@ The sections below list out the necessary parameters for each authentication typ
 |`apiSecret` | String | Secret used by the Destinations Service to establish ownership of the API key to the Service Provider. |
 |`acccessToken` | String | A value used by the Destinations Service to gain access to the Protected Resources on behalf of the User |
 |`tokenSecret` | String | A secret used by the Destinations Service to establish ownership of an access token. |
+
+-->
 
 ## OAuth2 user credentials
 
