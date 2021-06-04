@@ -16,7 +16,7 @@ Adobe Experience Platform Destination SDK is a set of configuration APIs that al
 
 <!--
 
-This documentation set provides all the configuration options needed for *Destination Authoring*. For the elements listed in the image below in the *Destinations Authoring* section, use the Destination SDK API endpoints to configure your destination in Experience Platform. Find more information in [Configuration options for the Destination SDK](/help/configuration-options.md).
+This documentation set provides all the configuration options needed for *Destination Authoring*. For the elements listed in the image below in the *Destinations Authoring* section, use Destination SDK API endpoints to configure your destination in Experience Platform. Find more information in [Configuration options for Destination SDK](/help/configuration-options.md).
 
 ![Destinations framework architecture](/help/assets/aep-destination-framework.png)
 
@@ -61,7 +61,7 @@ First, see the [integration patterns](/help/integration-methods.md). This page p
 
 -->
 
-Read [Configuration options for the Destination SDK](/help/configuration-options.md) and [Message format](/help/message-format.md) for information on the configuration options available to you.
+Read [Configuration options for Destination SDK](/help/configuration-options.md) and [Message format](/help/message-format.md) for information on the configuration options available to you.
 
 <!--
 

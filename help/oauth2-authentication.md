@@ -470,4 +470,4 @@ Prefix | Description | Example |
 
 ## Next steps {#next-steps}
 
-By reading this article, you now have an understanding of the OAuth 2 authentication patterns supported by Adobe Experience Platform and know how to configure your destination with OAuth 2 authentication support. Next, you can set up your OAuth 2-supported destination using the Destination SDK. Read [Use the Destination SDK to configure your destination](./configure-destination-instructions.md) for next steps.
+By reading this article, you now have an understanding of the OAuth 2 authentication patterns supported by Adobe Experience Platform and know how to configure your destination with OAuth 2 authentication support. Next, you can set up your OAuth 2-supported destination using Destination SDK. Read [Use Destination SDK to configure your destination](./configure-destination-instructions.md) for next steps.

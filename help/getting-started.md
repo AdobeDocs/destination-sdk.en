@@ -65,4 +65,4 @@ To use the API endpoints described in the [reference documentation](/help/config
 
 ## Next steps
 
-By following the steps in this article, you obtained authentication credentials to Adobe I/O, a sandbox name and ID, and were added to an allowlist. Next, you can set up a destination using the Destination SDK. Read [Use the Destination SDK to configure your destination](./configure-destination-instructions.md) for next steps.
+By following the steps in this article, you obtained authentication credentials to Adobe I/O, a sandbox name and ID, and were added to an allowlist. Next, you can set up a destination using Destination SDK. Read [Use Destination SDK to configure your destination](./configure-destination-instructions.md) for next steps.

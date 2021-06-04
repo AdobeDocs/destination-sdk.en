@@ -26,7 +26,7 @@ user-guide-description: Adobe Experience Platform Destination SDK provides you w
   + [Audience metadata endpoint API operations](/help/audience-metadata-api.md)
   + [Credentials endpoint API operations](/help/credentials-configuration-api.md)
 + Guides {#guides}
-  + [Use the Destination SDK to configure your destination](/help/configure-destination-instructions.md)
+  + [Use Destination SDK to configure your destination](/help/configure-destination-instructions.md)
 + Document your destination {#document-destination}
   + [Document your destination in Adobe Experience Platform](/help/docs-framework/documentation-instructions.md)
   + [Use the GitHub web interface to create a destination documentation page](/help/docs-framework/use-github-interface-to-create-documentation.md)
