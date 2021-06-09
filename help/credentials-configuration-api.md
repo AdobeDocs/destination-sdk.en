@@ -37,7 +37,7 @@ Use this API endpoint and select `PLATFORM_AUTHENTICATION` in the [destination c
 
 ```
 
-**Example configuration for an Oauth2 credential configuration**
+**Example configuration for an OAuth2 credential configuration**
 
 ```json
 
@@ -205,15 +205,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/v1/credent
 | Parameter | Type | Description |
 | -------- | ----------- | ----------- |
 |`name` | String | Represents a friendly name of your server, visible only to Adobe. This name is not visible to partners or customers. Example `Moviestar credentials configuration`.  |
-|`destinationServerType` | String | `URL_BASED` is the only available option in the beta release phase. |
-|`templatingStrategy` | String | <ul><li>Use `PEBBLE_V1` if Adobe needs to transform the URL in the `value` field below. Use this option if you have an endpoint like: `https://api.moviestar.com/data/{{endpoint.region}}/items` </li><li> Use `NONE` if no transformation is needed on the Adobe side, for example if you have an endpoint like: `https://api.moviestar.com/data/items` </li></ul>  |
-|`value` | String | Fill in the address of the API endpoint that Experience Platform should connect to. |
-|`maxUsersPerRequest` | Integer | Adobe can aggregate multiple exported profiles in a single HTTP call. Specify the maximum number of profiles that your endpoint should receive in a single HTTP call. Note that this is a best effort aggregation. For example, if you specify the value 100, Adobe might send any number of profiles smaller than 100 on a call. <br> If your server does not accept multiple users per request, set this value to 1. |
-|`splitUserById` | Boolean | Use this flag if the call to the destination should be split by identity. Set this flag to `true` if your server only accepts one identity per call, for a given namespace. |
-|`httpMethod` | String | The method that Adobe will use in calls to your server. Options are `GET`, `PUT`, `POST`, `DELETE`, `PATCH`. |
-|`templatingStrategy` | String | Use `PEBBLE_V1`. |
-|`value` | String | This string is the character-escaped version that transforms Platform customers' data to the format your service expects. <br> For information how to write the template, read the [Using templating section](/help/message-format.md#using-templating). <br> For more information about character escaping, refer to the [RFC JSON standard, section seven](https://tools.ietf.org/html/rfc8259#section-7). <br> For an example of a simple transformation, refer to the [Profile Attributes](/help/message-format.md#attributes) transformation. |
-|`contentType` | String | The content type that your server accepts. This value is most likely `application/json`. |
+
 
 {style="table-layout:auto"}
 
@@ -241,8 +233,8 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/v1/credenti
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'x-gw-ims-org-id: {IMS_ORG}' \
  -H 'x-api-key: {API_KEY}' \
- -H 'x-sandbox-name: {SANDBOX_NAME}'
- -H 'x-sandbox-id: {SANDBOX_ID}'  
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -H 'x-sandbox-id: {SANDBOX_ID}'  \
 ```
 
 **Response**
@@ -251,76 +243,21 @@ The following response returns HTTP status 200 with a list of credentials config
 
 ```json
 
-[
-       {
-        "instanceId": "2307ec2b-4798-45a4-9239-5d0a2fb0ed67",
-        "createdDate": "2020-11-17T06:49:24.331012Z",
-        "lastModifiedDate": "2020-11-17T06:49:24.331012Z",
-        "name": "Moviestar credentials configuration",
-        "destinationServerType": "URL_BASED",
-        "urlBasedDestination": {
-            "url": {
-                "templatingStrategy": "PEBBLE_V1",
-                "value": "https://go.{% if destination.config.domain == \"US\" %}moviestar.com{% else %}moviestar.eu{% endif%}/api/named_users/tags"
-            },
-            "splitUserById": false
-        },
-        "httpTemplate": {
-            "requestBody": {
-                "templatingStrategy": "PEBBLE_V1",
-                "value": "{ \"audience\": { \"named_user_id\": [ {% for named_user in input.profile.identityMap.named_user_id %} \"{{ named_user.id }}\"{% if not loop.last %},{% endif %} {% endfor %} ] }, {% if addedSegments(input.profile.segmentMembership.ups) is not empty %} \"add\": { \"adobe-segments\": [ {% for added_segment in addedSegments(input.profile.segmentMembership.ups) %} \"{{ destination.segmentNames[added_segment.key] }}\"{% if not loop.last %},{% endif %} {% endfor %} ] } {% endif %} {% if addedSegments(input.profile.segmentMembership.ups) is not empty and removedSegments(input.profile.segmentMembership.ups) is not empty %} , {% endif %} {% if removedSegments(input.profile.segmentMembership.ups) is not empty %} \"remove\": { \"adobe-segments\": [ {% for removed_segment in removedSegments(input.profile.segmentMembership.ups) %} \"{{ destination.segmentNames[removed_segment.key] }}\"{% if not loop.last %},{% endif %} {% endfor %} ] } {% endif %} }"
-            },
-            "httpMethod": "POST",
-            "contentType": "application/json",
-            "headers": [
-                {
-                    "header": "Accept",
-                    "value": {
-                        "templatingStrategy": "NONE",
-                        "value": "application/vnd.moviestar+json; version=3;"
-                    }
-                }
-            ]
-        },
-        "qos": {
-            "name": "freeform"
-        }
-    },
-    {
-        "instanceId": "d88de647-a352-4824-8b46-354afc7acbff",
-        "createdDate": "2020-11-17T16:50:59.635228Z",
-        "lastModifiedDate": "2020-11-17T16:50:59.635228Z",
-        "name": "Test11 credentials configuration",
-        "destinationServerType": "URL_BASED",
-        "urlBasedDestination": {
-            "url": {
-                "templatingStrategy": "PEBBLE_V1",
-                "value": "https://go.{% if destination.config.domain == \"US\" %}moviestar.com{% else %}airship.eu{% endif%}/api/named_users/tags"
-            },
-            "splitUserById": false
-        },
-        "httpTemplate": {
-            "requestBody": {
-                "templatingStrategy": "PEBBLE_V1",
-                "value": "{ \"audience\": { \"named_user_id\": [ {% for named_user in input.profile.identityMap.named_user_id %} \"{{ named_user.id }}\"{% if not loop.last %},{% endif %} {% endfor %} ] }, {% if addedSegments(input.profile.segmentMembership.ups) is not empty %} \"add\": { \"adobe-segments\": [ {% for added_segment in addedSegments(input.profile.segmentMembership.ups) %} \"{{ destination.segmentNames[added_segment.key] }}\"{% if not loop.last %},{% endif %} {% endfor %} ] } {% endif %} {% if addedSegments(input.profile.segmentMembership.ups) is not empty and removedSegments(input.profile.segmentMembership.ups) is not empty %} , {% endif %} {% if removedSegments(input.profile.segmentMembership.ups) is not empty %} \"remove\": { \"adobe-segments\": [ {% for removed_segment in removedSegments(input.profile.segmentMembership.ups) %} \"{{ destination.segmentNames[removed_segment.key] }}\"{% if not loop.last %},{% endif %} {% endfor %} ] } {% endif %} }"
-            },
-            "httpMethod": "POST",
-            "contentType": "application/json",
-            "headers": [
-                {
-                    "header": "Accept",
-                    "value": {
-                        "templatingStrategy": "NONE",
-                        "value": "application/vnd.moviestar+json; version=3;"
-                    }
-                }
-            ]
-        },
-        "qos": {
-            "name": "freeform"
-        }
-    },
-]
+   {
+        "instanceId": "b15affa0-3747-4030-895d-1d1236bb3680",
+        "createdDate": "2021-06-07T06:41:48.641943Z",
+        "lastModifiedDate": "2021-06-07T06:41:48.641943Z",
+        "type": "OAUTH2_USER_CREDENTIAL",
+        "name": "yourdestination",
+        "oauth2UserAuthentication": {
+            "url": "ABCD",
+            "clientId": "ABCDEFGHIJKL",
+            "clientSecret": "clientsecret",
+            "username": "username",
+            "password": "password",
+            "header": "header"
+    }
+
     
 ```
 
@@ -353,25 +290,19 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/v1/credenti
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
  -H 'x-sandbox-id: {SANDBOX_ID}' \
  -d '
-{
-  "name": "Moviestar credentials configuration",
-  "destinationServerType": "URL_BASED",
-  "urlBasedDestination": {
-    "url": {
-      "templatingStrategy": "PEBBLE_V1",
-      "value": "https://api.moviestar.com/data/{{endpoint.region}}/items"
-    },
-    "maxUsersPerRequest": 100,
-    "splitUserById": true
-  }
-},
-  "httpTemplate": {
-    "httpMethod": "POST",
-    "requestBody": {
-            "templatingStrategy": "PEBBLE_V1",
-            "value": "{ \"attributes\": [ {% for ns in [\"external_id\", \"yourdestination_id\"] %} {% if input.profile.identityMap[ns] is not empty and first_namespace_encountered %} , {% endif %} {% set first_namespace_encountered = true %} {% for identity in input.profile.identityMap[ns]%} { \"{{ ns }}\": \"{{ identity.id }}\" {% if input.profile.segmentMembership.ups is not empty %} , \"AEPSegments\": { \"add\": [ {% for segment in input.profile.segmentMembership.ups %} {% if segment.value.status == \"realized\" or segment.value.status == \"existing\" %} {% if added_segment_found %} , {% endif %} {% set added_segment_found = true %} \"{{ destination.segmentAliases[segment.key] }}\" {% endif %} {% endfor %} ], \"remove\": [ {% for segment in input.profile.segmentMembership.ups %} {% if segment.value.status == \"exited\" %} {% if removed_segment_found %} , {% endif %} {% set removed_segment_found = true %} \"{{ destination.segmentAliases[segment.key] }}\" {% endif %} {% endfor %} ] } {% set removed_segment_found = false %} {% set added_segment_found = false %} {% endif %} {% if input.profile.attributes is not empty %} , {% endif %} {% for attribute in input.profile.attributes %} \"{{ attribute.key }}\": {% if attribute.value is empty %} null {% else %} \"{{ attribute.value.value }}\" {% endif %} {% if not loop.last%} , {% endif %} {% endfor %} } {% if not loop.last %} , {% endif %} {% endfor %} {% endfor %} ] }"
-        },
-        "contentType": "application/json"
+   {
+        "instanceId": "b15affa0-3747-4030-895d-1d1236bb3680",
+        "createdDate": "2021-06-07T06:41:48.641943Z",
+        "lastModifiedDate": "2021-06-07T06:41:48.641943Z",
+        "type": "OAUTH2_USER_CREDENTIAL",
+        "name": "yourdestination",
+        "oauth2UserAuthentication": {
+            "url": "ABCD",
+            "clientId": "ABCDEFGHIJKL",
+            "clientSecret": "clientsecret",
+            "username": "username",
+            "password": "password",
+            "header": "header"
     }
 
 ```
@@ -411,25 +342,19 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/v1/credenti
 A successful response returns HTTP status 200 with detailed information about the specified credentials configuration.
 
 ```json
-{
-  "name": "Moviestar credentials configuration",
-  "destinationServerType": "URL_BASED",
-  "urlBasedDestination": {
-    "url": {
-      "templatingStrategy": "PEBBLE_V1",
-      "value": "https://api.moviestar.com/data/{{endpoint.region}}/items"
-    },
-    "maxUsersPerRequest": 100,
-    "splitUserById": true
-  }
-},
-  "httpTemplate": {
-    "httpMethod": "POST",
-    "requestBody": {
-            "templatingStrategy": "PEBBLE_V1",
-            "value": "{ \"attributes\": [ {% for ns in [\"external_id\", \"yourdestination_id\"] %} {% if input.profile.identityMap[ns] is not empty and first_namespace_encountered %} , {% endif %} {% set first_namespace_encountered = true %} {% for identity in input.profile.identityMap[ns]%} { \"{{ ns }}\": \"{{ identity.id }}\" {% if input.profile.segmentMembership.ups is not empty %} , \"AEPSegments\": { \"add\": [ {% for segment in input.profile.segmentMembership.ups %} {% if segment.value.status == \"realized\" or segment.value.status == \"existing\" %} {% if added_segment_found %} , {% endif %} {% set added_segment_found = true %} \"{{ destination.segmentAliases[segment.key] }}\" {% endif %} {% endfor %} ], \"remove\": [ {% for segment in input.profile.segmentMembership.ups %} {% if segment.value.status == \"exited\" %} {% if removed_segment_found %} , {% endif %} {% set removed_segment_found = true %} \"{{ destination.segmentAliases[segment.key] }}\" {% endif %} {% endfor %} ] } {% set removed_segment_found = false %} {% set added_segment_found = false %} {% endif %} {% if input.profile.attributes is not empty %} , {% endif %} {% for attribute in input.profile.attributes %} \"{{ attribute.key }}\": {% if attribute.value is empty %} null {% else %} \"{{ attribute.value.value }}\" {% endif %} {% if not loop.last%} , {% endif %} {% endfor %} } {% if not loop.last %} , {% endif %} {% endfor %} {% endfor %} ] }"
-        },
-        "contentType": "application/json"
+   {
+        "instanceId": "b15affa0-3747-4030-895d-1d1236bb3680",
+        "createdDate": "2021-06-07T06:41:48.641943Z",
+        "lastModifiedDate": "2021-06-07T06:41:48.641943Z",
+        "type": "OAUTH2_USER_CREDENTIAL",
+        "name": "yourdestination",
+        "oauth2UserAuthentication": {
+            "url": "ABCD",
+            "clientId": "ABCDEFGHIJKL",
+            "clientSecret": "clientsecret",
+            "username": "username",
+            "password": "password",
+            "header": "header"
     }
 ```
 

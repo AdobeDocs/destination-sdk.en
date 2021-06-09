@@ -130,6 +130,10 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/v1/destina
 |`destinationDelivery.destinationServerId` | String | This field is not required in the beta phase of Destination SDK. |
 |`inputSchemaId` | String | This field is not required in the beta phase of Destination SDK. |
 |`backfillHistoricalProfileData` | Boolean | Controls whether historical profile data is exported when segments are activated to the destination. <br> <ul><li> `true`: [!DNL Platform] sends the historical user profiles that qualified for the segment before the segment is activated. </li><li> `false`: [!DNL Platform] only includes user profiles that qualify for the segment after the segment is activated. </li></ul> |
+|`segmentMappingConfig.mapUserInput` | Boolean | Controls whether the segment mapping id in the destination activation workflow is input by user. |
+|`segmentMappingConfig.mapAepSegmentId` | Boolean | Controls whether the segment mapping id in the destination activation workflow is the Experience Platform segment ID. |
+|`segmentMappingConfig.mapAepSegmentName` | Boolean | Controls whether the segment mapping id in the destination activation workflow is the Experience Platform segment name. |
+|`segmentMappingConfig.audienceTemplateId` | Boolean | The `instanceId` of the audience metadata template used for this destination. |
 
 {style="table-layout:auto"}
 
