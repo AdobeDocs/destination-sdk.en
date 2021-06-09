@@ -327,3 +327,7 @@ A successful response returns HTTP status 200 along with an empty HTTP response.
 ## API error handling
 
 Destination SDK API endpoints follow the general Experience Platform API error message principles. Refer to [API status codes](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) and [request header errors](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) in the Platform troubleshooting guide.
+
+## Next steps
+
+After reading this document, you now know how to configure your destination server and templating using the `/authoring/v1/destination-servers` API endpoint. Read [how to use Destination SDK to configure your destination](/help/configure-destination-instructions.md) to understand where this step fits into the process of configuring your destination.
