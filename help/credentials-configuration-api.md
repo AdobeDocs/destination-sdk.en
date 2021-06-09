@@ -206,7 +206,6 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/v1/credent
 | -------- | ----------- | ----------- |
 |`name` | String | Represents a friendly name of your server, visible only to Adobe. This name is not visible to partners or customers. Example `Moviestar credentials configuration`.  |
 
-
 {style="table-layout:auto"}
 
 **Response**
