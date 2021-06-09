@@ -21,6 +21,10 @@ This page lists and describes all the API operations that you can perform using 
 
 Use this API endpoint and select `PLATFORM_AUTHENTICATION` in the [destination configuration](/help/destination-configuration.md#destination-delivery) if there is a global authentication system between Adobe and your destination and the [!DNL Platform] customer does not need to provide any authentication credentials to connect to your destination. In this case, you must create a credentials object using the `/credentials` API endpoint.
 
+<!--
+
+Commenting out the example configurations
+
 ## Example configurations
 
 **Example configuration for a Basic authentication credential configuration with username and password**
@@ -63,7 +67,7 @@ The sections below list out the necessary parameters for each authentication typ
 |`username` | String | credentials configuration login username |
 |`password` | String | credentials configuration login password |
 
-<!--
+
 
 // commenting out this part as these types of authentication methods are not supported in phase one
 
@@ -81,7 +85,7 @@ The sections below list out the necessary parameters for each authentication typ
 |username | String | credentials configuration SSH username |
 |SSHKey | String | credentials configuration SSH key |
 
--->
+
 
 ## OAuth1
 
@@ -133,6 +137,8 @@ The sections below list out the necessary parameters for each authentication typ
 |`url` | String | URL of authorization provider |
 |`expiration` | String | The time-to-live for the refresh token |
 |`header` | String | Any header required for authorization |
+
+-->
 
 ## Getting started with credentials configuration API operations
 
@@ -204,7 +210,15 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/v1/credent
 
 | Parameter | Type | Description |
 | -------- | ----------- | ----------- |
-|`name` | String | Represents a friendly name of your server, visible only to Adobe. This name is not visible to partners or customers. Example `Moviestar credentials configuration`.  |
+|`username` | String | credentials configuration login username |
+|`password` | String | credentials configuration login password |
+|`url` | String | URL of authorization provider |
+|`clientId` | String | Client ID of Client/Application credential |
+|`clientSecret` | String | Client secret of Client/Application credential |
+|`accessToken` | String | Access token provided by the authorization provider |
+|`expiration` | String | The time-to-live for the access token |
+|`refreshToken` | String | Refresh token provided by the authorization provider |
+|`header` | String | Any header required for authorization |
 
 {style="table-layout:auto"}
 
@@ -243,7 +257,7 @@ The following response returns HTTP status 200 with a list of credentials config
 ```json
 
    {
-        "instanceId": "b15affa0-3747-4030-895d-1d1236bb3680",
+        "instanceId": "n55affa0-3747-4030-895d-1d1236bb3680",
         "createdDate": "2021-06-07T06:41:48.641943Z",
         "lastModifiedDate": "2021-06-07T06:41:48.641943Z",
         "type": "OAUTH2_USER_CREDENTIAL",
@@ -281,7 +295,7 @@ The following request updates an existing credentials configuration, configured 
 
 ```shell
 
-curl -X PUT https://platform.adobe.io/data/core/activation/authoring/v1/credentials/bd4ec8f0-e98f-4b6a-8064-dd7adbfffec9 \
+curl -X PUT https://platform.adobe.io/data/core/activation/authoring/v1/credentials/n55affa0-3747-4030-895d-1d1236bb3680 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'x-gw-ims-org-id: {IMS_ORG}' \
  -H 'x-api-key: {API_KEY}' \
@@ -290,7 +304,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/v1/credenti
  -H 'x-sandbox-id: {SANDBOX_ID}' \
  -d '
    {
-        "instanceId": "b15affa0-3747-4030-895d-1d1236bb3680",
+        "instanceId": "n55affa0-3747-4030-895d-1d1236bb3680",
         "createdDate": "2021-06-07T06:41:48.641943Z",
         "lastModifiedDate": "2021-06-07T06:41:48.641943Z",
         "type": "OAUTH2_USER_CREDENTIAL",
@@ -328,7 +342,7 @@ GET /authoring/v1/credentials/{INSTANCE_ID}
 **Request**
 
 ```shell
-curl -X GET https://platform.adobe.io/data/core/activation/authoring/v1/credentials/bd4ec8f0-e98f-4b6a-8064-dd7adbfffec9 \
+curl -X GET https://platform.adobe.io/data/core/activation/authoring/v1/credentials/n55affa0-3747-4030-895d-1d1236bb3680 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'x-gw-ims-org-id: {IMS_ORG}' \
  -H 'x-api-key: {API_KEY}' \
@@ -342,7 +356,7 @@ A successful response returns HTTP status 200 with detailed information about th
 
 ```json
    {
-        "instanceId": "b15affa0-3747-4030-895d-1d1236bb3680",
+        "instanceId": "n55affa0-3747-4030-895d-1d1236bb3680",
         "createdDate": "2021-06-07T06:41:48.641943Z",
         "lastModifiedDate": "2021-06-07T06:41:48.641943Z",
         "type": "OAUTH2_USER_CREDENTIAL",
@@ -375,7 +389,7 @@ DELETE /authoring/v1/credentials/{INSTANCE_ID}
 **Request**
 
 ```shell
-curl -X DELETE https://platform.adobe.io/data/core/activation/authoring/v1/credentials/bd4ec8f0-e98f-4b6a-8064-dd7adbfffec9 \
+curl -X DELETE https://platform.adobe.io/data/core/activation/authoring/v1/credentials/n55affa0-3747-4030-895d-1d1236bb3680 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'x-gw-ims-org-id: {IMS_ORG}' \
  -H 'x-api-key: {API_KEY}' \
