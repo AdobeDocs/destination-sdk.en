@@ -2,7 +2,7 @@
 description: This page lists and describes all the API operations that you can perform using the `/authoring/v1/destinations` API endpoint.
 title: Destinations API endpoint operations
 ---
-# Destinations API endpoint operations {#destination-configuration}
+# Destinations endpoint API operations {#destination-configuration}
 
 **API endpoint**: `platform.adobe.io/data/core/activation/authoring/v1/destinations` 
 

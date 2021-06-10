@@ -12,7 +12,7 @@ exl-id: 2ecd0bdf-55c3-4946-a304-0147bc16ff39
 
 This configuration allows you to indicate basic information like your destination name, category, description, logo, and more. The settings in this configuration also determine how your destination appears in the Experience Platform user interface and the identities that can be exported to your destination.
 
-The functionality described in this document can be configured using the `/authoring/v1/destinations` API endpoint. Read [Destinations API endpoint operations](/help/destination-configuration-api.md) for a complete list of operations you can perform.
+The functionality described in this document can be configured using the `/authoring/v1/destinations` API endpoint. Read [Destinations API endpoint operations](/help/destination-configuration-api.md) for a complete list of operations you can perform on the endpoint.
 
 
 ## Example configuration {#example-configuration}
