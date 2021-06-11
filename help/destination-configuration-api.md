@@ -109,7 +109,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/v1/destina
 |`releaseNotes` | String | This field is not necessary in the beta phase of Destination SDK. |
 |`status` | String | Indicates the lifecycle status of the destination card. Accepted values are `TEST`, `PUBLISHED`, and `DELETED`. Use `TEST` when you first configure your destination. |
 |`customerAuthenticationConfigurations` | String | Indicates the configuration used to authenticate Experience Platform customers to your server. See `authType` below for accepted values. |
-|`customerAuthenticationConfigurations.authType` | String | Accepted values are `S3, SFTP_WITH_SSH_KEY, SFTP_WITH_PASSWORD, OAUTH1, OAUTH2, BASIC, BEARER`. |
+|`customerAuthenticationConfigurations.authType` | String | Accepted values are `S3, SFTP_WITH_SSH_KEY, SFTP_WITH_PASSWORD, OAUTH1, OAUTH2, BASIC, BEARER`.  |
 |`customerDataFields.name` | String | Provide a name for the custom field you are introducing. |
 |`customerDataFields.type` | String | Indicates what type of custom field you are introducing. Accepted values are `string`, `object`, `integer` |
 |`customerDataFields.title` | String | Indicates the name of the field, as it is seen by customers in the Experience Platform user interface |
@@ -127,13 +127,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/v1/destina
 |`identityNamespaces.externalId.allowedAttributesTransformation` | String | _Not shown in example configuration_. Used, for example, when the [!DNL Platform] customer has plain email addresses as an attribute and your platform only accepts hashed emails. This is where you would provide the transformation that needs to be applied (for example, transform the email to lowercase, then hash).   |
 |`identityNamespaces.externalId.acceptedGlobalNamespaces` | - | _Not shown in example configuration_. Used for cases when your platform accepts [standard identity namespaces](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces) (for example, IDFA), so you can restrict Platform users to only selecting these identity namespaces. |
 |`destinationDelivery.authenticationRule` | String | Indicates how [!DNL Platform] customers connect to your destination. Accepted values are `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Use `CUSTOMER_AUTHENTICATION` if Platform customers log into your system via a username and password, a bearer token, or another method of authentication. For example, you would select this option if you also selected `authType: OAUTH2` or `authType:BEARER` in `customerAuthenticationConfigurations`. </li><li> Use `PLATFORM_AUTHENTICATION` if there is a global authentication system between Adobe and your destination and the [!DNL Platform] customer does not need to provide any authentication credentials to connect to your destination. In this case, you must create a credentials object using the [Credentials](/help/credentials-configuration.md) configuration. </li><li>Use `NONE` if no authentication is required to send data to your destination platform. </li></ul> |
-|`destinationDelivery.destinationServerId` | String | This field is not required in the beta phase of Destination SDK. |
+|`destinationDelivery.destinationServerId` | String | The `instanceId` of the [destination server template](/help/destination-server-api.md) used for this destination. |
 |`inputSchemaId` | String | This field is not required in the beta phase of Destination SDK. |
 |`backfillHistoricalProfileData` | Boolean | Controls whether historical profile data is exported when segments are activated to the destination. <br> <ul><li> `true`: [!DNL Platform] sends the historical user profiles that qualified for the segment before the segment is activated. </li><li> `false`: [!DNL Platform] only includes user profiles that qualify for the segment after the segment is activated. </li></ul> |
 |`segmentMappingConfig.mapUserInput` | Boolean | Controls whether the segment mapping id in the destination activation workflow is input by user. |
 |`segmentMappingConfig.mapAepSegmentId` | Boolean | Controls whether the segment mapping id in the destination activation workflow is the Experience Platform segment ID. |
 |`segmentMappingConfig.mapAepSegmentName` | Boolean | Controls whether the segment mapping id in the destination activation workflow is the Experience Platform segment name. |
-|`segmentMappingConfig.audienceTemplateId` | Boolean | The `instanceId` of the audience metadata template used for this destination. |
+|`segmentMappingConfig.audienceTemplateId` | Boolean | The `instanceId` of the [audience metadata template](/help/audience-metadata-api.md) used for this destination. |
 
 {style="table-layout:auto"}
 
