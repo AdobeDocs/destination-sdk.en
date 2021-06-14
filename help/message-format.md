@@ -17,11 +17,11 @@ exl-id: bd348e99-56f7-449e-a639-8da6fd2cafaf
 
 To understand the process on the Adobe side, please familiarize yourself with the following Experience Platform concepts:
 
-* Experience Data Model (XDM). [XDM overview](https://docs.adobe.com/content/help/en/experience-platform/xdm/home.html) and  [How to create an XDM schema in Adobe Experience Platform](https://docs.adobe.com/content/help/en/experience-platform/xdm/tutorials/create-schema-ui.html).
-* Class. [How to assign a class to a schema](https://docs.adobe.com/content/help/en/experience-platform/xdm/tutorials/create-schema-ui.html#assign-a-class).
-* Field group. [Field group definition](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/composition.html#field-group) and [more information about field groups](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en#field-group).
-* IdentityMap. The identity map represents a map of all end-user identities in Adobe Experience Platform. Refer to `xdm:identityMap` in the [XDM field dictionary](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/field-dictionary.html).
-* SegmentMembership. The [segmentMembership](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/field-dictionary.html) XDM attribute informs which segments a profile is a member of. For the three different values in the `status` field, read the documentation on [Segment Membership Details schema field group](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html).
+* Experience Data Model (XDM). [XDM overview](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=en) and  [How to create an XDM schema in Adobe Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en).
+* Class. [Create and edit classes in the UI](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/classes.html?lang=en).
+* Field group. [Field group definition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#field-group) and [more information about field groups](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en#field-group).
+* IdentityMap. The identity map represents a map of all end-user identities in Adobe Experience Platform. Refer to `xdm:identityMap` in the [XDM field dictionary](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en).
+* SegmentMembership. The [segmentMembership](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en) XDM attribute informs which segments a profile is a member of. For the three different values in the `status` field, read the documentation on [Segment Membership Details schema field group](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html).
 
 ## Overview {#overview}
 
@@ -216,7 +216,7 @@ To transform the profile attributes exported to your destination, see the JSON a
 
 >[!IMPORTANT]
 >
->For a list of all available profile attributes in Adobe Experience Platform, see the [XDM field dictionary](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/field-dictionary.html). 
+>For a list of all available profile attributes in Adobe Experience Platform, see the [XDM field dictionary](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en). 
 
 
 
@@ -239,7 +239,7 @@ To transform the profile attributes exported to your destination, see the JSON a
 
 >[!IMPORTANT]
 >
->For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination configuration](/help/configuration-options.md). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+>For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination server configuration](/help/server-and-template-configuration.md#template-specs). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 
 ```python
 
@@ -271,7 +271,7 @@ To transform the profile attributes exported to your destination, see the JSON a
 
 ### Segment membership {#segment-membership}
 
-The [segmentMembership](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/field-dictionary.html) XDM attribute informs which segments a profile is a member of.
+The [segmentMembership](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en) XDM attribute informs which segments a profile is a member of.
 For the three different values in the `status` field, read the documentation on [Segment Membership Details schema field group](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html).
 
 **Input**
@@ -304,7 +304,7 @@ For the three different values in the `status` field, read the documentation on 
 
 >[!IMPORTANT]
 >
->For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination configuration](/help/configuration-options.md). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+>For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination server configuration](/help/server-and-template-configuration.md#template-specs). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 
 ```python
 
@@ -346,7 +346,7 @@ For the three different values in the `status` field, read the documentation on 
 
 ### Identities {#identities}
 
-For information about identities in Experience Platform, see the [Identity namespace overview](https://docs.adobe.com/content/help/en/experience-platform/identity/namespaces.html).
+For information about identities in Experience Platform, see the [Identity namespace overview](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en).
 
 **Input**
 
@@ -377,7 +377,7 @@ For information about identities in Experience Platform, see the [Identity names
 
 >[!IMPORTANT]
 >
->For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination configuration](/help/configuration-options.md). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+>For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination server configuration](/help/server-and-template-configuration.md#template-specs). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 
 ```python
 
@@ -479,7 +479,7 @@ The example below shows you how to transform the segment membership and identiti
 
 >[!IMPORTANT]
 >
->For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination configuration](/help/configuration-options.md). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+>For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination server configuration](/help/server-and-template-configuration.md#template-specs). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 
 ```python
 
@@ -611,7 +611,7 @@ Another common use case is exporting data that contains segment membership, iden
 
 >[!IMPORTANT]
 >
->For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination configuration](/help/configuration-options.md). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+>For all templates that you use, you must escape the illegal characters, such as double quotes `""` before inserting the template in the [destination server configuration](/help/server-and-template-configuration.md#template-specs). For more information on escaping double quotes, see Chapter 9 in the [JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 
 ```python
 
