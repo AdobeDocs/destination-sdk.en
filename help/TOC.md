@@ -12,16 +12,21 @@ user-guide-description: Adobe Experience Platform Destination SDK provides you w
 + [Overview](/help/overview.md)
 + [Getting started](/help/getting-started.md)
 + [Integration prerequisites](/help/integration-prerequisites.md)
-+ Reference {#reference}
++ Destination SDK functionality {#functionality}
   + [Configuration options](/help/configuration-options.md)
   + [Destination configuration](/help/destination-configuration.md)
   + [Server and template specs](/help/server-and-template-configuration.md)
-  + [Credentials configuration](/help/credentials-configuration.md)
   + [Message format](/help/message-format.md)
   + [Audience metadata management](/help/audience-metadata-management.md)
+  + [Authentication configuration](/help/credentials-configuration.md)
   + [OAuth 2 authentication](/help/oauth2-authentication.md) 
++ API reference {#api-reference}
+  + [Destinations endpoint API operations](/help/destination-configuration-api.md)
+  + [Destination server endpoint API operations](/help/destination-server-api.md)
+  + [Audience metadata endpoint API operations](/help/audience-metadata-api.md)
+  + [Credentials endpoint API operations](/help/credentials-configuration-api.md)
 + Guides {#guides}
-  + [Use the Destination SDK to configure your destination](/help/configure-destination-instructions.md)
+  + [Use Destination SDK to configure your destination](/help/configure-destination-instructions.md)
 + Document your destination {#document-destination}
   + [Document your destination in Adobe Experience Platform](/help/docs-framework/documentation-instructions.md)
   + [Use the GitHub web interface to create a destination documentation page](/help/docs-framework/use-github-interface-to-create-documentation.md)

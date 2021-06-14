@@ -1,11 +1,11 @@
 ---
 description: This page describes how to use the reference information in Configuration options for the Destinations SDK to configure your destination using Destination SDK.
 seo-description: This page describes how to use the reference information in Configuration options for the Destinations SDK to configure your destination using Destination SDK.
-seo-title: How to use the Destination SDK to configure your destination
-title: How to use the Destination SDK to configure your destination
+seo-title: How to use Destination SDK to configure your destination
+title: How to use Destination SDK to configure your destination
 exl-id: 8fe68f3e-972a-40c5-9b63-8a51d5eff820
 ---
-# How to use the Destination SDK to configure your destination
+# How to use Destination SDK to configure your destination
 
 
 >[!IMPORTANT]
@@ -25,7 +25,7 @@ Before advancing to the steps illustrated below, please read the [Destination SD
 
 ## Use the Configuration options in Adobe Experience Platform Destination SDK to set up your destination
 
-![Illustrated steps of using the Destination SDK endpoints](/help/assets/destination-sdk-steps.png)
+![Illustrated steps of using Destination SDK endpoints](/help/assets/destination-sdk-steps.png)
 
 ## Step 1: Create transformation template - Use a templating language to specify the message output format
 
@@ -69,7 +69,7 @@ For some destinations, Destination SDK requires that you configure an audience m
 
 ## Step 4: Create destination configuration
 
-Shown below is an example configuration for a destination template, created by using the `/destinations` API endpoint. For more information about this template, refer to [Destination configuration](/help/destination-configuration.md) in the reference documentation. 
+Shown below is an example configuration for a destination template, created by using the `/destinations` API endpoint. For more information about this template, refer to [Destination configuration](/help/destination-configuration.md). 
 
 ```json
 
@@ -138,9 +138,9 @@ POST platform.adobe.io/data/core/activation/authoring/v1/destinations
 
 ## Step 5: Create credentials configuration / Set up authentication
 
-Depending on whether you specify `"authenticationRule": "CUSTOMER_AUTHENTICATION"` or `"authenticationRule": "PLATFORM_AUTHENTICATION"` in the destination configuration above, you can set up authentication for your destination using the `/destination` or the `/credentials` endpoint. 
+Depending on whether you specify `"authenticationRule": "CUSTOMER_AUTHENTICATION"` or `"authenticationRule": "PLATFORM_AUTHENTICATION"` in the destination configuration above, you can set up authentication for your destination by using the `/destination` or the `/credentials` endpoint. 
 
-* If you selected `"authenticationRule": "CUSTOMER_AUTHENTICATION"` and your destination supports the OAuth 2 authentication method, read [OAuth 2 authentication](/help/oauth2-authentication.md).
+* **Most common case**: If you selected `"authenticationRule": "CUSTOMER_AUTHENTICATION"` and your destination supports the OAuth 2 authentication method, read [OAuth 2 authentication](/help/oauth2-authentication.md).
 * If you selected `"authenticationRule": "PLATFORM_AUTHENTICATION"`, refer to [Credentials configuration](/help/credentials-configuration.md) in the reference documentation.
 
 <!--
