@@ -148,7 +148,7 @@ Adobe needs to know which [!DNL Platform] identities customers will be able to e
 Identity namespaces do not require a 1-to-1 correspondence between [!DNL Platform] and your destination.
 For instance, customers could map a [!DNL Platform] [!DNL IDFA] namespace to an [!DNL IDFA] namespace from your destination, or they can map the same [!DNL Platform] [!DNL IDFA] namespace to a [!DNL Customer ID] namespace in your destination.
 
- Read more in the [Identity Namespace overview](https://docs.adobe.com/content/help/en/experience-platform/identity/namespaces.html).
+ Read more in the [Identity Namespace overview](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en).
 
 ![Render target identites in the UI](/help/assets/target-identities-ui.png) 
 

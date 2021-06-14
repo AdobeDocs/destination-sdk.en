@@ -39,7 +39,7 @@ The server and template specs can be configured in Adobe Destination SDK via the
 
 ```
 
-## Server specs
+## Server specs {#server-specs}
 
 Customers will be able to activate data from Adobe Experience Platform to your destination via HTTP exports. The server configuration contains information about the server receiving the messages (the server on your side).
 
@@ -69,7 +69,7 @@ This process delivers user data as a series of HTTP messages to your destination
 
 -->
 
-## Template specs
+## Template specs {#template-specs}
 
 The template spec allows you to configure how to format the exported message to your destination. Adobe uses a templating language similar to [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) to transform the fields from the XDM schema into a format supported by your destination. For more information about the transformation, visit the links below:
 

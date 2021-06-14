@@ -13,20 +13,14 @@ exl-id: 6cc9c758-44bb-463b-941a-06b1a22ee8f3
 >* The documentation and the functionality are subject to change.
 
 Welcome to Adobe Experience Platform, great to have you here!
-Documenting your destination is the final step before it can be set live in Adobe Experience Platform. 
-
-<!--
-
-This assumes that you have completed steps 1-3 to [integrate with Adobe Real-time CDP](https://docs-stg.corp.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destinations-cat/destinations-catalog.html#integrate-with-adobe).
-
--->
+Documenting your destination is the final step before it can be set live in Adobe Experience Platform.
 
 This documentation section includes:
 
 * Step-by step instructions for you to create a documentation page for your new destination;
 * A template for you to fill out for your destination;
-* [General instructions on using Markdown](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/markdown.html);
-* [Specific instructions for the Adobe Markdown flavor](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/markdown.html#custom-markdown-extensions) (the Adobe Markdown flavor is very similar to regular Markdown).
+* [General instructions on using Markdown](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en);
+* [Specific instructions for the Adobe Markdown flavor](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en#custom-markdown-extensions) (the Adobe Markdown flavor is very similar to regular Markdown).
 
 ## Prerequisites
 
@@ -38,17 +32,11 @@ To create documentation for your destination according to the instructions in th
 
 ## High-level instructions to create documentation for your destination in Adobe Experience Platform
 
-At a high level, to create documentation for your destination, you need to [create a fork](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/local-repo.html#fork-the-repository) of the Adobe Experience Platform documentation repository and edit the provided documentation template in a new branch. Use the Adobe-provided template to create a new destination page. Open a pull request (PR) when you are ready. Instructions to do this are further below, in [Steps to create your new destination page](/help/docs-framework/documentation-instructions.md#steps-to-create-docs-page).
-
-<!--
-
-Adobe's documentation team is happy to help with this, just ask for assistance in the pull request.
-
--->
+At a high level, to create documentation for your destination, you need to [create a fork](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository) of the Adobe Experience Platform documentation repository and edit the provided documentation template in a new branch. Use the Adobe-provided template to create a new destination page. Open a pull request (PR) when you are ready. Instructions to do this are further below, in [Steps to create your new destination page](/help/docs-framework/documentation-instructions.md#steps-to-create-docs-page).
 
 >[!TIP]
 >
->See [Writing guidance for Adobe Documentation](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/general-writing-guidance.html) for some quick writing tips that the Adobe documentation team uses when authoring documentation.
+>See [Writing guidance for Adobe Documentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/general-writing-guidance.html?lang=en) for some quick writing tips that the Adobe documentation team uses when authoring documentation.
 
 <!--
 
@@ -115,7 +103,7 @@ The instructions below show you how to use the GitHub web interface to author do
 >Refer also to our supporting documentation [Install Git and Markdown Authoring tools](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/install-tools.html), [Set up Git repository locally for documentation](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/local-repo.html), and [GitHub contribution workflow for major changes](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/full-workflow.html) in Adobe's contributor guide.
 
 1. In your browser, navigate to `https://github.com/AdobeDocs/experience-platform.en`.
-1. To [fork](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/local-repo.html#fork-the-repository) the repository, click **Fork** as shown in the image below.
+1. To [fork](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository) the repository, click **Fork** as shown in the image below.
 
    ![fork repo](/help/docs-framework/assets/ssd-fork-repo.png)
 
@@ -167,7 +155,7 @@ The instructions below show you how to use the GitHub web interface to author do
 
 >[!TIP]
 >
->To add images and links to your documentation, and for any other questions around Markdown, read [Using Markdown](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/markdown.html) in Adobe's collaborative writing guide.
+>To add images and links to your documentation, and for any other questions around Markdown, read [Using Markdown](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en) in Adobe's collaborative writing guide.
 
 <br>&nbsp;
 
@@ -180,7 +168,7 @@ Please see [Install Git and Markdown Authoring tools](https://docs.adobe.com/con
 
 
 1. In your browser, navigate to `https://github.com/AdobeDocs/experience-platform.en`
-1. To [fork](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/local-repo.html#fork-the-repository) the repository, click **Fork** as shown in the screenshot.
+1. To [fork](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository) the repository, click **Fork** as shown in the screenshot.
 
    ![fork repo](/help/docs-framework/assets/ssd-fork-repo.png)
 
@@ -238,7 +226,7 @@ Please see [Install Git and Markdown Authoring tools](https://docs.adobe.com/con
 
 >[!TIP]
 >
->To add images and links to your documentation, and for any other questions around Markdown, read [Using Markdown](https://docs.adobe.com/content/help/en/contributor/contributor-guide/writing-essentials/markdown.html) in Adobe's collaborative writing guide.
+>To add images and links to your documentation, and for any other questions around Markdown, read [Using Markdown](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en) in Adobe's collaborative writing guide.
 
 -->
 

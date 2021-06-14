@@ -3,7 +3,7 @@ cloud: Experience Cloud
 solution: Experience Platform
 type: Documentation
 git-repo: https://github.com/AdobeDocs/destination-sdk.en
-index: no
+index: yes
 ---
 
 # Metadata for internal use
