@@ -28,6 +28,8 @@ The destinations service in Adobe Experience Platform uses configuration templat
 
 ![Destination SDK templates and configurations](/help/assets/self-service-configuration.png)
 
+## Related links {#related-links}
+
 The pages below provide more detail about the functionality and configuration options available in Destination SDK, and the corresponding API operations that you can perform.
 
 Functionality description | API reference |
