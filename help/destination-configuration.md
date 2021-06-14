@@ -1,5 +1,5 @@
 ---
-description: The destinations configuration allows you to indicate basic information like your destination name, category, description, logo, and more. The settings in this configuration also determine how your destination appears in the Experience Platform user interface and the identities that can be exported to your destination.
+description: The destinations configuration allows you to indicate basic information like your destination name, category, description, logo, and more. The settings in this configuration also determine how Experience Platform users authenticate to your destination, how it appears in the Experience Platform user interface and the identities that can be exported to your destination.
 title: Destination configuration options for Destination SDK
 exl-id: 2ecd0bdf-55c3-4946-a304-0147bc16ff39
 ---
@@ -10,7 +10,7 @@ exl-id: 2ecd0bdf-55c3-4946-a304-0147bc16ff39
 >* This feature is in limited beta and is only available to select [Adobe Exchange](https://partners.adobe.com/exchangeprogram/creativecloud.html) members. If you are interested in using Destination SDK, please contact Adobe Exchange. 
 >* The documentation and the functionality are subject to change.
 
-This configuration allows you to indicate basic information like your destination name, category, description, logo, and more. The settings in this configuration also determine how your destination appears in the Experience Platform user interface and the identities that can be exported to your destination.
+This configuration allows you to indicate basic information like your destination name, category, description, logo, and more. The settings in this configuration also determine how Experience Platform users authenticate to your destination, how it appears in the Experience Platform user interface and the identities that can be exported to your destination.
 
 The functionality described in this document can be configured using the `/authoring/v1/destinations` API endpoint. Read [Destinations API endpoint operations](/help/destination-configuration-api.md) for a complete list of operations you can perform on the endpoint.
 
