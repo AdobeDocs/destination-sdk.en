@@ -26,10 +26,10 @@ As a first step, you must create an app in your system for Adobe Experience Plat
 >
 >The step to register a redirect/callback URL for Adobe Experience Platform in your system is required only for the [OAuth 2 with Authorization Code](/help/oauth2-authentication.md#authorization-code) grant type. For the other two supported grant types (password and client credentials), you can skip this step.
 
-Redirect/callback URL | Environment |
----------|----------|
- `https://platform.adobe.io/data/core/activation/oauth/api/v1/callback` | Production |
- `https://platform-stage.adobe.io/data/core/activation/oauth/api/v1/callback` | Staging |
+|Redirect/callback URL | Environment |
+|---------|----------|
+|`https://platform.adobe.io/data/core/activation/oauth/api/v1/callback` | Production |
+|`https://platform-stage.adobe.io/data/core/activation/oauth/api/v1/callback` | Staging |
 
  {style="table-layout:auto"}
 
@@ -51,13 +51,13 @@ Experience Platform supports the three OAuth 2 grant types in the table below. I
 >* You provide the input parameters as instructed in the sections below. Adobe-internal systems connect to your platform's authentication system and grab output parameters, which are used to authenticate the user and maintain authentication to your destination.
 >* The input parameters highlighted in bold in the table are required parameters in the OAuth 2 authentication flow. The other parameters are optional. There are other custom input parameters that are not shown here, but are described at length in the sections [Customize your OAuth 2 configuration](/help/oauth2-authentication.md#customize-configuration) and [Access token refresh](/help/oauth2-authentication.md#access-token-refresh). 
 
-OAuth 2 Grant | Inputs | Outputs |
----------|----------|---------|
- Authorization Code | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>scope</li><li><b>authorizationUrl</b></li><li><b>accessTokenUrl</b></li><li>refreshTokenUrl</li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
- Password | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>scope</li><li><b>accessTokenUrl</b></li><li><b>username</b></li><li><b>password</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
- Client Credential | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>scope</li><li><b>accessTokenUrl</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
+|OAuth 2 Grant | Inputs | Outputs |
+|---------|----------|---------|
+| Authorization Code | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>scope</li><li><b>authorizationUrl</b></li><li><b>accessTokenUrl</b></li><li>refreshTokenUrl</li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
+| Password | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>scope</li><li><b>accessTokenUrl</b></li><li><b>username</b></li><li><b>password</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
+| Client Credential | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>scope</li><li><b>accessTokenUrl</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
 
- {style="table-layout:auto"}
+{style="table-layout:auto"}
 
 The above table lists the fields that are used in standard OAuth 2 flows. In addition to these standard fields, various partner integrations may require additional inputs and outputs. Adobe has designed a flexible OAuth 2 authentication/authorization framework for Destination SDK that can handle variations to the above standard fields pattern while supporting a mechanism to automatically regenerate invalid outputs, such as expired access tokens.
 
@@ -72,9 +72,9 @@ The system that Adobe has designed for OAuth 2 authentication:
 
 If your destination supports a standard OAuth 2.0 Authorization Code flow (read the [RFC standards specs](https://tools.ietf.org/html/rfc6749#section-4.1)) or a variation of it, consult the required and optional fields below:
 
-OAuth 2 Grant | Inputs | Outputs |
----------|----------|---------|
- Authorization Code | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>scope</li><li><b>authorizationUrl</b></li><li><b>accessTokenUrl</b></li><li>refreshTokenUrl</li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
+|OAuth 2 Grant | Inputs | Outputs |
+|---------|----------|---------|
+| Authorization Code | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>scope</li><li><b>authorizationUrl</b></li><li><b>accessTokenUrl</b></li><li>refreshTokenUrl</li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
 
  {style="table-layout:auto"}
 
@@ -119,9 +119,9 @@ To set up this authentication method for your destination, add the following lin
 For the OAuth 2 Password grant (read the [RFC standards specs](https://tools.ietf.org/html/rfc6749#section-4.3)), Experience Platform requires the user's username and password. In the authentication flow, Experience Platform exchanges these credentials for an access token and, optionally, a refresh token.
 Adobe makes use of the standard inputs below to simplify destination configuration, with the ability to override values:
 
-OAuth 2 Grant | Inputs | Outputs |
----------|----------|---------|
-Password | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>scope</li><li><b>accessTokenUrl</b></li><li><b>username</b></li><li><b>password</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
+|OAuth 2 Grant | Inputs | Outputs |
+|---------|----------|---------|
+|Password | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>scope</li><li><b>accessTokenUrl</b></li><li><b>username</b></li><li><b>password</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -163,11 +163,11 @@ To set up this authentication method for your destination, add the following lin
 
 You can configure an OAuth 2 Client Credentials (read the [RFC standards specs](https://tools.ietf.org/html/rfc6749#section-4.4)) destination, which supports the standard inputs and outputs listed below. You have the ability to customize the values. See [Customize your OAuth 2 configuration](/help/oauth2-authentication.md#customize-configuration) for details.
 
-OAuth 2 Grant | Inputs | Outputs |
----------|----------|---------|
- Client Credentials | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>scope</li><li><b>accessTokenUrl</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
+|OAuth 2 Grant | Inputs | Outputs |
+|---------|----------|---------|
+ |Client Credentials | <ul><li><b>clientId</b></li><li><b>clientSecret</b></li><li>scope</li><li><b>accessTokenUrl</b></li></ul> | <ul><li><b>accessToken</b></li><li>expiresIn</li><li>refreshToken</li><li>tokenType</li></ul> |
 
- {style="table-layout:auto"}
+{style="table-layout:auto"}
 
 To set up this authentication method for your destination, add the following lines to your configuration, in the `/destinations` [endpoint](/help/destination-configuration.md):
 
@@ -458,15 +458,15 @@ You can use the following parameters in `accessTokenRequest` to customize your t
 Depending on your authentication customization, you might need to access data fields in the authentication response, as shown in the previous section. To do that, please familiarize yourself with the [Pebble templating language](https://pebbletemplates.io/) used by Adobe and refer to the templating conventions below to customize your OAuth 2 implementation.
 
 
-Prefix | Description | Example |
----------|----------|---------|
- authData | Access any partner or customer data field's value. | ``{{ authData.accessToken }}`` |
- response.body | HTTP response body | ``{{ response.body.access_token }}`` |
- response.status | HTTP response status | ``{{ response.status }}`` |
- response.headers | HTTP response headers | ``{{ response.headers.server[0] }}`` |
- authContext | Access information about the current authentication attempt | <ul><li>`{{ authContext.sandboxName }} `</li><li>`{{ authContext.sandboxId }} `</li><li>`{{ authContext.imsOrgId }} `</li><li>`{{ authContext.client }} // the client executing the authentication attempt `</li></ul> |
+|Prefix | Description | Example |
+|---------|----------|---------|
+| authData | Access any partner or customer data field's value. | ``{{ authData.accessToken }}`` |
+| response.body | HTTP response body | ``{{ response.body.access_token }}`` |
+| response.status | HTTP response status | ``{{ response.status }}`` |
+| response.headers | HTTP response headers | ``{{ response.headers.server[0] }}`` |
+| authContext | Access information about the current authentication attempt | <ul><li>`{{ authContext.sandboxName }} `</li><li>`{{ authContext.sandboxId }} `</li><li>`{{ authContext.imsOrgId }} `</li><li>`{{ authContext.client }} // the client executing the authentication attempt `</li></ul> |
 
- {style="table-layout:auto"}
+{style="table-layout:auto"}
 
 ## Next steps {#next-steps}
 

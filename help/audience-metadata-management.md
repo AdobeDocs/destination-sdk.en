@@ -160,11 +160,11 @@ This section includes an example of a generic audience template, for your refere
 
 ```
 
-Template section | Description |
----------|----------|
-`audience` | Includes all metadata from Experience Platform needed to create an audience in the destination platform. |
-`credential` | Specifies the authorization type for your destination. |
-`metadataTemplate` | Includes basic information for HTTP calls to your destination, to create, update, validate, and delete audiences. |
-`validations` | Runs validations for any fields in the template configuration before making a call to the partner API. For example, you could validate that the user's account ID is input correctly. |
+|Template section | Description |
+|--- |--- |
+|`audience` | Includes all metadata from Experience Platform needed to create an audience in the destination platform. |
+|`credential` | Specifies the authorization type for your destination. |
+|`metadataTemplate` | Includes basic information for HTTP calls to your destination, to create, update, validate, and delete audiences. |
+|`validations` | Runs validations for any fields in the template configuration before making a call to the partner API. For example, you could validate that the user's account ID is input correctly. |
 
 Find descriptions of all parameters in the template in the reference documentation [Audience metadata endpoint API operations](/help/audience-metadata-api.md).

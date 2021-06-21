@@ -32,11 +32,12 @@ The destinations service in Adobe Experience Platform uses configuration templat
 
 The pages below provide more detail about the functionality and configuration options available in Destination SDK, and the corresponding API operations that you can perform.
 
-Functionality description | API reference |
----------|----------|
-[Destination configuration](/help/destination-configuration.md) | [Destinations API endpoint operations](/help/destination-configuration-api.md) |
-[Server and template specs](/help/server-and-template-configuration.md) | [Destination servers API endpoint operations](/help/destination-server-api.md) |
-[Authentication configuration](/help/credentials-configuration.md) | [Credentials endpoint API operations](/help/credentials-configuration-api.md) |
-[Audience metadata management](/help/audience-metadata-management.md) | [Audience metadata endpoint API operations](/help/audience-metadata-api.md) | 
-[OAuth 2 configuration](/help/oauth2-authentication.md) | Configure using the `customerAuthenticationConfigurations` parameter in the [/destinations API endpoint](/help/destination-configuration-api.md). |
-[Message format](/help/message-format.md) | - |
+|Functionality description | API reference |
+|--- |--- |
+|[Destination configuration](/help/destination-configuration.md) | [Destinations API endpoint operations](/help/destination-configuration-api.md) |
+|[Server and template specs](/help/server-and-template-configuration.md) | 
+|[Destination servers API endpoint operations](/help/destination-server-api.md) |
+|[Authentication configuration](/help/credentials-configuration.md) | [Credentials endpoint API operations](/help/credentials-configuration-api.md) |
+|[Audience metadata management](/help/audience-metadata-management.md) | [Audience metadata endpoint API operations](/help/audience-metadata-api.md) | 
+|[OAuth 2 configuration](/help/oauth2-authentication.md) | Configure using the `customerAuthenticationConfigurations` parameter in the [/destinations API endpoint](/help/destination-configuration-api.md). |
+|[Message format](/help/message-format.md) | - |

@@ -88,12 +88,11 @@ Authorization: Bearer YOUR_REST_API_KEY
 
 Considering the message format, the corresponding transformations are as follows:
 
-Attribute in partner XDM schema on the Adobe side| Transformation | Attribute in HTTP message on your side
----------|----------|---------|
- `_your_custom_schema.firstName` |` attributes.first_name` | `first_name` |
- `_your_custom_schema.lastName` | `attributes.last_name` | `last_name` |
- `personalEmail.address` | `attributes.external_id` | `external_id` |
-
+|Attribute in partner XDM schema on the Adobe side| Transformation | Attribute in HTTP message on your side
+|---------|----------|---------|
+|`_your_custom_schema.firstName` |` attributes.first_name` | `first_name` |
+|`_your_custom_schema.lastName` | `attributes.last_name` | `last_name` |
+|`personalEmail.address` | `attributes.external_id` | `external_id` |
 
 
 <!--
