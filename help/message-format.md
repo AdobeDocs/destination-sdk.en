@@ -88,7 +88,7 @@ Authorization: Bearer YOUR_REST_API_KEY
 
 Considering the message format, the corresponding transformations are as follows:
 
-|Attribute in partner XDM schema on the Adobe side| Transformation | Attribute in HTTP message on your side
+|Attribute in partner XDM schema on the Adobe side| Transformation | Attribute in HTTP message on your side|
 |---------|----------|---------|
 |`_your_custom_schema.firstName` |` attributes.first_name` | `first_name` |
 |`_your_custom_schema.lastName` | `attributes.last_name` | `last_name` |
@@ -707,13 +707,13 @@ The context provided to the template contains `input`  (the profiles / data that
 
 The table below provides descriptions for the functions in the examples above.
 
-Function | Description |
----------|----------|
- `input.profile` | The profile, represented as a [JsonNode](http://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html). Follows the partner XDM schema mentioned further above on this page.|
- `destination.segmentAliases` | Map from segment IDs in the Adobe Experience Platform namespace to segment aliases in the partner's system. |
- `destination.segmentNames` | Map from segment names in the Adobe Experience Platform namespace to segment names in the partner's system. |
- `addedSegments(listOfSegments)` | Returns only the segments that have status `realized` or `existing`. |
- `removedSegments(listOfSegments)` | Returns only the segments that have status `exited`. |
+|Function | Description |
+|---------|----------|
+| `input.profile` | The profile, represented as a [JsonNode](http://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html). Follows the partner XDM schema mentioned further above on this page.|
+| `destination.segmentAliases` | Map from segment IDs in the Adobe Experience Platform namespace to segment aliases in the partner's system. |
+| `destination.segmentNames` | Map from segment names in the Adobe Experience Platform namespace to segment names in the partner's system. |
+| `addedSegments(listOfSegments)` | Returns only the segments that have status `realized` or `existing`. |
+| `removedSegments(listOfSegments)` | Returns only the segments that have status `exited`. |
 
 
 ## What Adobe needs from you to set up your destination {#what-adobe-needs}
