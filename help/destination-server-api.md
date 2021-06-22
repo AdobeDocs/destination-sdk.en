@@ -1,6 +1,7 @@
 ---
 description: This page lists and describes all the API operations that you can perform using the `/authoring/v1/destination-servers` API endpoint. The server and template specs for your destination can be configured in Adobe Destination SDK via the common endpoint `/authoring/v1/destination-servers`.
 title: Destination server endpoint API operations
+exl-id: 70c3a620-be0c-4516-8721-c56ba5b81a12
 ---
 # Destination server endpoint API operations
 

@@ -1,6 +1,7 @@
 ---
 description: This page describes how to authenticate and start using Adobe Destination SDK. It includes instructions on how to obtain Adobe I/O authentication credentials, a sandbox name and ID, and how to be added to an allowed partner list.
 title: Getting started with Destination SDK
+exl-id: 75a3e3f6-0470-4e60-9a19-e994a265a837
 ---
 # Getting started 
 

@@ -1,6 +1,7 @@
 ---
 description: To use Destination SDK, a partner company must meet the prerequisites listed in this document.
 title: Integration prerequisites
+exl-id: 1230bea0-4b19-4a36-98b9-ef8d0cb01152
 ---
 # Integration prerequisites
 

@@ -1,6 +1,7 @@
 ---
 description: This page describes all the API operations that you can perform using the `/authoring/v1/credentials` API endpoint.
 title: Credentials endpoint API operations
+exl-id: eda21827-0e32-4253-921a-397c3f958bc7
 ---
 # Credentials endpoint API operations {#credentials}
 

@@ -1,6 +1,7 @@
 ---
 description: This page describes all the API operations that you can perform using the `/authoring/v1/audience-templates` API endpoint.
 title: Audience metadata endpoint API operations
+exl-id: f7f9ed60-82ff-4311-8748-86a479fe050a
 ---
 # Audience metadata endpoint API operations
 

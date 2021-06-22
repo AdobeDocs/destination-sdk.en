@@ -1,6 +1,7 @@
 ---
 description: This page describes the various OAuth 2 authentication flows supported by Destination SDK, and provides instructions to set up OAuth 2 authentication for your destination.
 title: OAuth 2 authentication
+exl-id: 606e88a2-53d2-4299-a40d-51baff8fdfa7
 ---
 # OAuth 2 authentication 
 
