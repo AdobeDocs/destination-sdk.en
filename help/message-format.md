@@ -17,11 +17,11 @@ exl-id: bd348e99-56f7-449e-a639-8da6fd2cafaf
 
 To understand the process on the Adobe side, please familiarize yourself with the following Experience Platform concepts:
 
-* Experience Data Model (XDM). [XDM overview](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=en) and  [How to create an XDM schema in Adobe Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en).
-* Class. [Create and edit classes in the UI](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/classes.html?lang=en).
-* Field group. [Field group definition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#field-group) and [more information about field groups](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en#field-group).
-* IdentityMap. The identity map represents a map of all end-user identities in Adobe Experience Platform. Refer to `xdm:identityMap` in the [XDM field dictionary](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en).
-* SegmentMembership. The [segmentMembership](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en) XDM attribute informs which segments a profile is a member of. For the three different values in the `status` field, read the documentation on [Segment Membership Details schema field group](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html).
+* **Experience Data Model (XDM)**. [XDM overview](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=en) and  [How to create an XDM schema in Adobe Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en).
+* **Class**. [Create and edit classes in the UI](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/classes.html?lang=en).
+* **Field group**. [Field group definition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#field-group) and [more information about field groups](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en#field-group).
+* **IdentityMap**. The identity map represents a map of all end-user identities in Adobe Experience Platform. Refer to `xdm:identityMap` in the [XDM field dictionary](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en).
+* **SegmentMembership**. The [segmentMembership](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en) XDM attribute informs which segments a profile is a member of. For the three different values in the `status` field, read the documentation on [Segment Membership Details schema field group](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html).
 
 ## Overview {#overview}
 
@@ -40,7 +40,7 @@ Experience Platform uses schemas to describe the structure of data in a consiste
 
 Users who want to activate data to your destination need to map the fields that they use for their datasets in Experience Platform to a schema that translates to your destination's expected format. Adobe will create a custom field group for your company to add to the partner schema. The fields in the field group depend on the profile attribute fields that you can receive.
 
-**Customer XDM schema (1)**: This refers to the schema that a customer uses in Experience Platform. In Experience Platform, in the [activate destination workflow](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/dest-tutorials/activate-destinations.html), customers would map fields from their schema to the partner schema that Adobe create for your destination (2).
+**Customer XDM schema (1)**: This refers to the schema that a customer uses in Experience Platform. In Experience Platform, in the [mapping step](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate-destinations.html?lang=en#mapping) of the activate destination workflow, customers would map fields from their schema to the partner schema that Adobe create for your destination (2).
 
 **Partner XDM schema (2)**: Based on the JSON standard schema (3) that you share with Adobe, the team at Adobe will create a custom schema for your destination. Note that in a [future phase of the project](/help/overview.md#phased-approach), you will be able to create the custom schema for your destination on your own.
 
@@ -65,7 +65,7 @@ To demonstrate the transformation process, the example below uses three common p
 
 >[!NOTE]
 >
->The customer maps the attributes from the Adobe XDM schema to the partner XDM schema in the Adobe Experience Platform UI, in the **Mapping** step of the [activate destination workflow](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate-destinations.html#identity-mapping).
+>The customer maps the attributes from the Adobe XDM schema to the partner XDM schema in the Adobe Experience Platform UI, in the **Mapping** step of the [activate destination workflow](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate-destinations.html#mapping).
 
 Let's say your platform can receive a message format like:
 
