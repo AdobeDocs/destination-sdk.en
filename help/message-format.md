@@ -30,7 +30,7 @@ Use the content on this page together with the rest of the [configuration option
 Adobe Experience Platform exports data to a significant number of destinations, in various data formats. Some examples of destination types are advertising platforms (Google), social networks (Facebook), cloud storage locations (Amazon S3, Azure Event Hubs).
 
 Experience Platform can adjust the exported message format to match the expected format on your side. To understand this customization, the following concepts are important:
-* The customer (1) and partner (2) XDM schema in Adobe Experience Platform
+* The source (1) and target (2) XDM schema in Adobe Experience Platform
 * The message format on the partner side (3), and 
 * The transformation layer between the two.
 
@@ -38,23 +38,17 @@ Experience Platform can adjust the exported message format to match the expected
 
 Experience Platform uses schemas to describe the structure of data in a consistent and reusable way.
 
-Users who want to activate data to your destination need to map the fields that they use for their datasets in Experience Platform to a schema that translates to your destination's expected format. Adobe will create a custom field group for your company to add to the partner schema. The fields in the field group depend on the profile attribute fields that you can receive.
+Users who want to activate data to your destination need to map the fields that they use for their datasets in Experience Platform to a schema that translates to your destination's expected format. Adobe will create a custom field group for your company to add to the target schema. The fields in the field group depend on the profile attribute fields that you can receive.
 
-**Customer XDM schema (1)**: This refers to the schema that a customer uses in Experience Platform. In Experience Platform, in the [mapping step](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate-destinations.html?lang=en#mapping) of the activate destination workflow, customers would map fields from their schema to the partner schema that Adobe create for your destination (2).
+**Source XDM schema (1)**: This refers to the schema that a customer uses in Experience Platform. In Experience Platform, in the [mapping step](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate-destinations.html?lang=en#mapping) of the activate destination workflow, customers would map fields from their source schema to your destination's target schema (2).
 
-**Partner XDM schema (2)**: Based on the JSON standard schema (3) that you share with Adobe, the team at Adobe will create a custom schema for your destination. Note that in a [future phase of the project](/help/overview.md#phased-approach), you will be able to create the custom schema for your destination on your own.
+**Target XDM schema (2)**: Based on the JSON standard schema (3) that you share with Adobe, the team at Adobe will create a custom schema for your destination. Note that in a [future phase of the project](/help/overview.md#phased-approach), you will be able to create the custom schema for your destination on your own.
 
 **JSON standard schema of your destination profile attributes (3)**: Please share with us a [JSON schema](https://json-schema.org/learn/miscellaneous-examples.html) of all the profile attributes that your platform supports and their types (for example: object, string, array). Example fields that your destination could support could be `firstName`, `lastName`, `gender`, `email`, `phone`,  `productId`, `productName`, and so on.
 
-Based on the schema transformations described above, here is how the structure of a message changes between the XDM schema and the sample schema on the partner side:
+Based on the schema transformations described above, here is how the structure of a message changes between the source XDM schema and the sample schema on the partner side:
 
 ![Transformations message example](/help/assets/transformations-with-examples.png)
-
-<!--
-
-**Message output (4)**: This represents a standard message that your destination can receive. In the example above, the output expected by the destination is JSON structured HTTP. However, the intention is to support any kind of destination format, for example CSV, XML, FORM-URL-ENCODED etc.
-
--->
 
 <br>&nbsp;
 
@@ -65,7 +59,7 @@ To demonstrate the transformation process, the example below uses three common p
 
 >[!NOTE]
 >
->The customer maps the attributes from the Adobe XDM schema to the partner XDM schema in the Adobe Experience Platform UI, in the **Mapping** step of the [activate destination workflow](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate-destinations.html#mapping).
+>The customer maps the attributes from the source XDM schema to the partner XDM schema in the Adobe Experience Platform UI, in the **Mapping** step of the [activate destination workflow](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate-destinations.html#mapping).
 
 Let's say your platform can receive a message format like:
 
@@ -95,13 +89,6 @@ Considering the message format, the corresponding transformations are as follows
 |`personalEmail.address` | `attributes.external_id` | `external_id` |
 
 
-<!--
-
-Note that the `identityMap` attribute in Adobe Experience Platform can contain several identities. In the example in the table, the first identity is mapped to the `external_id` attribute on your side.
-
--->
-
-
 ## Using a templating language for the identity, attributes, and segment membership transformations {#using-templating}
 
 Adobe uses a templating language similar to [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) to transform the fields from the XDM schema into a format supported by your destination.
@@ -112,99 +99,7 @@ This section provides several examples of how these transformations are made, fr
 2. Increased complexity examples of templates that combine the fields above: [Create a template that sends segments and identities](/help/message-format.md#segments-and-identities) and [Create a template that sends segments, identities, and profile attributes](/help/message-format.md#segments-identities-attributes).
 3. Deepest dive, showing two examples of templates from industry partners.
 
-<!--
 
-This section describes the templates that you can use for the transformations mentioned above.
-
-```python
-
-{% for user in users %}
-  <li><a href="{{ user.url }}">{{ user.username }}</a></li>
-{% endfor %}
-
-```
-
-Some Pebble features are not supported, such as `{% include % }` and `{% extends % }`. 
-
-### Context
-
-The context provided to the template contains input  (the profiles / data that are exported in this call) and destination (data about the destination that data is sent to, valid for all profiles).
-
-#### Input
-
-There are two kinds of input, single-profile and multi-profile. Single-profile inputs have the following properties:
-
-* `profile`: the profile as a [JsonNode](http://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html)
-* `identityNamespace`: *Optional*. For destinations that only accept one identity per request, the identity namespace of the one identity in this request.
-* `id`: *Optional*. For destinations that only accept one identity per request, the one identity in this request. This is not strictly required, as that identity could be accessed through profile.identityMap, but it simplifies the templates.
-
-Multi-profile inputs have:
-
-* `profiles`: A list of profiles, each one represented as a [JsonNode](http://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html)
-* `aggregationKey`: *Optional*. For destinations that require/accept aggregation by more than orderId, the list of properties and their values used for aggregating these particular profiles.
-
-
-The profiles will be in the partner schema for the destination, so whatever properties are there in the schema can be accessed in the template (including `identityMap` and `segmentMembership` if present.
-
-#### Destination
-
-* id - the id of the data export order
-* `segmentAliases` - map from segment IDs in the Experience Platform Unified Profile Service namespace to segment aliases in your system. Example usage:
-
-  ```python
-
-  {% for segment in input.profile.segmentMembership.ups %}
-      segmentAlias = "{{ destination.segmentAliases[segment.key] }}";
-  {% endfor %}
-
-  ```
-
-  This is a shortcut for `destination.allSegmentAliases.ups[segment.key]`.
-
-* `allSegmentAliases`: a map from segment IDs in all Experience Platform namespaces to segment aliases in your system. The example above is equivalent to:  
-
-  ```python
-
-  {% for segment in input.profile.segmentMembership.ups %}
-      segmentAlias = "{{ destination.allSegmentAliases.ups[segment.key] }}";
-  {% endfor %}
-
-  ```
-
-
-* further parameters will follow  
-
-
-
-### Adobe-specific Functions
-
-In addition to the functions already present in Pebble, the Adobe Destination SDK provides the following:
-
-* `now()` - the current date and time, useful for destinations that require a timestamp
-* `addedSegments(listOfSegments)` - returns just the segments that have status `realized` or `existing`. For example:
-
-  ```python
-
-  {% for segment in addedSegments(input.profile.segmentMembership.ups) %}
-    ...
-  {% endfor %}
-
-  ```
-
-  
-  This is also available as a filter:
-
-  ```python
-
-  {% for segment in input.profile.segmentMembership.ups | added %}
-    ...
-  {% endfor %}
-
-  ```
-
-* `removedSegments(listOfSegments)` - same as above, for segments that are exited
-
--->
 
 
 
@@ -722,228 +617,4 @@ Based on the transformations outlined in the sections above, Adobe needs the fol
 
 * Considering *all* the fields that your platform can receive, Adobe needs the standard JSON schema that corresponds to your expected message format. Having the template allows Adobe to define transformations and to create a custom XDM schema for your company, which customers would use to export data to your destination.
 
-<!--
 
-
-```
-
-{
-  "$id": "https://example.com/person.schema.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Person",
-  "type": "object",
-  "properties": {
-    "firstName": {
-      "type": "string",
-      "description": "The person's first name."
-    },
-    "lastName": {
-      "type": "string",
-      "description": "The person's last name."
-    },
-    "age": {
-      "description": "Age in years which must be equal to or greater than zero.",
-      "type": "integer",
-      "minimum": 0
-    }
-  }
-}
-
-
-```
-
-```
-POST https://YOUR_REST_API_URL/users
-Content-Type: application/json
-Authorization: Bearer YOUR_REST_API_KEY
-
-{
-  "id": "yourstruly@adobe.com",
-  shoppingList: [
-    {
-      "attribute_name": "product_id"
-      "attribute_value": "12345"
-    },
-    {
-      "attribute_name": "product_name"
-      "attribute_value": "Toy Dinosaur"
-    }
-  ],
-  {
-    "attribute_name": "first_name"
-    "attribute_value": "Yours"
-  },
-  {
-    "attribute_name": "last_name"
-    "attribute_value": "Truly"
-  }
-}
-
-```
-
-```
-
-{
-  "id": "$input._yourcompanyschema_xdm.id@adobe.com",
-  shoppingList: [
-    {
-      "attribute_name": "product_id"
-      "attribute_value": "$input.productId"
-    },
-    {
-      "attribute_name": "product_name"
-      "attribute_value": "$input.productName"
-    }
-  ],
-  {
-    "attribute_name": "first_name"
-    "attribute_value": "$input.firstName"
-  },
-  {
-    "attribute_name": "last_name"
-    "attribute_value": "$input.lastName"
-  },
-  {
-    "attribute_name": "another_field"
-    "attribute_value": "$input.anotherField" // any other fields in your standard schema
-  }
-}
-
-```
-
-
-
-```
-
-{
-  "title": "Schema title",
-  "type": "object",
-  "properties": {
-    "email": {
-      "type": "string"
-    },
-    "shoppingList": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "productId": {
-            "type": "integer"
-          },
-          "productName": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "personalDetails": {
-      "type": "object",
-      "properties": {
-        "firstName": {
-          "type": "string"
-        },
-        "lastName": {
-          "type": "string"
-        }
-      }
-    }
-  }
-}
-
-```
-
-```
-
-{
-  "segmentMembership": {
-    "ups": {
-      "72ddd79b-6b0a-4e97-a8d2-332ccd81bd02": {
-        "lastQualificationTime": "2019-11-22T16:48:06Z",
-        "status": "existing"
-      }
-    }
-  },
-  "identityMap": {
-    "email": [
-      {
-        "id": "yourstruly@adobe.com"
-      }
-    ]
-  },
-  "person": {
-    "name": {
-      "firstName": "Yours",
-      "lastName": "Truly"
-    }
-  },
-  "_customer_company": {
-    "cart": [
-      {
-        "id": 12345,
-        "name": "Toy Dinosaur",
-        "price": 99.99
-      },
-      {
-        "id": 23456,
-        "name": "Baby Giraffe Toy",
-        "price": 50
-      }
-    ]
-  }
-}
-
-```
-
-```
-
-{
-  "identityMap": {
-    "email": [
-      {
-        "id": "yourstruly@adobe.com"
-      }
-    ]
-  },
-  "_your_company_name": {
-    "shoppingList": [
-      {
-        "productId": 12345,
-        "productName": "Toy Dinosaur"
-      },
-      {
-        "productId": 23456,
-        "productName": "Baby Giraffe Toy"
-      }
-    ],
-    "firstName": "Yours",
-    "lastName": "Truly"
-  }
-}
-
-```
-
-
-```
-
-
-{
-  "email": "yourstruly@adobe.com",
-  "shoppingList": [
-    {
-      "productId": 12345,
-      "productName": "Toy Dinosaur"
-    },
-    {
-      "productId": 23456,
-      "productName": "Baby Giraffe Toy"
-    }
-  ],
-  "personalDetails": {
-    "firstName": "Yours",
-    "lastName": "Truly"
-  }
-}
-
-```
-
--->
